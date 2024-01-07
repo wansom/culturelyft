@@ -120,7 +120,7 @@ nav {
   padding: 13px 20px;
 }
 
-.links button {
+.links .btn {
   width: 157px;
   height: 40px;
   background: var(--primary);
@@ -202,7 +202,7 @@ section.banner{
   opacity: 0.9;
 }
 
-.about button {
+.about a {
   width: 157px;
   height: 40px;
   background: var(--white);
@@ -361,6 +361,18 @@ section.banner{
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+}
+.speakers .btn{
+  width: 157px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: var(--white);
 }
 .contact button{
   width: 157px;

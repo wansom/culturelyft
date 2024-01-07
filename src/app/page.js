@@ -74,10 +74,10 @@ export default function Home() {
               </span>
             </div>
             <a href="#about-id" class="active">Employee Engagement</a>
-            <a href="#schedule-id">Team Insights</a>
-            <a href="#schedule-id">Company Culture</a>
-            <a href="#speakers-id">Resources</a>
-            <button>Speak to Our Team</button>
+            <a href="#insights">Team Insights</a>
+            <a href="#culture">Company Culture</a>
+            <a href="#contact">Resources</a>
+            <a href='#contact' className='btn whitespace-nowrap flex items-center justify-center'>Speak to Our Team</a>
           </div>
           <div class="menu-bar">
             <span className={isOpen ? "hide text-white" : " active"}
@@ -124,28 +124,26 @@ export default function Home() {
             <div>
               <h1 className='text-[32px] font-semibold'>Understand your employees</h1>
               <p className='z-10 mb-2'>Listen to your employees so you can make better decisions and drive meaningful change in your organization.</p>
-              <button className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <a href='#contact' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg>
-              </button>
+              </a>
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
             <div>
               <h1 className='text-[32px] font-semibold'>Build high-performing teams</h1>
               <p className='z-10 mb-2'>Build high-performing teams by enabling ongoing conversations with anytime feedback, goal tracking, development-focused reviews, and better 1‑on‑1s.</p>
-              <button className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <a href='#contact' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-              </button>
+              </svg></a>
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
             <div>
               <h1 className='text-[32px] font-semibold'>Develop your people</h1>
               <p className='z-10 mb-2'>Grow and retain your people with personalized, continuous development that's easy to measure and scale.</p>
-              <button className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <a href='#contact' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-              </button>
+              </svg></a>
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
           </div>
@@ -256,7 +254,7 @@ export default function Home() {
       </section>
       <section class="speakers bg-[#01382E] py-6 my-10" id="speakers-id">
         <div className='container mx-auto px-5 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-5  '>
-          <div className='rounded-lg p-5 space-y-4 bg-white'>
+          <div className='rounded-lg p-5 space-y-4 bg-white' id='insights'>
             <h2>Highlight emerging issues
               before you fall behind</h2>
             <p>With  Employee Research you can read between the lines. Capture, consolidate and measure employee feedback that falls outside of your Engagement or Pulse programs.</p>
@@ -266,9 +264,9 @@ export default function Home() {
               <li>Reduce time to action with best-in-class I/O designed programs that are lightweight yet incredibly comprehensive. No need to wait for other departments to guide strategy or decisions</li>
               <li>Protect employee confidentiality and anonymity with built-in enterprise security that’s both scalable and reliable</li>
             </ul>
-            <button>Speak to Our Team</button>
+            <button to='#contact' className='btn'>Speak to Our Team</button>
           </div>
-          <div className='rounded-lg p-5 space-y-4 bg-white'>
+          <div className='rounded-lg p-5 space-y-4 bg-white' id='culture'>
             <h2>Build The Best Company Culture</h2>
             <p>Culture Lyft, quickly uncover and weigh what matters most to your employees, whether that’s more vacation days, better healthcare or work-life balance.</p>
             <ul className='list-disc list-inside'>
@@ -276,7 +274,7 @@ export default function Home() {
               <li>Get insights on employee preferences faster with rigorous, pre-configured analyses for benefits, office design, employer value proposition and more</li>
               <li>Enable leaders to run programs with ease and glean insights quickly thanks to guided setups, all without compromising on quality</li>
             </ul>
-<button>Speak to Our Team</button>
+<button to='#contact' className='btn'>Speak to Our Team</button>
           </div>
         </div>
         
@@ -300,10 +298,10 @@ export default function Home() {
           <div class="">
             <form onSubmit={handleSubmit} className='flex items-center  contact gap-2'>
               {/* Rest of the form inputs with required attributes */}
-              <div className="control-group name">
-                <input type="text" name="firstname" value={formData.firstname} onChange={handleInputChange} required />
+              <div className="control-group name" id='contact'>
+                <input type="text" name="firstname" placeholder='enter email' value={formData.firstname} onChange={handleInputChange} required />
               </div>
-              <button type="submit">Send Message</button>
+              <button type="submit">contact Us</button>
             </form>
           </div>
         </div>
