@@ -362,6 +362,7 @@ section.banner{
   font-weight: 400;
   line-height: 24px;
 }
+
 .speakers .btn{
   width: 157px;
   height: 40px;
@@ -401,7 +402,30 @@ section.banner{
   padding: 13px 20px;
   border-radius: 10px;
 }
-
+.blog h2{
+  color: var(--primary);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
+.blog p{
+  color: var(--primary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.blog .preview{
+  color: var(--primary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  height: 200px;
+  text-overflow: ellipsis;
+  overflow-y: hidden;
+}
 /* == RESPONSIVE == */
 /* Medium devices (landscape tablets, 768px and up) */
 @media screen and (max-width: 994px) {

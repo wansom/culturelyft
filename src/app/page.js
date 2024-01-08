@@ -1,10 +1,9 @@
 'use client'
 import Image from 'next/image'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [isOpen, setOpen] = useState(false);
-  const [isModalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -12,6 +11,7 @@ export default function Home() {
     phonenumber: "",
     tickets: ""
   });
+  const [posts, setPosts] = useState([]);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -51,6 +51,28 @@ export default function Home() {
       })
     }
   };
+  useEffect(() => {
+    fetch("https://intelliverseai.com/wp/wp-json/wp/v2/posts")
+      .then((response) => response.json())
+      .then((posts) => {
+        const promises = posts.map((post) => {
+          return fetch(
+            `https://intelliverseai.com/wp/wp-json/wp/v2/media/${post.featured_media}`
+          )
+            .then((response) => response.json())
+            .then((media) => {
+              post.featured_image_url = media.source_url;
+              return post;
+            });
+        });
+        return Promise.all(promises);
+      })
+      .then((posts) => {
+        setPosts(posts);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <main className=" overflow-x-hidden">
       <nav class="nav ">
@@ -274,16 +296,38 @@ export default function Home() {
               <li>Get insights on employee preferences faster with rigorous, pre-configured analyses for benefits, office design, employer value proposition and more</li>
               <li>Enable leaders to run programs with ease and glean insights quickly thanks to guided setups, all without compromising on quality</li>
             </ul>
-<button to='#contact' className='btn'>Speak to Our Team</button>
+            <button to='#contact' className='btn'>Speak to Our Team</button>
           </div>
         </div>
-        
+
       </section>
       <section class="blog" id="about-id">
-        <div className='grid '>
+        <div className='grid grid-cols-1 md:grid-cols-3 container mx-auto px-5 gap-10 py-10'>
+          {posts.map((post) => (
+            <div className='shadow-lg rounded'>
+              {post.featured_media && (
+                <img src={post.featured_image_url}
+                  alt={post.title.rendered} className='h-[300px] w-full object-cover' />
+
+              )}
+
+              <div className='px-5 py-2'>
+                <h2 className=''>{post.title.rendered}</h2>
+                <div className='preview mb-5' dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+                <a href='#contact' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg></a>
+
+              </div>
+
+
+            </div>
+          ))}
+
+
 
         </div>
-      
+
       </section>
 
       <section class="contact" id="contact-id">
@@ -293,7 +337,7 @@ export default function Home() {
               <h1 className='font-bold text-[32px]'>Reach out to Us</h1>
               <p className='text-24 font-semibold'>Invest in your people. Accelerate your business results.</p>
             </div>
-          
+
           </div>
           <div class="">
             <form onSubmit={handleSubmit} className='flex items-center  contact gap-2'>
