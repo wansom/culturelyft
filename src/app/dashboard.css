@@ -1,5 +1,5 @@
 .dash-nav {
-    height: fit-content;
+    height: 100vh;
     padding: 15px;
     background-color: #01382E;
     width: 280px !important;
@@ -1777,7 +1777,7 @@ table.fold-table>tbody>tr td.table-dt-status svg {
 .compose-msg-btn button {
     height: 54px;
     width: 100%;
-    background-color: #0F305E;
+    background-color: #01382E;
     outline: none;
     border: 0px;
     border-radius: 10px;
@@ -1836,10 +1836,6 @@ table.fold-table>tbody>tr td.table-dt-status svg {
     content: "";
     left: 0;
     height: 3px;
-}
-
-.msgtabcontent {
-    display: none;
 }
 
 .msg-person {
@@ -1904,7 +1900,7 @@ table.fold-table>tbody>tr td.table-dt-status svg {
     border-radius: 8px;
     outline: none;
     border: 0px;
-    background-color: #0684F9;
+    background-color: #01382E;
     font-size: 9px;
     color: #ffffff;
 }

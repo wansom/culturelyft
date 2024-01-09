@@ -1,28 +1,29 @@
 import Image from 'next/image'
+import Link from 'next/link';
 const DashboardSidebar = () => {
     return ( 
         <nav class="dash-nav">
         <div class="ins-lg -mt-10">
             <div class="dash-lg ">
-            <a href="/" class="nav-logo">
+            <Link href="/" class="nav-logo">
               <Image
                 src="/logo-white.png"
                 alt="logo"
                 width={150}
                 height={80}
               />
-            </a>
+            </Link>
             </div>
             <div class="dash-arrow">
-                <a href='/' className='flex items-center justify-center'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <Link href='/' className='flex items-center justify-center'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
 </svg>
-</a>
+</Link>
             </div>
         </div>
         <div class="dash-links -mt-14">
             <div class="link">
-                <a href="/dashboard">
+                <Link href="/dashboard">
                     <div class="link-icon">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -45,43 +46,23 @@ const DashboardSidebar = () => {
                     <div class="red-status">
 
                     </div>
-                </a>
+                </Link>
             </div>
             <div class="link">
-                <a href="claims.html">
+                <Link href="/dashboard/team">
                     <div class="link-icon">
-                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M7.61736 3.63477C3.95236 3.94018 1 6.99435 1 10.7612C1 14.7316 4.25778 17.9893 8.22819 17.9893C12.1986 17.9893 15.4564 14.7316 15.4564 10.7612H7.61736V3.63477Z"
-                                stroke="#ADC9CD" stroke-miterlimit="10" />
-                            <path
-                                d="M10.7737 0.988281C10.57 0.988281 10.3664 0.988281 10.1628 0.988281V8.11467H18.0018C18.0018 4.24606 14.7441 0.988281 10.7737 0.988281Z"
-                                stroke="#ADC9CD" stroke-miterlimit="10" />
-                        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+</svg>
+
                     </div>
                     <div class="link-text">
-                        Claims
+                        Team Profiles
                     </div>
-                </a>
+                </Link>
             </div>
             <div class="link">
-                <a href="clients.html" class="active">
-                    <div class="link-icon">
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.4203 16.8753H5.58125C3.03611 16.8753 1 14.8392 1 12.2941V5.77851C1 3.23338 3.03611 1.19727 5.58125 1.19727H13.4203C15.9654 1.19727 18.0015 3.23338 18.0015 5.77851V12.2941C18.0015 14.8392 15.9654 16.8753 13.4203 16.8753Z"
-                                stroke="#ADC9CD" stroke-miterlimit="10" />
-                            <path d="M4.15576 5.98242L9.55145 10.9709L14.9471 5.98242" stroke="#ADC9CD"
-                                stroke-miterlimit="10" />
-                        </svg>
-                    </div>
-                    <div class="link-text">
-                        Clients
-                    </div>
-                </a>
-            </div>
-            <div class="link">
-                <a href="policies.html">
+                <Link href="/dashboard/programs">
                     <div class="link-icon">
                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -111,11 +92,44 @@ const DashboardSidebar = () => {
                         </svg>
                     </div>
                     <div class="link-text">
-                        Policies
+                        Culture Kit
                     </div>
-                </a>
+                </Link>
             </div>
             <div class="link">
+                <Link href="/dashboard/templates">
+                    <div class="link-icon">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.29446 11.788H13.8655" stroke="#ADC9CD" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1 5.73393C1 3.55216 2.11684 1.67843 4.23615 1.24361C6.35457 0.807932 7.9646 0.958545 9.30213 1.68013C10.6406 2.40171 10.2573 3.46707 11.6323 4.24907C13.0082 5.03192 15.2214 3.85594 16.667 5.41569C18.1806 7.04861 18.1725 9.55544 18.1725 11.1535C18.1725 17.2257 14.7711 17.7073 9.58625 17.7073C4.40144 17.7073 1 17.2869 1 11.1535V5.73393Z"
+                                stroke="#ADC9CD" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="link-text">
+                    Templates
+                    </div>
+                </Link>
+            </div>
+            <div class="link">
+                <Link href="/dashboard/feedback" class="active">
+                    <div class="link-icon">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.4203 16.8753H5.58125C3.03611 16.8753 1 14.8392 1 12.2941V5.77851C1 3.23338 3.03611 1.19727 5.58125 1.19727H13.4203C15.9654 1.19727 18.0015 3.23338 18.0015 5.77851V12.2941C18.0015 14.8392 15.9654 16.8753 13.4203 16.8753Z"
+                                stroke="#ADC9CD" stroke-miterlimit="10" />
+                            <path d="M4.15576 5.98242L9.55145 10.9709L14.9471 5.98242" stroke="#ADC9CD"
+                                stroke-miterlimit="10" />
+                        </svg>
+                    </div>
+                    <div class="link-text">
+                        Feedback Forms
+                    </div>
+                </Link>
+            </div>
+            
+            {/* <div class="link">
                 <a href="renewals.html">
                     <div class="link-icon">
                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,45 +148,25 @@ const DashboardSidebar = () => {
                         Renewals
                     </div>
                 </a>
-            </div>
+            </div> */}
+            
             <div class="link">
-                <a href="providers.html">
+                <Link href="/dashboard/settings">
                     <div class="link-icon">
-                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.29446 11.788H13.8655" stroke="#ADC9CD" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M1 5.73393C1 3.55216 2.11684 1.67843 4.23615 1.24361C6.35457 0.807932 7.9646 0.958545 9.30213 1.68013C10.6406 2.40171 10.2573 3.46707 11.6323 4.24907C13.0082 5.03192 15.2214 3.85594 16.667 5.41569C18.1806 7.04861 18.1725 9.55544 18.1725 11.1535C18.1725 17.2257 14.7711 17.7073 9.58625 17.7073C4.40144 17.7073 1 17.2869 1 11.1535V5.73393Z"
-                                stroke="#ADC9CD" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402M6.75 21A3.75 3.75 0 0 1 3 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 0 0 3.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008Z" />
+</svg>
+
                     </div>
                     <div class="link-text">
-                        Providers
+                        Account Settings
                     </div>
-                </a>
+                </Link>
             </div>
+           
+            
             <div class="link">
-                <a href="report.html">
-                    <div class="link-icon">
-                        <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.27428 8.11279V14.0934" stroke="#ADC9CD" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M9.03072 5.25049V14.094" stroke="#ADC9CD" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M12.7227 11.2732V14.0937" stroke="#ADC9CD" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M1 9.69958C1 3.17537 3.00803 1 9.03039 1C15.0527 1 17.0608 3.17537 17.0608 9.69958C17.0608 16.2238 15.0527 18.3992 9.03039 18.3992C3.00803 18.3992 1 16.2238 1 9.69958Z"
-                                stroke="#ADC9CD" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <div class="link-text">
-                        Report
-                    </div>
-                </a>
-            </div>
-            <div class="link">
-                <a href="inbox.html">
+                <a href="/dashboard/chat">
                     <div class="link-icon">
                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -197,12 +191,20 @@ const DashboardSidebar = () => {
                     </div>
                 </a>
             </div>
+            <div class="link">
+                <a href="report.html">
+                 
+                    <div class="link-text">
+                        Inbox
+                    </div>
+                </a>
+            </div>
         </div>
         <div class="nav-profile">
           
             <div class="profile">
                 <div class="pr-img">
-                    <img src="/logo.png" alt="Insurance profile image"/>
+                    <img src="/profile.png" alt="Insurance profile image"/>
                     <span class="name-initials">a</span>
                 </div>
                 <div class="pr-text">
