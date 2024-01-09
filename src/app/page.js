@@ -83,13 +83,13 @@ export default function Home() {
         <div class="banner-container basis-2/2 md:basis=1/3">
           <div class="bn-text mt-10">
             <div class="bn-txt-holder">
-              <h1 class="text-[32px] md:text-[48px] mx-5 md:mx-24 text-black">
+              <h1 class="text-[32px] md:text-[48px] mx-5 md:ml-28 text-black">
                 Great People build Great Companies. Redefine your team experience.
 
               </h1>
-              <p className='mx-5 md:mx-24 my-5 text-black'>Develop programs,structures and expereinces that empower leaders,managers and teams to be at their best </p>
+              <p className='mx-5 md:mx-28 my-5 text-black'>Develop programs,structures and expereinces that empower leaders,managers and teams to be at their best </p>
               <a
-                  class="block px-10 py-6 mt-4 text-[18px] font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple w-[200px] mx-5 md:mx-24"
+                  class="block px-10 py-6 mt-4 text-[18px] font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple w-[200px] mx-5 md:mx-28"
                   href="/login"
                 >
                   Get Started
