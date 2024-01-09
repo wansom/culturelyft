@@ -1,6 +1,9 @@
+import Navbar from "../components/navbar";
+
 const UserLogin = () => {
     return (
         <main>
+            <Navbar/>
           <section className="container mx-auto">
 
           <div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
