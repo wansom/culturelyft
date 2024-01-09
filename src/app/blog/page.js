@@ -4,8 +4,9 @@ import '../blog.css'
 const BlogPage = () => {
     return (  
         <main>
+          <Navbar/>
         <article>  
-          <section class="topics" id="topics" aria-labelledby="topic-label">
+          <section class="topics mt-2" id="topics" aria-labelledby="topic-label">
             <div class="container mx-auto">
     
               <div class="card topic-card">
@@ -116,7 +117,7 @@ const BlogPage = () => {
                 <li>
                   <div class="card feature-card">
     
-                    <figure class="card-banner img-holder" style={{width:'507px',height: '618px'}}>
+                    <figure class="card-banner img-holder h-[250px]">
                       <img src="./assets/images/featured-1.png" width="1602" height="903" loading="lazy"
                         alt="Self-observation is the first step of inner unfolding" class="img-cover"/>
                     </figure>
@@ -168,7 +169,7 @@ const BlogPage = () => {
                 <li>
                   <div class="card feature-card">
     
-                    <figure class="card-banner img-holder" style={{width:'1602px',height: '903px'}}>
+                    <figure class="card-banner img-holder h-[250px]">
                       <img src="./assets/images/featured-2.png" width="1602" height="903" loading="lazy"
                         alt="Self-observation is the first step of inner unfolding" class="img-cover"/>
                     </figure>
@@ -220,7 +221,7 @@ const BlogPage = () => {
                 <li>
                   <div class="card feature-card">
     
-                    <figure class="card-banner img-holder" style={{width:'1602px',height: '903px'}}>
+                    <figure class="card-banner img-holder h-[250px]">
                       <img src="./assets/images/featured-3.png" width="1602" height="903" loading="lazy"
                         alt="Self-observation is the first step of inner unfolding" class="img-cover"/>
                     </figure>
@@ -272,7 +273,7 @@ const BlogPage = () => {
                 <li>
                   <div class="card feature-card">
     
-                    <figure class="card-banner img-holder" style={{width:'1602px',height: '903px'}}>
+                    <figure class="card-banner img-holder h-[250px]">
                       <img src="./assets/images/featured-4.png" width="1602" height="903" loading="lazy"
                         alt="Self-observation is the first step of inner unfolding" class="img-cover"/>
                     </figure>
@@ -324,7 +325,7 @@ const BlogPage = () => {
                 <li>
                   <div class="card feature-card">
     
-                    <figure class="card-banner img-holder" style={{width:'1602px',height: '903px'}}>
+                    <figure class="card-banner img-holder h-[250px]">
                       <img src="./assets/images/featured-5.png" width="1602" height="903" loading="lazy"
                         alt="Self-observation is the first step of inner unfolding" class="img-cover"/>
                     </figure>
@@ -383,7 +384,7 @@ const BlogPage = () => {
     
             </div>
     
-            <img src="./assets/images/shadow-3.svg" width="500" height="1500" loading="lazy" alt="" class="feature-bg"/>
+            <img src="/logo.png" width="500" height="1500" loading="lazy" alt="" class="feature-bg"/>
     
           </section>
     
@@ -402,7 +403,7 @@ const BlogPage = () => {
     
                 <li>
                   <button class="card tag-btn">
-                    <img src="./assets/images/tag1.png" width="32" height="32" loading="lazy" alt="Travel"/>
+                    <img src="/logo.png" width="32" height="32" loading="lazy" alt="Travel"/>
     
                     <p class="btn-text">Travel</p>
                   </button>
@@ -418,7 +419,7 @@ const BlogPage = () => {
     
                 <li>
                   <button class="card tag-btn">
-                    <img src="./assets/images/tag3.png" width="32" height="32" loading="lazy" alt="Lifestyle"/>
+                    <img src="/logo.png" width="32" height="32" loading="lazy" alt="Lifestyle"/>
     
                     <p class="btn-text">Lifestyle</p>
                   </button>
@@ -426,7 +427,7 @@ const BlogPage = () => {
     
                 <li>
                   <button class="card tag-btn">
-                    <img src="./assets/images/tag4.png" width="32" height="32" loading="lazy" alt="Fashion"/>
+                    <img src="/logo.png" width="32" height="32" loading="lazy" alt="Fashion"/>
     
                     <p class="btn-text">Fashion</p>
                   </button>
@@ -434,7 +435,7 @@ const BlogPage = () => {
     
                 <li>
                   <button class="card tag-btn">
-                    <img src="./assets/images/tag5.png" width="32" height="32" loading="lazy" alt="Food"/>
+                    <img src="/logo.png" width="32" height="32" loading="lazy" alt="Food"/>
     
                     <p class="btn-text">Food</p>
                   </button>
@@ -518,7 +519,7 @@ const BlogPage = () => {
                   <li>
                     <div class="recent-post-card">
     
-                      <figure class="card-banner img-holder" style={{width:'271px',height: '258px'}}>
+                      <figure class="card-banner img-holder h-[258px]" >
                         <img src="./assets/images/recent-post-1.jpg" width="271" height="258" loading="lazy"
                           alt="Helpful Tips for Working from Home as a Freelancer" class="img-cover"/>
                       </figure>
@@ -558,7 +559,7 @@ const BlogPage = () => {
                   <li>
                     <div class="recent-post-card">
     
-                      <figure class="card-banner img-holder" style={{width:'271px',height: '258px'}}>
+                      <figure class="card-banner img-holder h-[258px]">
                         <img src="./assets/images/recent-post-2.jpg" width="271" height="258" loading="lazy"
                           alt="Helpful Tips for Working from Home as a Freelancer" class="img-cover"/>
                       </figure>
@@ -598,7 +599,7 @@ const BlogPage = () => {
                   <li>
                     <div class="recent-post-card">
     
-                      <figure class="card-banner img-holder" style={{width:'271px',height: '258px'}}>
+                      <figure class="card-banner img-holder h-[258px]">
                         <img src="./assets/images/recent-post-3.jpg" width="271" height="258" loading="lazy"
                           alt="Helpful Tips for Working from Home as a Freelancer" class="img-cover"/>
                       </figure>
@@ -638,7 +639,7 @@ const BlogPage = () => {
                   <li>
                     <div class="recent-post-card">
     
-                      <figure class="card-banner img-holder" style={{width:'271px',height: '258px'}}>
+                      <figure class="card-banner img-holder h-[258px]">
                         <img src="./assets/images/recent-post-4.jpg" width="271" height="258" loading="lazy"
                           alt="Helpful Tips for Working from Home as a Freelancer" class="img-cover"/>
                       </figure>
@@ -678,7 +679,7 @@ const BlogPage = () => {
                   <li>
                     <div class="recent-post-card">
     
-                      <figure class="card-banner img-holder" style={{width:'271px',height: '258px'}}>
+                      <figure class="card-banner img-holder h-[258px] w-full" >
                         <img src="./assets/images/recent-post-5.jpg" width="271" height="258" loading="lazy"
                           alt="Helpful Tips for Working from Home as a Freelancer" class="img-cover"/>
                       </figure>
@@ -951,85 +952,6 @@ const BlogPage = () => {
                         </div>
     
                       </div>
-                    </li>
-    
-                  </ul>
-    
-                </div>
-    
-                <div class="card aside-card insta-card">
-    
-                  <a href="#" class="logo">
-                    <img src="./assets/images/logo.svg" width="119" height="37" loading="lazy" alt="Wren logo"/>
-                  </a>
-    
-                  <p class="card-text">
-                    Follow us on instagram
-                  </p>
-    
-                  <ul class="insta-list">
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-1.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
-                    </li>
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-2.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
-                    </li>
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-3.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
-                    </li>
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-4.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
-                    </li>
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-5.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
-                    </li>
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-6.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
-                    </li>
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-7.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
-                    </li>
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-8.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
-                    </li>
-    
-                    <li>
-                      <a href="#" class="insta-post img-holder" style={{width:'276px',height: '277px'}}>
-                        <img src="./assets/images/insta-post-9.png" width="276" height="277" loading="lazy" alt="insta post"
-                          class="img-cover"/>
-                      </a>
                     </li>
     
                   </ul>

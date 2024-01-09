@@ -28,7 +28,7 @@ const Navbar = () => {
             <a href="#about-id" class="active">Employee Engagement</a>
             <a href="#insights">Team Insights</a>
             <a href="#culture">Company Culture</a>
-            <a href="#contact">Resources</a>
+            <a href="/blog">Resources</a>
             <a href='#contact' className='btn whitespace-nowrap flex items-center justify-center'>Speak to Our Team</a>
           </div>
           <div class="menu-bar">
