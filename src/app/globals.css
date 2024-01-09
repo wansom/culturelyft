@@ -2,21 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-  outline: none;
-  border: 0px;
-  box-sizing: border-box;
-  font-family: 'Urbanist', sans-serif;
-  -webkit-transition: all 400ms ease-in-out;
-  -moz-transition: all 400ms ease-in-out;
-  -ms-transition: all 400ms ease-in-out;
-  -o-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
-  
-}
+
 
 button,
 input {
@@ -283,13 +269,11 @@ section.banner{
 .bn-txt-holder h1{
   font-weight: 600;
   line-height: 68px;
-  color: var(--color);
 }
 .bn-txt-holder p{
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
-  color: var(--background-end-rgb);
   width: 100%;
   max-width: 600px;
   text-align: left;
@@ -436,38 +420,38 @@ section.banner{
 
 /* == || Speakers == */
 .speakers p {
-  color: var(--primary);
+  color: var(--white);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
 }
 .speakers h2 {
-  color: var(--primary);
+  color: var(--white);
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
 }
 .speakers li {
-  color: var(--primary);
-  font-size: 16px;
+  color: var(--white);
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 28px;
 }
 
 .speakers .btn{
   width: 157px;
   height: 40px;
-  background: var(--primary);
+  background: var(--white);
   border-radius: 10px;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color: var(--white);
+  color: var(--primary);
 }
 .contact button{
   width: 157px;
