@@ -57,7 +57,7 @@ const UserLogin = () => {
                 <p class="mt-4">
                   <a
                     class="text-sm font-medium text-[#13A8BD] dark:text-[#13A8BD] hover:underline"
-                    href="./forgotpassword"
+                    href="/forgot-password"
                   >
                     Forgot your password?
                   </a>
