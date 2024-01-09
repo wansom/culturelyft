@@ -87,7 +87,7 @@ const BlogPage = () => {
                     <a href="#" class="slider-card">
 
                       <figure class="slider-banner img-holder h-[318px]" >
-                        <img src="/banner.jpg" width="507" height="618" loading="lazy" alt="Travel"
+                        <img src="/about-2.jpg" width="507" height="618" loading="lazy" alt="Travel"
                           class="img-cover" />
                       </figure>
 
@@ -104,7 +104,7 @@ const BlogPage = () => {
                     <a href="#" class="slider-card">
 
                       <figure class="slider-banner img-holder h-[318px] " >
-                        <img src="/banner.jpg" width="507" height="618" loading="lazy" alt="Design"
+                        <img src="/blog-1.jpg" width="507" height="618" loading="lazy" alt="Design"
                           class="img-cover" />
                       </figure>
 
@@ -543,7 +543,7 @@ const BlogPage = () => {
                         <a href="#" class="card-badge">Working Tips</a>
 
                         <h3 class="text-black headline-3 card-title">
-                          <a href="#" class="link hover-2">{post.title.rendered}</a>
+                          <a href={'/blog/'+post.slug} class="link hover-2">{post.title.rendered}</a>
                         </h3>
 
                         <p class="card-text" dangerouslySetInnerHTML={{ __html: post.content.rendered.slice(0, 200) }}>
