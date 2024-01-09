@@ -1,36 +1,10 @@
-* {
-    margin: 0px;
-    box-sizing: border-box;
-    padding: 0px;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
 .dash-nav {
-    height: 100%;
+    height: fit-content;
     padding: 15px;
-    background-color: #0F305E;
+    background-color: #01382E;
     width: 280px !important;
-    position: relative;
+    position: sticky;
+    top: 0;
 }
 
 .ins-lg {
@@ -39,14 +13,9 @@ body {
     justify-content: space-between;
 }
 
-.dash-lg svg {
-    height: 90px;
-    width: 150px;
-}
-
-.dash-arrow button {
-    height: 30px;
-    width: 30px;
+.dash-arrow a {
+    height: 40px;
+    width: 40px;
     border: 0px;
     border-radius: 10px;
     background-color: #345687;
@@ -94,7 +63,7 @@ body {
 .dash-links .link a:hover,
 .nav-profile .link a:hover {
     background-color: #ffffff;
-    color: #1787E0;
+    color: #01382E;
 }
 
 .dash-links .link a.active svg path,
@@ -194,7 +163,6 @@ body {
     min-height: fit-content;
     flex-grow: 2;
     background-color: #F8F8F8;
-    padding: 15px;
     overflow: scroll !important;
     position: relative;
     z-index: 0;

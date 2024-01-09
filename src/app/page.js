@@ -147,7 +147,7 @@ export default function Home() {
       </section>
       <section class="speakers  py-6 my-10" id="speakers-id">
         <div className='container mx-auto px-5 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-5  '>
-          <div className='rounded-[16px] p-5 space-y-4 bg-[#01382E]' id='insights'>
+          <div className='rounded-[16px] p-10 space-y-4 bg-[#01382E]' id='insights'>
             <h1 className='text-[32px] font-semibold text-white'>Get more insights from Research</h1>
             <p>With  Employee Research you can read between the lines. Capture, consolidate and measure employee feedback that falls outside of your Engagement or Pulse programs.</p>
             <ul className='list-disc list-inside'>
@@ -161,7 +161,7 @@ export default function Home() {
               </svg>
               </a>
           </div>
-          <div className='rounded-[16px] p-5 space-y-4 bg-[#01382E]' id='culture'>
+          <div className='rounded-[16px] p-10 space-y-4 bg-[#01382E]' id='culture'>
             <h1 className='text-[32px] font-semibold text-white'>Build The Best Company Culture</h1>
             <p>Culture Lyft, quickly uncover and weigh what matters most to your employees, whether that’s more vacation days, better healthcare or work-life balance.</p>
             <ul className='list-disc list-inside'>
