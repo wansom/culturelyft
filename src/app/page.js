@@ -83,11 +83,17 @@ export default function Home() {
         <div class="banner-container basis-2/2 md:basis=1/3">
           <div class="bn-text mt-10">
             <div class="bn-txt-holder">
-              <h1 class="text-[32px] md:text-[48px] mx-5 text-black">
-                People build Companies. Redefine your team experience.
+              <h1 class="text-[32px] md:text-[48px] mx-5 md:mx-24 text-black">
+                Great People build Great Companies. Redefine your team experience.
 
               </h1>
-              <p className='mx-5 text-black'>Develop programs,structures and expereinces that empower leaders,managers and teams to be at their best </p>
+              <p className='mx-5 md:mx-24 my-5 text-black'>Develop programs,structures and expereinces that empower leaders,managers and teams to be at their best </p>
+              <a
+                  class="block px-10 py-6 mt-4 text-[18px] font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple w-[200px] mx-5 md:mx-24"
+                  href="/login"
+                >
+                  Get Started
+                </a>
             </div>
           </div>
           <div class=""></div>
@@ -150,7 +156,10 @@ export default function Home() {
               <li>Reduce time to action with best-in-class I/O designed programs that are lightweight yet incredibly comprehensive. No need to wait for other departments to guide strategy or decisions</li>
               <li>Protect employee confidentiality and anonymity with built-in enterprise security that’s both scalable and reliable</li>
             </ul>
-            <button to='#contact' className='btn'>Speak to Our Team</button>
+            <a href='#contact' className='flex items-center gap-2 text-white'>Speak to Our Team <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              </a>
           </div>
           <div className='rounded-[16px] p-5 space-y-4 bg-[#01382E]' id='culture'>
             <h1 className='text-[32px] font-semibold text-white'>Build The Best Company Culture</h1>
@@ -160,7 +169,10 @@ export default function Home() {
               <li>Get insights on employee preferences faster with rigorous, pre-configured analyses for benefits, office design, employer value proposition and more</li>
               <li>Enable leaders to run programs with ease and glean insights quickly thanks to guided setups, all without compromising on quality</li>
             </ul>
-            <button to='#contact' className='btn'>Speak to Our Team</button>
+            <a href='#contact' className='flex items-center gap-2 text-white'>Speak to Our Team <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              </a>
           </div>
         </div>
 
