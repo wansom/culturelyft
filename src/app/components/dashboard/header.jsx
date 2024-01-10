@@ -1,7 +1,7 @@
 const DashboardHeader = () => {
     return ( 
-        <div class="tp-dash-vw">
-        <span>Clients</span>
+        <div class="tp-dash-vw w-full">
+        <span></span>
         <div class="dash-notifications">
           <div class="bell">
             <svg

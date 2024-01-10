@@ -140,11 +140,6 @@
   
   address { font-style: normal; }
   
-  html {
-    font-size: 10px;
-    scroll-behavior: smooth;
-  }
-  
   body {
     background-color: var(--white);
     color: var(--text-shadow-blue);

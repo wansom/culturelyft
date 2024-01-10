@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main class="dash-view claims-views clients-view flex">
           <DashboardSidebar/>
-          <div>
+          <div className='w-full'>
             <DashboardHeader/>
           {children}
 

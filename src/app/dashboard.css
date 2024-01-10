@@ -2,7 +2,7 @@
     height: 100vh;
     padding: 15px;
     background-color: #01382E;
-    width: 280px !important;
+    width: 350px !important;
     position: sticky;
     top: 0;
 }
@@ -18,8 +18,8 @@
     width: 40px;
     border: 0px;
     border-radius: 10px;
-    background-color: #345687;
-    color: #ffffff;
+    background-color: #D7F5E8;
+    color: #000000;
     outline: none;
     cursor: pointer;
 }
@@ -64,6 +64,12 @@
 .nav-profile .link a:hover {
     background-color: #ffffff;
     color: #01382E;
+}
+ .active-link{
+    background-color: #ffffff;
+    color: #01382E;
+    padding: 10px 20px;
+    border-radius: 12px;  
 }
 
 .dash-links .link a.active svg path,
@@ -2323,3 +2329,7 @@ table.fold-table>tbody>tr td.table-dt-status svg {
     color: #535353;
 }
 /* == || INBOX == */
+.welcome-card h1{
+
+
+}

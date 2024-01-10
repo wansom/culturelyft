@@ -1,6 +1,9 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 const DashboardSidebar = () => {
+    const pathname = usePathname()
     return ( 
         <nav class="dash-nav">
         <div class="ins-lg -mt-10">
@@ -22,8 +25,8 @@ const DashboardSidebar = () => {
             </div>
         </div>
         <div class="dash-links -mt-14">
-            <div class="link">
-                <Link href="/dashboard">
+            <div className='link'>
+                <Link href="/dashboard" class={` ${pathname === '/' ? 'active' : ''}`}>
                     <div class="link-icon">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -43,13 +46,13 @@ const DashboardSidebar = () => {
                     <div class="link-text">
                         Dashboard
                     </div>
-                    <div class="red-status">
+                    <div  class={`link ${pathname === '/dashboard' ? 'red-status' : ''}`}>
 
                     </div>
                 </Link>
             </div>
-            <div class="link">
-                <Link href="/dashboard/team">
+            <div className='link'>
+                <Link href="/dashboard/team" class={` ${pathname === '/dashboard/team' ? 'active' : ''}`}>
                     <div class="link-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
@@ -61,8 +64,8 @@ const DashboardSidebar = () => {
                     </div>
                 </Link>
             </div>
-            <div class="link">
-                <Link href="/dashboard/programs">
+            <div className='link'>
+                <Link href="/dashboard/programs"  class={` ${pathname === '/dashboard/programs' ? 'active' : ''}`}>
                     <div class="link-icon">
                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -97,7 +100,7 @@ const DashboardSidebar = () => {
                 </Link>
             </div>
             <div class="link">
-                <Link href="/dashboard/templates">
+                <Link href="/dashboard/templates"  class={`${pathname === '/dashboard/templates' ? 'active' : ''}`}>
                     <div class="link-icon">
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.29446 11.788H13.8655" stroke="#ADC9CD" stroke-linecap="round"
@@ -113,7 +116,7 @@ const DashboardSidebar = () => {
                 </Link>
             </div>
             <div class="link">
-                <Link href="/dashboard/feedback" class="active">
+                <Link href="/dashboard/feedback"  class={` ${pathname === '/dashboard/feedback' ? 'active' : ''}`}>
                     <div class="link-icon">
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -151,7 +154,7 @@ const DashboardSidebar = () => {
             </div> */}
             
             <div class="link">
-                <Link href="/dashboard/settings">
+                <Link href="/dashboard/settings"  class={` ${pathname === '/dashboard/settings' ? 'active' : ''}`}>
                     <div class="link-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402M6.75 21A3.75 3.75 0 0 1 3 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 0 0 3.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008Z" />
@@ -166,7 +169,7 @@ const DashboardSidebar = () => {
            
             
             <div class="link">
-                <a href="/dashboard/chat">
+                <a href="/dashboard/chat"  class={` ${pathname === '/dashboard/chat' ? 'active' : ''}`}>
                     <div class="link-icon">
                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -188,14 +191,6 @@ const DashboardSidebar = () => {
                     </div>
                     <div class="inbox-msgs">
                         12
-                    </div>
-                </a>
-            </div>
-            <div class="link">
-                <a href="report.html">
-                 
-                    <div class="link-text">
-                        Inbox
                     </div>
                 </a>
             </div>
