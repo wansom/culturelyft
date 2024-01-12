@@ -28,9 +28,16 @@ const BlogAside = ({posts}) => {
                     </h4>
 
                     <div class="warpper">
-                      <p class="card-subtitle">15 mins read</p>
+                    
 
-                      <time class="publish-date" datetime="2022-04-15">15 April 2022</time>
+                      <time class="publish-date" datetime="2022-04-15">{new Date(post?.date).toLocaleDateString(
+                                "en-US",
+                                {
+                                  year: "numeric",
+                                  month: "long",
+                                  day: "numeric",
+                                }
+                              )}</time>
                     </div>
 
                   </div>

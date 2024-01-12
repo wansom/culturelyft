@@ -285,7 +285,7 @@
   .topic-card .card-text {
     color: var(--white);
     font-size: var(--fontSize-8);
-    margin-block: 15px 20px;
+    margin-block: 15px 10px;
   }
   
   .btn-group {

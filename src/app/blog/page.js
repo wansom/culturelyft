@@ -1,30 +1,40 @@
-'use client'
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect } from "react";
 import Navbar from "../components/navbar";
-import '../blog.css'
-import BlogAside from '../components/blog-aside';
-import BlogCategories from '../components/blog-categories';
+import "../blog.css";
+import BlogAside from "../components/blog-aside";
+import BlogCategories from "../components/blog-categories";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("https://intelliverseai.com/wp/wp-json/wp/v2/posts")
+      fetch("https://intelliverseai.com/wp/wp-json/wp/v2/posts")
       .then((response) => response.json())
-      .then((posts) => {
-        const promises = posts.map((post) => {
-          return fetch(
+      .then(async (posts) => {
+        const updatedPosts = await Promise.all(posts.map(async (post) => {
+          const imageResponse = await fetch(
             `https://intelliverseai.com/wp/wp-json/wp/v2/media/${post.featured_media}`
-          )
-            .then((response) => response.json())
-            .then((media) => {
-              post.featured_image_url = media.source_url;
-              return post;
-            });
-        });
-        return Promise.all(promises);
-      })
-      .then((posts) => {
-        setPosts(posts);
+          );
+          const image = await imageResponse.json();
+
+          const categoriesResponse = await fetch(
+            `https://intelliverseai.com/wp/wp-json/wp/v2/categories?post=${post.id}`
+          );
+          const categories = await categoriesResponse.json();
+
+          const tagsResponse = await fetch(
+            `https://intelliverseai.com/wp/wp-json/wp/v2/tags?post=${post.id}`
+          );
+          const tags = await tagsResponse.json();
+
+          return {
+            ...post,
+            featured_image_url: image.source_url,
+            categories,
+            tags,
+          };
+        }));
+        setPosts(updatedPosts);
       })
       .catch((error) => console.error(error));
   }, []);
@@ -32,7 +42,7 @@ const BlogPage = () => {
     <main>
       <Navbar />
       <article>
-    <BlogCategories/>
+        <BlogCategories />
         {/* 
           <section class="section feature" aria-label="feature" id="featured">
             <div class="container">
@@ -428,62 +438,75 @@ const BlogPage = () => {
     
             </div>
           </section> */}
-        <section class="section recent-post" id="recent" aria-labelledby="recent-label">
+        <section
+          class="section recent-post"
+          id="recent"
+          aria-labelledby="recent-label"
+        >
           <div class="container">
-
             <div class="post-main">
-
               <h2 class="headline headline-2 section-title">
-                <span class="span">Recent Articles</span>
+                {/* <span class="span">Recent Articles</span> */}
               </h2>
               <ul class="grid-list">
                 {posts.map((post) => (
                   <li>
                     <div class="recent-post-card">
-
-                      <figure class="card-banner img-holder h-[258px]" >
-                        <img src={post.featured_image_url}
-                          alt={post.title.rendered} width="271" height="258" loading="lazy"
-                          class="img-cover" />
+                      <figure class="card-banner img-holder h-[258px]">
+                        <img
+                          src={post?.featured_image_url}
+                          alt={post?.title.rendered}
+                          width="271"
+                          height="258"
+                          loading="lazy"
+                          class="img-cover"
+                        />
                       </figure>
 
                       <div class="card-content">
-
-                        <a href="#" class="card-badge">Working Tips</a>
-
-                        <h3 class="text-black headline-3 card-title">
-                          <a href={'/blog/'+post.slug} class="link hover-2">{post.title.rendered}</a>
+                        <h3 class="text-black text-[32px] card-title">
+                          <a href={"/blog/" + post.slug} class=" hover-2">
+                            {post?.title.rendered}
+                          </a>
                         </h3>
 
-                        <p class="card-text" dangerouslySetInnerHTML={{ __html: post.content.rendered.slice(0, 200) }}>
+                        <div>
+                        <p class=" text-gray-500 text-[16px]" dangerouslySetInnerHTML={{ __html: post?.content.rendered.slice(0, 90) }}>
 
-                        </p>
+</p>...
+                        </div>
 
                         <div class="card-wrapper">
-                          <div class="card-tag">
-                            <a href="#" class="span hover-2"># Travel</a>
-
-                            <a href="#" class="span hover-2"># Lifestyle</a>
+                          <div class="">
+                            <a href="#" class="text-gray-500 text-[12px] hover-2">
+                              # {post?.categories[0].name}
+                            </a>
                           </div>
 
                           <div class="wrapper">
-                            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                            <ion-icon
+                              name="time-outline"
+                              aria-hidden="true"
+                            ></ion-icon>
 
-                            <span class="span">3 mins read</span>
+                            <span class="text-gray-500 text-[12px]">
+                              {new Date(post?.date).toLocaleDateString(
+                                "en-US",
+                                {
+                                  year: "numeric",
+                                  month: "long",
+                                  day: "numeric",
+                                }
+                              )}
+                            </span>
                           </div>
                         </div>
-
                       </div>
-
                     </div>
                   </li>
                 ))}
-
-
-
-
               </ul>
-{/* 
+              {/* 
               <nav aria-label="pagination" class="pagination">
 
                 <a href="#" class="pagination-btn" aria-label="previous page">
@@ -500,18 +523,14 @@ const BlogPage = () => {
                 </a>
 
               </nav> */}
-
             </div>
 
-           <BlogAside posts={posts}/>
-
+            <BlogAside posts={posts} />
           </div>
         </section>
-
       </article>
-      
     </main>
   );
-}
+};
 
 export default BlogPage;
