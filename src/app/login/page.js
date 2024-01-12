@@ -1,10 +1,82 @@
+'use client'
 import Navbar from "../components/navbar";
 import '../blog.css'
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { signIn } from "../services/auth";
 
 const UserLogin = () => {
+  const router = useRouter();
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [errors, setErrors] = useState({
+    email: '',
+    password: '',
+  });
+  const [loading,setLoading] =useState(false)
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+setLoading(true)
+    // Validate form fields
+    const newErrors = {};
+    if (formData.email.trim() === '') {
+      newErrors.email = 'Email is required';
+    } else if (!isValidEmail(formData.email)) {
+      newErrors.email = 'Invalid email address';
+    }
+
+    if (formData.password.trim() === '') {
+      newErrors.password = 'Password is required';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    // If validation passes, you can perform the login logic here
+    console.log('Login submitted:', formData);
+    await signIn(formData).then(()=>{
+      setLoading(false)
+      router.push('/dashboard');
+
+    }).catch((err)=>{
+      setLoading(false)
+      toast.error(` 🦄 ${err.message} !`, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        })
+    })
+
+    // Navigate to the dashboard page
+ 
+  };
+
+  const isValidEmail = (email) => {
+    // You can use a regex or any other method to validate email format
+    return /\S+@\S+\.\S+/.test(email);
+  };
     return (
     <main className="overflow-x-hidden">
             <Navbar/>
@@ -37,28 +109,51 @@ const UserLogin = () => {
                 >
                   Login
                 </h1>
-                <label class="block text-sm">
-                  <span class="text-gray-700 dark:text-gray-400">Email</span>
-                  <input
-                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="Jane Doe"
-                  />
-                </label>
-                <label class="block mt-4 text-sm">
-                  <span class="text-gray-700 dark:text-gray-400">Password</span>
-                  <input
-                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="***************"
-                    type="password"
-                  />
-                </label>
-  
-                <a
-                  class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
-                  href="/"
-                >
-                  Log in
-                </a>
+                <form onSubmit={handleSubmit}>
+      <label className="block text-sm">
+        <span className="text-gray-700 dark:text-gray-400">Email</span>
+        <input
+          className={`block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input ${
+            errors.email && 'border-red-500'
+          }`}
+          placeholder="user@culturelyft.com"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        {errors.email && (
+          <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+        )}
+      </label>
+      <label className="block mt-4 text-sm">
+        <span className="text-gray-700 dark:text-gray-400">Password</span>
+        <input
+          className={`block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input ${
+            errors.password && 'border-red-500'
+          }`}
+          placeholder="***************"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        {errors.password && (
+          <p className="text-red-500 text-xs mt-1">{errors.password}</p>
+        )}
+      </label>
+
+      <button
+        type="submit"
+        className=" flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+      >
+        Log In
+       {loading&&(<div class=" flex justify-center items-center">
+    <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+  </div>)}
+      </button>
+    </form>
+
   
                 <hr class="my-8" />
   
