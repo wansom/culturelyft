@@ -1,13 +1,13 @@
 'use client'
-import { userLogout } from '@/app/services/auth';
+import { logout } from '@/app/services/auth';
 import Image from 'next/image'
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation'
 const DashboardSidebar = () => {
     const router =useRouter()
     const pathname = usePathname()
-    const logout=()=>{
-        userLogout().then(()=>{
+    const userLogout=()=>{
+        logout().then(()=>{
             console.log('user logged out')
             router.push('/login')
         })
@@ -215,7 +215,7 @@ const DashboardSidebar = () => {
                     <p>ameliakendi@gm..</p>
                 </div>
                 <div class="pr-drpdwn">
-                    <button class="pr-drpdwn-btn" onClick={logout}>
+                    <button class="pr-drpdwn-btn" onClick={userLogout}>
                         <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.0938 11.0488L11.0454 2.00044L1.99697 11.0488" stroke="#F5F7FF"
                                 stroke-width="2.68421" stroke-linecap="round" stroke-linejoin="round" />

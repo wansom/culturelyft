@@ -1,4 +1,4 @@
-import { firestoreDb } from './firebase'
+import { auth, firestoreDb } from './firebase'
 
 import {
 	addDoc,
@@ -26,6 +26,7 @@ const USERS_PATH = 'CultureLyftClients'
 
 export const firestoreListener = onSnapshot
 export const deleteDbField = deleteField()
+
 
 const getDocuments = query => {
 	return getDocs(query).then(docs => {
@@ -63,5 +64,10 @@ export const getAllUsers = () => {
 }
 export const createNewUser=(values)=>{
 return addDocument(usersRef,values)
+}
+
+ export const getCurrentUser=()=>{
+    
+    return getDocument(userRef('ftHc6vN7Q7JKBiCU9IiO'))
 }
 

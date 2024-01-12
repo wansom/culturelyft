@@ -1,19 +1,24 @@
+'use client'
 import Link from "next/link";
-import DashboardSidebar from "../components/dashboard/sidebar";
+import { useDataContext } from "../services/DataContext";
 
 const Dashboard = () => {
+  const {posts} =useDataContext()
   return (
     <div className="px-5 pt-5">
       <div className="flex flex-col md:flex-row gap-10">
         <div className="welcome-card h-[300px] rounded-[16px] bg-[#D7F5E8] basis-2/3 w-full p-10 flex">
           <div>
+            
             <h2 className="text-[32px] font-bold">
               Welcome back 👋 <br />
-              Ochieng Warren
+               
             </h2>
+            {posts&&(
+              <h2  className="text-[32px] font-bold">{posts[0]?.title.rendered}</h2>
+            )}
             <p>
-              If you are going to use a passage of Lorem Ipsum, you need to be
-              sure there isn't anything.
+            Employee engagement, performance & development platform you need to build an employee experience people love.
             </p>
             <div>
               <Link href="/dashboard/company/new"
