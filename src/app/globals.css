@@ -28,11 +28,6 @@
     --bg-oxford-blue-2: hsla(222, 47%, 11%, 1);
 
   
-    /** Gradient colors */
-    --gradient-1: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%);
-    --gradient-2: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%, #0ea5ea);
-    --gradient-3: linear-gradient(0deg, #000d1a, transparent);
-  
     /** Border colors */
     --border-wild-blue-yonder: hsla(216, 33%, 68%, 1);
     --border-prussian-blue: hsla(216, 33%, 20%, 1);
@@ -143,8 +138,7 @@ button { cursor: pointer; }
 }
 .form-input:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-  border-color: #63b3ed;
+  border-color: #01382E;
 }
 .form-textarea {
   -webkit-appearance: none;
@@ -226,19 +220,6 @@ nav {
   padding: 13px 20px;
 }
 
-.links .btn {
-  width: 157px;
-  height: 40px;
-  background: var(--primary);
-  border-radius: 10px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  color: var(--white);
-  margin: 0px 0px 0px 20px;
-}
 
 .links a.active,
 .links a:hover {

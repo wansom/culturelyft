@@ -1,4 +1,5 @@
 import Navbar from "../components/navbar";
+import '../blog.css'
 
 const ForgotPassword = () => {
     return (  <main>

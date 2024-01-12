@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/navbar';
 import BlogCategories from './components/blog-categories';
 import './blog.css'
-import FooterComponent from './components/footer';
 
 export default function Home() {
   const [isOpen, setOpen] = useState(false);
@@ -77,7 +76,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className=" overflow-x-hidden">
+    <main className="overflow-x-hidden">
     <Navbar/>
       <section class="banner flex flex-col md:flex-row">
         <div class="banner-container basis-2/2 md:basis=1/3">
@@ -88,12 +87,11 @@ export default function Home() {
 
               </h1>
               <p className='mx-5 md:mx-28 my-5 text-black'>Develop programs,structures and expereinces that empower leaders,managers and teams to be at their best </p>
-              <a
-                  class="block px-10 py-6 mt-4 text-[18px] font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple w-[200px] mx-5 md:mx-28"
-                  href="/login"
-                >
-                  Get Started
-                </a>
+              <a href="/login"
+                class="md:ml-28 block w-[150px] px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple ml-10"
+              >
+               Get Started
+              </a>
             </div>
           </div>
           <div class=""></div>

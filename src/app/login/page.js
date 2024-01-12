@@ -1,8 +1,9 @@
 import Navbar from "../components/navbar";
+import '../blog.css'
 
 const UserLogin = () => {
     return (
-        <main>
+    <main className="overflow-x-hidden">
             <Navbar/>
           <section className="container mx-auto">
 

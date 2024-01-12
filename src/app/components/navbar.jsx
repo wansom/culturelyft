@@ -29,7 +29,11 @@ const Navbar = () => {
             <a href="#insights">Team Insights</a>
             <a href="#culture">Company Culture</a>
             <a href="/blog">Resources</a>
-            <a href='#contact' className='btn whitespace-nowrap flex items-center justify-center'>Speak to Our Team</a>
+            <button href="/login"
+                class=" block w-[200px] px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple ml-10"
+              >
+               Speak To Our Team
+              </button>
           </div>
           <div class="menu-bar">
             <span className={isOpen ? "hide text-white" : " active"}
