@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.26.5",
-    "awesome-react-stepper": "^1.1.1",
     "firebase": "^10.7.1",
     "firebase-cli": "^1.2.0",
     "next": "14.0.4",
