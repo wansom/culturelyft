@@ -22,7 +22,7 @@ import {
 	where
 } from 'firebase/firestore'
 
-const USERS_PATH = 'users'
+const USERS_PATH = 'CultureLyftClients'
 
 export const firestoreListener = onSnapshot
 export const deleteDbField = deleteField()
@@ -51,3 +51,17 @@ const updateDocument = (ref, data) => {
 const deleteDocument = (ref, docId) => {
 	return deleteDoc(doc(firestoreDb, ref, docId))
 }
+
+
+//database functions
+const usersRef = collection(firestoreDb, USERS_PATH)
+const userRef = userId => {
+	return doc(firestoreDb, USERS_PATH, userId)
+}
+export const getAllUsers = () => {
+	return getDocuments(query(usersRef))
+}
+export const createNewUser=(values)=>{
+return addDocument(usersRef,values)
+}
+

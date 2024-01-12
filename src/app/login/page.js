@@ -1,11 +1,15 @@
 import Navbar from "../components/navbar";
 import '../blog.css'
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const UserLogin = () => {
     return (
     <main className="overflow-x-hidden">
             <Navbar/>
           <section className="mx-auto">
+          <ToastContainer />
 
           <div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
         <div
