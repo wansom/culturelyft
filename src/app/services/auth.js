@@ -9,7 +9,7 @@ export const signIn=(values)=>{
 return signInWithEmailAndPassword(auth,values.email.trim(),values.password.trim())
 }
 
-export const userLogout=()=>{
+export const logout=()=>{
     return signOut(auth)
 }
 export const passwordReset=async(email)=>{

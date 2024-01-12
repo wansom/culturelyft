@@ -4,6 +4,8 @@ import '../blog.css'
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+
+import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { signIn } from "../services/auth";
