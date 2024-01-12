@@ -7,7 +7,9 @@ import BlogCategories from "../components/blog-categories";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
+  const [loading,setLoading]=useState(true)
   useEffect(() => {
+    setLoading(true)
       fetch("https://intelliverseai.com/wp/wp-json/wp/v2/posts")
       .then((response) => response.json())
       .then(async (posts) => {
@@ -34,9 +36,10 @@ const BlogPage = () => {
             tags,
           };
         }));
+        setLoading(false)
         setPosts(updatedPosts);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => setLoading(false));
   }, []);
   return (
     <main>
@@ -448,6 +451,11 @@ const BlogPage = () => {
               <h2 class="headline headline-2 section-title">
                 {/* <span class="span">Recent Articles</span> */}
               </h2>
+              {loading&&(
+                 <div class=" flex justify-center items-center my-10">
+                 <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+               </div>
+              )}
               <ul class="grid-list">
                 {posts.map((post) => (
                   <li>

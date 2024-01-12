@@ -36,7 +36,9 @@ const BlogPost = () => {
 
 if(!post){
   return(
-    <p>Loading...</p>
+    <div class=" flex justify-center items-center my-10">
+    <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+  </div>
   )
 }
   return (

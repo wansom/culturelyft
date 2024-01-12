@@ -37,7 +37,7 @@ const BlogCategories = () => {
               <ul class="slider-list" data-slider-container>
 
                 <li class="slider-item">
-                  <a href="#" class="slider-card">
+                  <a href="/blog" class="slider-card">
 
                     <figure class="slider-banner img-holder h-[318px]">
                       <img src="/banner.jpg" width="507" height="618" loading="lazy" alt="Sport"
@@ -54,7 +54,7 @@ const BlogCategories = () => {
                 </li>
 
                 <li class="slider-item">
-                  <a href="#" class="slider-card">
+                  <a href="blog" class="slider-card">
 
                     <figure class="slider-banner img-holder h-[318px]" >
                       <img src="/about-2.jpg" width="507" height="618" loading="lazy" alt="Travel"
@@ -71,7 +71,7 @@ const BlogCategories = () => {
                 </li>
 
                 <li class="slider-item">
-                  <a href="#" class="slider-card">
+                  <a href="/blog" class="slider-card">
 
                     <figure class="slider-banner img-holder h-[318px] " >
                       <img src="/blog-1.jpg" width="507" height="618" loading="lazy" alt="Design"
