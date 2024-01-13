@@ -4,6 +4,7 @@ import{ useEffect, useState } from 'react';
 import { useParams } from 'next/navigation'
 import '../../blog.css'
 import BlogAside from "@/app/components/blog-aside";
+import MainLoader from "@/app/components/main-loader";
 
 const BlogPost = () => {
 
@@ -36,9 +37,7 @@ const BlogPost = () => {
 
 if(!post){
   return(
-    <div class=" flex justify-center items-center my-10">
-    <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
-  </div>
+    <MainLoader/>
   )
 }
   return (

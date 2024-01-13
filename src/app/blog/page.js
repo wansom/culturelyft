@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 import "../blog.css";
 import BlogAside from "../components/blog-aside";
 import BlogCategories from "../components/blog-categories";
+import MainLoader from "../components/main-loader";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
@@ -452,9 +453,7 @@ const BlogPage = () => {
                 {/* <span class="span">Recent Articles</span> */}
               </h2>
               {loading&&(
-                 <div class=" flex justify-center items-center my-10">
-                 <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
-               </div>
+                 <MainLoader/>
               )}
               <ul class="grid-list">
                 {posts.map((post) => (

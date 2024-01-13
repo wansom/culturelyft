@@ -2,11 +2,12 @@
 import Link from "next/link";
 import { UserContext, useDataContext } from "../services/DataContext";
 import { useContext } from "react";
+import MainLoader from "../components/main-loader";
 
 const Dashboard = () => {
   const { user, loading, error } = useContext(UserContext);
   
-  if (loading) return <div>Loading user data...</div>;
+  if (loading) return <MainLoader/>;
   if (error) return <div>Error fetching user data: {error.message}</div>;
   return (
     <div className="px-5 pt-5">

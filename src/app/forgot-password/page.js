@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import ButtonLoader from "../components/button-loader";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -99,9 +100,7 @@ await passwordReset(email).then(()=>{
         disabled={loading}
       >
         {loading && (
-          <div className="flex justify-center items-center">
-            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-          </div>
+          <ButtonLoader/>
         )}
         Recover Password
       </button>
