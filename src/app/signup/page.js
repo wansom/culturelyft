@@ -56,8 +56,13 @@ setLoading(true)
       setLoading(false)
       return;
     }
-     await createUser(formData).then(()=>{
-      createNewUser(formData)
+     await createUser(formData).then((user)=>{
+      console.log(user.user.uid)
+      const payload ={
+        uid: user.user.uid,
+        data:formData
+      }
+      createNewUser(payload)
       setLoading(false)
       toast.success('🦄 Account Created Successfully!', {
         position: "top-right",

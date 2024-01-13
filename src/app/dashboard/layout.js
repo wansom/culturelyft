@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import '../dashboard.css'
 import DashboardSidebar from '../components/dashboard/sidebar'
 import DashboardHeader from '../components/dashboard/header'
-import { DataContextProvider } from '../services/DataContext'
+import { DataContextProvider, UserProvider } from '../services/DataContext'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,14 +17,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <main class="dash-view claims-views clients-view flex">
-          <DataContextProvider>
+          <UserProvider>
           <DashboardSidebar/>
           <div className='w-full'>
             <DashboardHeader/>
           {children}
 
           </div>
-          </DataContextProvider>
+          </UserProvider>
         
         </main>
       </body>

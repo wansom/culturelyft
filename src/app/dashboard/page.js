@@ -1,9 +1,13 @@
 'use client'
 import Link from "next/link";
-import { useDataContext } from "../services/DataContext";
+import { UserContext, useDataContext } from "../services/DataContext";
+import { useContext } from "react";
 
 const Dashboard = () => {
-  const {posts} =useDataContext()
+  const { user, loading, error } = useContext(UserContext);
+  
+  if (loading) return <div>Loading user data...</div>;
+  if (error) return <div>Error fetching user data: {error.message}</div>;
   return (
     <div className="px-5 pt-5">
       <div className="flex flex-col md:flex-row gap-10">
@@ -14,8 +18,8 @@ const Dashboard = () => {
               Welcome back 👋 <br />
                
             </h2>
-            {posts&&(
-              <h2  className="text-[32px] font-bold">{posts[0]?.title.rendered}</h2>
+            {user&&(
+              <h2  className="text-[32px] font-bold">{user?.company}</h2>
             )}
             <p>
             Employee engagement, performance & development platform you need to build an employee experience people love.

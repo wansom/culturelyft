@@ -62,8 +62,8 @@ const userRef = userId => {
 export const getAllUsers = () => {
 	return getDocuments(query(usersRef))
 }
-export const createNewUser=(values)=>{
-return addDocument(usersRef,values)
+export const createNewUser=(payload)=>{
+return setDoc(userRef(payload.uid),payload.data)
 }
 
  export const getCurrentUser=()=>{

@@ -1,56 +1,46 @@
-// DataContext.js
 'use client'
-import { createContext, useContext, useState, useEffect } from 'react';
-import { getCurrentUser } from './firestore';
+import { createContext, useState, useEffect } from 'react';
+import { auth, firestoreDb } from './firebase';
+import { collection, doc, getDoc } from 'firebase/firestore';
 
-const DataContext = createContext();
+export const UserContext = createContext();
 
-const DataContextProvider = ({ children }) => {
-    const [posts, setPosts] = useState([]);
-    const [user,setUser] = useState(null)
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetch("https://intelliverseai.com/wp/wp-json/wp/v2/posts")
-      .then((response) => response.json())
-      .then((posts) => {
-        const promises = posts.map((post) => {
-          return fetch(
-            `https://intelliverseai.com/wp/wp-json/wp/v2/media/${post.featured_media}`
-          )
-            .then((response) => response.json())
-            .then((media) => {
-              post.featured_image_url = media.source_url;
-              return post;
-            });
-        });
-        return Promise.all(promises);
-      })
-      .then((posts) => {
-        setPosts(posts);
-        const singlePost =posts.find((post)=>post.slug===id)
-        setPosts(singlePost)
-        getCurrentUser().then(({data})=>{
-
-            console.log(data,"I am here")
-        })
-      })
-      .catch((error) => console.error(error));
+ useEffect(() => {
+  const unsubscribe = auth.onAuthStateChanged(async(userAuth) => {
+    if (userAuth) {
+      console.log(userAuth.uid)
+      const docRef = doc(collection(firestoreDb, 'CultureLyftClients'), userAuth.uid)
       
-  }, []);
+      getDoc(docRef)
+        .then((doc) => {
+          setUser(doc.data());
+          const userData = doc.data()
+          console.log(userData,'we fetched data');
+          setLoading(false);
+        })
+        .catch((err) => {
+          setError(err);
+          setLoading(false);
+        });
+    } else {
+      setUser(null);
+      setLoading(false);
+      console.log('error fetching currentuser')
+    }
+  });
+
+  return unsubscribe;
+}, []);
+
 
   return (
-    <DataContext.Provider value={{ posts }}>
+    <UserContext.Provider value={{ user, loading, error }}>
       {children}
-    </DataContext.Provider>
+    </UserContext.Provider>
   );
 };
-
-const useDataContext = () => {
-  const context = useContext(DataContext);
-  if (!context) {
-    throw new Error('useDataContext must be used within a DataContextProvider');
-  }
-  return context;
-};
-
-export { DataContextProvider, useDataContext };
