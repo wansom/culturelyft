@@ -84,6 +84,13 @@
     background-color: #F64018;
     margin: 0px 0px 0px 20px;
 }
+.green-status {
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    background-color: #01382E;
+    margin: 0px 0px 0px 20px;
+}
 
 .inbox-msgs {
     height: 24px;

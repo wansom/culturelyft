@@ -65,9 +65,11 @@ export const getAllUsers = () => {
 export const createNewUser=(payload)=>{
 return setDoc(userRef(payload.uid),payload.data)
 }
-
- export const getCurrentUser=()=>{
-    
-    return getDocument(userRef('ftHc6vN7Q7JKBiCU9IiO'))
-}
-
+// Update user details function
+export const updateUserDetails = async (payload) => {
+  try {
+    await updateDoc(userRef(payload.uid), payload.data);
+  } catch (error) {
+    console.error('Error updating user details:', error.message);
+  }
+};

@@ -3,6 +3,8 @@ import { createContext, useState, useEffect } from 'react';
 import { auth, firestoreDb } from './firebase';
 import { collection, doc, getDoc } from 'firebase/firestore';
 
+
+
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
@@ -19,8 +21,15 @@ export const UserProvider = ({ children }) => {
       getDoc(docRef)
         .then((doc) => {
           setUser(doc.data());
-          const userData = doc.data()
-          console.log(userData,'we fetched data');
+          const userData = doc.data()        
+          const userId = doc.id; 
+          // Add the ID to the userData object
+          const userDataWithId = {
+            ...userData,
+            id: userId,
+          };
+          setUser(userDataWithId);
+  
           setLoading(false);
         })
         .catch((err) => {

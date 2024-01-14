@@ -23,13 +23,18 @@ const Dashboard = () => {
               <h2  className="text-[32px] font-bold">{user?.company}</h2>
             )}
             <p>
-            Employee engagement, performance & development platform you need to build an employee experience people love.
+            Engagement, performance & development platform you need to build an employee experience people love.
             </p>
-            <div>
+            <div className="flex flex-col md:flex-row gap-2">
               <Link href="/dashboard/company/new"
                 class="block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
               >
                 Complete Company Profile
+              </Link>
+              <Link href="/dashboard/company/new"
+                class="block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 bg-transparent border border-[#01382E] rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple"
+              >
+                View  Feedback
               </Link>
             </div>
           </div>
