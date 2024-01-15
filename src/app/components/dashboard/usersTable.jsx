@@ -3,14 +3,21 @@
 import { useState } from "react";
 import Drawer from "../drawer";
 import EmployeeOnboarding from "../forms/employee-onboarding";
+import StartSurvey from "../forms/survey-start";
 
 const UsersTable = ({user}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openModal,setOpenModal]=useState(null)
+  const handleModalOpen=(value)=>{
+    setIsOpen(true)
+    setOpenModal(value)
+  }
     return ( <>
         <div class="claim-records">
         <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
          <div className="p-10">
-         <EmployeeOnboarding user={user}/>
+          {openModal===1&&(<EmployeeOnboarding user={user}/>)}
+          {openModal===2&&(<StartSurvey user={user}/>)}
          </div>
         </Drawer>
 
@@ -137,8 +144,8 @@ const UsersTable = ({user}) => {
     </div>
   </form>
   <div class="record-file-view px-4">
-    <button class="file-claim-btn" onClick={() => setIsOpen(true)}>Create New Employee Profile</button>
-    <button class="file-claim-btn" >Start New Survey</button>
+    <button class="file-claim-btn" onClick={() =>handleModalOpen(1) }>Create New Employee Profile</button>
+    <button class="file-claim-btn" onClick={() =>handleModalOpen(2) } >Start New Survey</button>
   </div>
 
 </div>

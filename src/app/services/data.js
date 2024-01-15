@@ -252,3 +252,19 @@ export const leadershipImprovementQuestions = [
     {value:'Feedback and Recognition Preferences',label:'Feedback and Recognition Preferences'},
     {value:'Communication Skills',label:'Communication Skills'}
   ]
+  export const surveyTypes=[
+    {value:'Anonymous Survey', label:'Anonymous Survey'},
+    {value:'Identified survey', label:'Identified survey'}
+  ]
+  export const newsurveyRoles=[
+    {value:'Employee Engagement',label:'Employee Engagement'},
+    {value:'Employee Satisfaction',label:'Employee Satisfaction'},
+    {value:'Performance Feedback',label:'Performance Feedback'},
+    {value:'Onboarding Surveys',label:'Onboarding Surveys'},
+    {value:' Exit Interview',label:' Exit Interview'},
+    {value:' Culture Surveys',label:'Culture Surveys'},
+    {value:'Pulse Surveys',label:'Pulse Surveys'},
+    {value:'Training Needs Assessment',label:'Training Needs Assessment'},
+    {value:'Diversity and Inclusion',label:'Diversity and Inclusion'},
+    {value:'Wellness Surveys',label:' Wellness Surveys'},
+  ]
