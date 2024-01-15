@@ -570,8 +570,8 @@
     height: 40px;
     width: fit-content;
     padding: 0px 20px;
-    background-color: #E7F4FF;
-    color: #1787E0;
+    background-color: #D7F5E8;
+    color: #01382E;
     margin: 0px 0px 0px 12px;
     outline: none;
     border: 0px;
@@ -668,7 +668,7 @@
 }
 
 .record-table table thead tr {
-    background-color: #0F305E;
+    background-color: #01382E;
     color: #ffffff;
     border: none;
 }

@@ -5,7 +5,7 @@ const UsersTable = () => {
 <div class="claims-top">
   <form action="" class="form">
     <div class="fm-ctrl">
-      <label for="claim-id">Claim ID</label> <br />
+      <label for="claim-id">Name </label> <br />
       <div class="input-hold">
         <input type="search" />
         <div class="search-icon">
@@ -37,7 +37,7 @@ const UsersTable = () => {
       </div>
     </div>
     <div class="fm-ctrl">
-      <label for="claim-id">Status</label> <br />
+      <label for="claim-id">Department</label> <br />
       <select name="" id="">
         <option value="">
           <svg
@@ -79,7 +79,7 @@ const UsersTable = () => {
       </select>
     </div>
     <div class="fm-ctrl">
-      <label for="">Filters</label>
+      <label for="">Filter</label>
       <div class="filters">
         <svg
           width="13"
@@ -124,9 +124,9 @@ const UsersTable = () => {
       </div>
     </div>
   </form>
-  <div class="record-file-view">
-    <button class="file-claim-btn">View Heat-map</button>
-    <button class="file-claim-btn">Create New Quote</button>
+  <div class="record-file-view px-4">
+    <button class="file-claim-btn">Create New Member</button>
+    <button class="file-claim-btn">Start New Survey</button>
   </div>
 </div>
 <div class="record-table">
@@ -141,9 +141,9 @@ const UsersTable = () => {
             </label>
           </div>
         </th>
-        <th>Client</th>
-        <th>Business name</th>
-        <th>Location</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Skills</th>
         <th>Coverages</th>
         <th>Expiration</th>
         <th>Premium</th>
