@@ -3,6 +3,7 @@ import { communicationChannelsQuestions, conflictResolutionQuestions, decisionMa
 import { updateUserDetails } from "@/app/services/firestore";
 import { useState } from "react";
 import Select from "react-tailwindcss-select";
+import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from "react-toastify";
 
 

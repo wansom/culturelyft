@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Select from "react-tailwindcss-select";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const ExpectedOutcomeForm = ({user,updateProgress}) => {
     const [leadershipImprovement, setLeadershipImprovement] = useState('');

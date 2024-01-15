@@ -239,4 +239,16 @@ export const leadershipImprovementQuestions = [
     { value: 'By focusing on collaborative problem-solving and seeking solutions that benefit all parties.', label: 'By focusing on collaborative problem-solving and seeking solutions that benefit all parties.' },
     { value: 'Depending on the severity and context, with flexibility and adaptation to the situation.', label: 'Depending on the severity and context, with flexibility and adaptation to the situation.' },
   ];
-  
+  export const profileTypes=[
+    {value:'Skills and Competencies',label:'Skills and Competencies'},
+    {value:'Strengths and Weaknesses',label:'Strengths and Weaknesses'},
+    {value:'Career Goals',label:'Career Goals'},
+    {value:'Work Preferences',label:'Work Preferences'},
+    {value:'Values and Motivations',label:'Values and Motivations'},
+    {value:'Learning and Development Needs',label:'Learning and Development Needs'},
+    {value:'Team Collaboration Style',label:'Team Collaboration Style'},
+    {value:'Diversity and Inclusion Preferences',label:'Diversity and Inclusion Preferences'},
+    {value:'Project Preferences',label:'Project Preferences'},
+    {value:'Feedback and Recognition Preferences',label:'Feedback and Recognition Preferences'},
+    {value:'Communication Skills',label:'Communication Skills'}
+  ]

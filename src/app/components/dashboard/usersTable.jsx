@@ -1,6 +1,18 @@
-const UsersTable = () => {
+'use client'
+
+import { useState } from "react";
+import Drawer from "../drawer";
+import EmployeeOnboarding from "../forms/employee-onboarding";
+
+const UsersTable = ({user}) => {
+  const [isOpen, setIsOpen] = useState(false);
     return ( <>
         <div class="claim-records">
+        <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+         <div className="p-10">
+         <EmployeeOnboarding user={user}/>
+         </div>
+        </Drawer>
 
 <div class="claims-top">
   <form action="" class="form">
@@ -125,11 +137,12 @@ const UsersTable = () => {
     </div>
   </form>
   <div class="record-file-view px-4">
-    <button class="file-claim-btn">Create New Member</button>
-    <button class="file-claim-btn">Start New Survey</button>
+    <button class="file-claim-btn" onClick={() => setIsOpen(true)}>Create New Employee Profile</button>
+    <button class="file-claim-btn" >Start New Survey</button>
   </div>
+
 </div>
-<div class="record-table">
+{/* <div class="record-table">
   <table>
     <thead>
       <tr>
@@ -143,10 +156,10 @@ const UsersTable = () => {
         </th>
         <th>Name</th>
         <th>Email</th>
+        <th>Role</th>
+        <th>Date Joined</th>
         <th>Skills</th>
-        <th>Coverages</th>
-        <th>Expiration</th>
-        <th>Premium</th>
+        <th>Personality</th>
         <th>Status</th>
         <th>Action</th>
         <th></th>
@@ -473,9 +486,9 @@ const UsersTable = () => {
       </tr>
     </tbody>
   </table>
+</div> */}
 </div>
-</div>
-<div class="record-pagination">
+{/* <div class="record-pagination">
 <div class="rec-pg-contain">
   <div class="record-num">Records: 1-7 of 7</div>
   <div class="record-pg">
@@ -566,7 +579,8 @@ const UsersTable = () => {
     </div>
   </div>
 </div>
-</div></> );
+</div> */}
+</> );
 }
  
 export default UsersTable;

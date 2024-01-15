@@ -1,22 +1,25 @@
-'use client'
+'use state'
+import { departments, profileTypes } from "@/app/services/data";
+import { createEmployeeProfile } from "@/app/services/firestore";
 import { useState } from "react";
+import Select from "react-tailwindcss-select";
 import { ToastContainer, toast } from "react-toastify";
-import Select from 'react-tailwindcss-select';
 import 'react-toastify/dist/ReactToastify.css';
-import { departments, organizationTypes } from "@/app/services/data";
-import { updateUserDetails } from "@/app/services/firestore";
 
-const OverviewForm = ({user,updateProgress}) => {
+const EmployeeOnboarding = ({user}) => {
     const [formData, setFormData] = useState({
-        company: '',
-        companyEmail: '',
-        phoneNumber: '',
-        departments: [],
-        organizationType: '',
-        city: '',
+        name: '',
+        email: '',
+        role: '',
+        date: '',
+        department: '',
+        profilePreference: [],
+        employer:user.id,
+        response:false
+       
       });
       const [animal, setAnimal] = useState(null);
-      const [organizationType, setOrganizationType] = useState(null)
+      const [profileType, setprofileType] = useState(null)
 
       const handleDepartmentChange = (value) => {
         setAnimal(value)
@@ -26,17 +29,17 @@ const OverviewForm = ({user,updateProgress}) => {
         }
         setFormData((prevFormData) => ({
           ...prevFormData,
-          departments: newValue,
+          profilePreference: newValue,
         }));
     
       };
-      const handleOrganizationChange = value => {
+      const handleprofileChange = value => {
     
         setFormData((prevFormData) => ({
           ...prevFormData,
-          ['organizationType']: value.value,
+          ['department']: value.value,
         }));
-        setOrganizationType(value)
+        setprofileType(value)
       }
     
       const handleChange = (e) => {
@@ -49,15 +52,8 @@ const OverviewForm = ({user,updateProgress}) => {
       };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const payload = {
-          uid: user.id,
-          data: formData,
-          profileUpdate:'50%'
-        }
-        console.log(payload);
-    
         try {
-          await updateUserDetails(payload);
+          await createEmployeeProfile(formData);
           toast.success(` 🦄 Details updated successfuly!`, {
             position: "top-right",
             autoClose: 3000,
@@ -68,7 +64,6 @@ const OverviewForm = ({user,updateProgress}) => {
             progress: undefined,
             theme: "light",
           })
-          updateProgress('Company Culture','50%')
         } catch (error) {
           toast.error(` 🦄 something went wrong!`, {
             position: "top-right",
@@ -82,72 +77,73 @@ const OverviewForm = ({user,updateProgress}) => {
           })
         }
       };
-    return ( 
-        <form onSubmit={handleSubmit}>
-            <ToastContainer/>
+    return (<>
+                <ToastContainer/>
+     <form onSubmit={handleSubmit}>
+
         <div className=" space-y-5 mb-10">
 
           <label className="block text-sm w-full">
-            <span className="text-gray-700 dark:text-gray-400">Company Name</span>
+            <span className="text-gray-700 dark:text-gray-400">Employee Name</span>
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="text"
-              name="company"
-              value={formData.company}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
-              placeholder="Culture Lyft"
+              placeholder="Vincent Kompany"
             />
           </label>
 
           <label className="block text-sm w-full">
-            <span className="text-gray-700 dark:text-gray-400">Company Email</span>
+            <span className="text-gray-700 dark:text-gray-400">Employee Email</span>
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="email"
-              name="companyEmail"
-              value={formData.companyEmail}
+              name="email"
+              value={formData.email}
               onChange={handleChange}
               placeholder="hr@culturelyft.com"
             />
           </label>
           <label className="block text-sm w-full">
-            <span className="text-gray-700 dark:text-gray-400">Phone Number</span>
-            <input
-              className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-              type="tel"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              placeholder="+1-212-456-7890"
-            />
-          </label>
-          <label className=" w-full block text-sm">
-            <span className="text-gray-700 dark:text-gray-400">City</span>
+            <span className="text-gray-700 dark:text-gray-400">Role</span>
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="text"
-              name="city"
-              value={formData.city}
+              name="role"
+              value={formData.role}
               onChange={handleChange}
-              placeholder="San Francisco"
+              placeholder="Fullstack Engineer"
             />
           </label>
           <label className=" w-full block text-sm">
-            <span className="text-gray-700 dark:text-gray-400">Departments</span>
-            <Select className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-              value={animal}
-              onChange={handleDepartmentChange}
+            <span className="text-gray-700 dark:text-gray-400">Date Hired</span>
+            <input
+              className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              placeholder=""
+            />
+          </label>
+          <label className=" w-full block text-sm">
+            <span className="text-gray-700 dark:text-gray-400">Department</span>
+            <Select className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"              
+              value={profileType}
+              onChange={handleprofileChange}
               options={departments}
-              isMultiple
             />
           </label>
           <label className="block text-sm w-full">
-            <span className="text-gray-700 dark:text-gray-400">Type of Organization</span>
+            <span className="text-gray-700 dark:text-gray-400">Which Profile Areas do you want to create</span>
             <Select className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-              value={organizationType}
-              onChange={handleOrganizationChange}
-              options={organizationTypes}
-
+              
+              value={animal}
+              onChange={handleDepartmentChange}
+              options={profileTypes}
+              isMultiple
             />
           </label>
         </div>
@@ -159,7 +155,7 @@ const OverviewForm = ({user,updateProgress}) => {
           Save And Continue
         </button>
       </form>
-     );
+    </>);
 }
  
-export default OverviewForm;
+export default EmployeeOnboarding;

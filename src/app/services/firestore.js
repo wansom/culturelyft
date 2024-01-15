@@ -73,3 +73,16 @@ export const updateUserDetails = async (payload) => {
     console.error('Error updating user details:', error.message);
   }
 };
+
+export const createEmployeeProfile=async(payload)=> {
+	try {
+		const mainCollectionRef = collection(firestoreDb, USERS_PATH);
+		const mainDocRef = doc(mainCollectionRef, payload.employer);
+		const subCollectionRef = collection(mainDocRef, 'employees');
+		const addedDocRef = await addDoc(subCollectionRef, payload);
+		return addedDocRef.id;
+	} catch (error) {
+	  console.error('Error adding document:', error.message);
+	  throw error;
+	}
+  }
