@@ -86,3 +86,25 @@ export const createEmployeeProfile=async(payload)=> {
 	  throw error;
 	}
   }
+
+ export const fetchEmployeesData  = async (documentId) => {
+	try {
+	  const documentRef = doc(firestoreDb, USERS_PATH, documentId);
+
+	  // Get a reference to the subcollection
+	  const subcollectionRef = collection(documentRef, 'employees');
+
+	  // Fetch the data from the subcollection
+	  const snapshot = await getDocs(subcollectionRef);
+
+	  // Extract the data from the snapshot
+	  const data = snapshot.docs.map((doc) => ({
+		id: doc.id,
+		...doc.data(),
+	  }));
+
+	  return data
+	} catch (error) {
+	return
+	}
+  };

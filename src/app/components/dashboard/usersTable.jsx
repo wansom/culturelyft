@@ -1,17 +1,24 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Drawer from "../drawer";
 import EmployeeOnboarding from "../forms/employee-onboarding";
 import StartSurvey from "../forms/survey-start";
+import { fetchEmployeesData } from "@/app/services/firestore";
 
 const UsersTable = ({user}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [openModal,setOpenModal]=useState(null)
+  const [employees, setEmployees] =useState([])
   const handleModalOpen=(value)=>{
     setIsOpen(true)
     setOpenModal(value)
   }
+  useEffect(() => {
+fetchEmployeesData(user.id).then((data)=>{
+ setEmployees(data)
+})
+  }),[]
     return ( <>
         <div class="claim-records">
         <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -149,7 +156,7 @@ const UsersTable = ({user}) => {
   </div>
 
 </div>
-{/* <div class="record-table">
+<div class="record-table">
   <table>
     <thead>
       <tr>
@@ -165,337 +172,72 @@ const UsersTable = ({user}) => {
         <th>Email</th>
         <th>Role</th>
         <th>Date Joined</th>
-        <th>Skills</th>
-        <th>Personality</th>
+        <th>Department</th>
         <th>Status</th>
-        <th>Action</th>
-        <th></th>
+        <th>View Full Profile</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="tbl-form">
-          <div class="keep-me">
-            <label class="ctn-check">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </td>
-        <td>Roy Muturi</td>
-        <td>ABC Africa</td>
-        <td>Kilua, Karen, Nairobi KE</td>
-        <td>GL</td>
-        <td>23/09/2023</td>
-        <td class="red">$6,737.89</td>
-        <td class="green">Active</td>
-        <td>
-          <button class="view">View</button>
-        </td>
-        <td>
-          <button>
-            <svg
-              width="15"
-              height="4"
-              viewBox="0 0 15 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.5794 2.15813H13.5966"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7.83805 2.15813H7.85527"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2.09672 2.15813H2.11394"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td class="tbl-form">
-          <div class="keep-me">
-            <label class="ctn-check">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </td>
-        <td>Roy Muturi</td>
-        <td>ABC Africa</td>
-        <td>Kilua, Karen, Nairobi KE</td>
-        <td>GL</td>
-        <td>23/09/2023</td>
-        <td>$6,737.89</td>
-        <td class="green">Active</td>
-        <td>
-          <button class="view">View</button>
-        </td>
-        <td>
-          <button>
-            <svg
-              width="15"
-              height="4"
-              viewBox="0 0 15 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.5794 2.15813H13.5966"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7.83805 2.15813H7.85527"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2.09672 2.15813H2.11394"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td class="tbl-form">
-          <div class="keep-me">
-            <label class="ctn-check">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </td>
-        <td>Roy Muturi</td>
-        <td>ABC Africa</td>
-        <td>Kilua, Karen, Nairobi KE</td>
-        <td>GL</td>
-        <td>23/09/2023</td>
-        <td class="grey">$6,737.89</td>
-        <td class="red">Expired</td>
-        <td>
-          <button class="view">View</button>
-        </td>
-        <td>
-          <button>
-            <svg
-              width="15"
-              height="4"
-              viewBox="0 0 15 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.5794 2.15813H13.5966"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7.83805 2.15813H7.85527"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2.09672 2.15813H2.11394"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td class="tbl-form">
-          <div class="keep-me">
-            <label class="ctn-check">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </td>
-        <td>Roy Muturi</td>
-        <td>ABC Africa</td>
-        <td>Kilua, Karen, Nairobi KE</td>
-        <td>GL</td>
-        <td>23/09/2023</td>
-        <td class="green">$6,737.89</td>
-        <td class="green">Active</td>
-        <td>
-          <button class="view">View</button>
-        </td>
-        <td>
-          <button>
-            <svg
-              width="15"
-              height="4"
-              viewBox="0 0 15 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.5794 2.15813H13.5966"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7.83805 2.15813H7.85527"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2.09672 2.15813H2.11394"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td class="tbl-form">
-          <div class="keep-me">
-            <label class="ctn-check">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </td>
-        <td>Roy Muturi</td>
-        <td>ABC Africa</td>
-        <td>Kilua, Karen, Nairobi KE</td>
-        <td>GL</td>
-        <td>23/09/2023</td>
-        <td>$6,737.89</td>
-        <td class="grey">Pending</td>
-        <td>
-          <button class="view">View</button>
-        </td>
-        <td>
-          <button>
-            <svg
-              width="15"
-              height="4"
-              viewBox="0 0 15 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.5794 2.15813H13.5966"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7.83805 2.15813H7.85527"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2.09672 2.15813H2.11394"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td class="tbl-form">
-          <div class="keep-me">
-            <label class="ctn-check">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </td>
-        <td>Roy Muturi</td>
-        <td>ABC Africa</td>
-        <td>Kilua, Karen, Nairobi KE</td>
-        <td>GL</td>
-        <td>23/09/2023</td>
-        <td>$6,737.89</td>
-        <td class="yellow">Expiring in 4 Days</td>
-        <td>
-          <button class="view">View</button>
-        </td>
-        <td>
-          <button>
-            <svg
-              width="15"
-              height="4"
-              viewBox="0 0 15 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.5794 2.15813H13.5966"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7.83805 2.15813H7.85527"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2.09672 2.15813H2.11394"
-                stroke="#797979"
-                stroke-width="2.74627"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </td>
-      </tr>
+     {employees.map((member)=>(
+       <tr>
+       <td class="tbl-form">
+         <div class="keep-me">
+           <label class="ctn-check">
+             <input type="checkbox" />
+             <span class="checkmark"></span>
+           </label>
+         </div>
+       </td>
+       <td>{member.name}</td>
+       <td>{member.email}</td>
+       <td>{member.role}</td>
+       <td>{member.date}</td>
+       <td>{member.department}</td>
+       <td class="green">Active</td>    
+       <td>
+         <button class="view">View</button>
+       </td>
+       <td>
+         <button>
+           <svg
+             width="15"
+             height="4"
+             viewBox="0 0 15 4"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg"
+           >
+             <path
+               d="M13.5794 2.15813H13.5966"
+               stroke="#797979"
+               stroke-width="2.74627"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+             />
+             <path
+               d="M7.83805 2.15813H7.85527"
+               stroke="#797979"
+               stroke-width="2.74627"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+             />
+             <path
+               d="M2.09672 2.15813H2.11394"
+               stroke="#797979"
+               stroke-width="2.74627"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+             />
+           </svg>
+         </button>
+       </td>
+     </tr>
+     ))}
     </tbody>
   </table>
-</div> */}
 </div>
-{/* <div class="record-pagination">
+</div>
+<div class="record-pagination">
 <div class="rec-pg-contain">
   <div class="record-num">Records: 1-7 of 7</div>
   <div class="record-pg">
@@ -586,7 +328,7 @@ const UsersTable = ({user}) => {
     </div>
   </div>
 </div>
-</div> */}
+</div>
 </> );
 }
  
