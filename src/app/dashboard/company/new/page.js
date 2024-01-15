@@ -7,11 +7,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import CultureForm from "./cultreForm";
 import ExpectedOutcomeForm from "./expectedOutcomeForm";
 import OverviewForm from "./overViewForm";
+import ProgressBar from "@/app/components/progressBar";
 
 
 const NewCompanyProfile = () => {
   const { user, loading, error } = useContext(UserContext);
   const [formStep, setFormStep] = useState(1)
+  const [percent, setPercent]=useState(user?.profileUpdate)
+  const [stage,setStage] = useState('Overview')
+
+ const handleProgressChange=(percent,stage)=>{
+    setPercent(percent),
+    setStage(stage)
+  }
   if (loading) return <MainLoader />;
   if (error) return <div>Error fetching user data: {error.message}</div>;
   return (
@@ -28,25 +36,23 @@ const NewCompanyProfile = () => {
           max size of 3 Mb</p>
 
       </div> */}
+      
       <div className="  rounded-[16px] bg-white w-full px-10 mx-10 my-4">
         <div className="flex gap-1 flex-wrap my-4">
-          <div className="flex items-center"><div className="red-status"></div><h4 className="font-bold text-[#01382E] text-[14px] cursor-pointer" onClick={() => { setFormStep(1) }}>Overview</h4>
-          </div>
-          <div className="flex items-center opacity-75 cursor-pointer"><div className="green-status"></div><h4 className="font-bold text-[#01382E] text-[14px]" onClick={() => { setFormStep(2) }}>Company Culture</h4>
-          </div>
-          <div className="flex items-center opacity-75 cursor-pointer"><div className="green-status"></div><h4 className="font-bold text-[#01382E] text-[14px]" onClick={() => { setFormStep(3) }}>Expected Outcomes</h4>
-          </div>
+        <ProgressBar stage={stage} percent={percent}/>
+   
           
 
         </div>
-        {formStep == 1 && (
-         <OverviewForm/>
+        {percent==='0%'&& (
+         <OverviewForm user={user} updateProgress={handleProgressChange}/>
         )}
-        {formStep == 2 && (
-          <CultureForm  user={user}/>
+        {percent ==='50%'&& (
+          <CultureForm  user={user} updateProgress={handleProgressChange}/>
         )}
-         {formStep == 3 && (
-          <ExpectedOutcomeForm  user={user}/>
+         {percent ==='75%'||percent==='100%' && (
+          <ExpectedOutcomeForm  user={user} updateProgress={handleProgressChange}/>
+        
         )}
 
       </div>

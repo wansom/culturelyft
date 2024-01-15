@@ -1,16 +1,19 @@
 'use client'
 import { aiImpactQuestions, dreamTeamEnvironmentQuestions, employeeMotivationObstaclesQuestions, idealLeadershipQuestions, leadershipImprovementQuestions, teamDynamicsQuestions } from "@/app/services/data";
+import { updateUserDetails } from "@/app/services/firestore";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Select from "react-tailwindcss-select";
 import { ToastContainer, toast } from "react-toastify";
 
-const ExpectedOutcomeForm = ({user}) => {
+const ExpectedOutcomeForm = ({user,updateProgress}) => {
     const [leadershipImprovement, setLeadershipImprovement] = useState('');
     const [teamImprovement, setTeamImprovement] = useState('');
     const [employeeMotivationObstacles, setEmployeeMotivationObstacles] = useState('');
     const [idealLeadership, setIdealLeadership] = useState('');
     const [dreamTeamEnvironment, setDreamTeamEnvironment] = useState('');
     const [aiImpact, setAIImpact] = useState('');
+     const router =useRouter()
 
     const handleLeadershipImprovementChange = (value) => {
         setLeadershipImprovement(value);
@@ -36,7 +39,8 @@ const ExpectedOutcomeForm = ({user}) => {
         setAIImpact(value);
       };
 
-      const handleSubmit = () => {
+      const handleSubmit =async (e) => {
+        e.preventDefault()
         // Perform any validation if needed
         if (!leadershipImprovement || !teamImprovement || !employeeMotivationObstacles || !idealLeadership || !dreamTeamEnvironment || !aiImpact) {
             toast.error(` 🦄 some fields are missing!`, {
@@ -51,12 +55,42 @@ const ExpectedOutcomeForm = ({user}) => {
               })
           return;
         }     
-        console.log('Leadership Improvement:', leadershipImprovement);
-        console.log('Team Improvement:', teamImprovement);
-        console.log('Employee Motivation Obstacles:', employeeMotivationObstacles);
-        console.log('Ideal Leadership:', idealLeadership);
-        console.log('Dream Team Environment:', dreamTeamEnvironment);
-        console.log('AI Impact:', aiImpact);
+        const payload = {
+          uid: user.id,
+          data: {
+            expectedOutcomes:[
+             leadershipImprovement,teamImprovement,employeeMotivationObstacles,idealLeadership,dreamTeamEnvironment,aiImpact
+            ],
+            profileUpdate:'100%'
+          }
+        }
+        try {
+          await updateUserDetails(payload);
+          toast.success(` 🦄 Details updated successfuly!`, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          })
+          updateProgress('Expected outcomes','100%')
+
+        } catch (error) {
+          console.log(error)
+          toast.error(` 🦄 something went wrong!`, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          })
+        }
       };
       
     
@@ -134,7 +168,7 @@ const ExpectedOutcomeForm = ({user}) => {
               type="submit"
               className="block w-[200px] px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
             >
-              Save And Continue
+              Complete Profile
             </button>
       </form>  
      );

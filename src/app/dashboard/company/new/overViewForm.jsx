@@ -5,7 +5,7 @@ import Select from 'react-tailwindcss-select';
 import { departments, organizationTypes } from "@/app/services/data";
 import { updateUserDetails } from "@/app/services/firestore";
 
-const OverviewForm = () => {
+const OverviewForm = ({user,updateProgress}) => {
     const [formData, setFormData] = useState({
         company: '',
         companyEmail: '',
@@ -17,8 +17,6 @@ const OverviewForm = () => {
       const [animal, setAnimal] = useState(null);
       const [organizationType, setOrganizationType] = useState(null)
 
-      const [selectedCulture, setSelectedCulture] = useState([]);
-    
       const handleDepartmentChange = (value) => {
         setAnimal(value)
         let newValue = [];
@@ -39,15 +37,7 @@ const OverviewForm = () => {
         }));
         setOrganizationType(value)
       }
-      
-      const handleCultureChange = (value) => {
-        setSelectedCulture(value)
-        // setSelectDepartment(selectedOption);
-        // setFormData((prevFormData) => ({
-        //   ...prevFormData,
-        //   [questionId]: selectedOption.value,
-        // }));
-      };
+    
       const handleChange = (e) => {
         const { name, value } = e.target;
         console.log(name);
@@ -58,11 +48,12 @@ const OverviewForm = () => {
       };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
         const payload = {
           uid: user.id,
-          data: formData
+          data: formData,
+          profileUpdate:'50%'
         }
+        console.log(payload);
     
         try {
           await updateUserDetails(payload);
@@ -76,6 +67,7 @@ const OverviewForm = () => {
             progress: undefined,
             theme: "light",
           })
+          updateProgress('Company Culture','50%')
         } catch (error) {
           toast.error(` 🦄 something went wrong!`, {
             position: "top-right",

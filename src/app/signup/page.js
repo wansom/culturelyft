@@ -61,7 +61,8 @@ setLoading(true)
       console.log(user.user.uid)
       const payload ={
         uid: user.user.uid,
-        data:formData
+        data:formData,
+        profileUpdate:'0%'
       }
       createNewUser(payload)
       setLoading(false)

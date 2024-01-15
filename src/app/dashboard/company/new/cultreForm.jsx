@@ -1,11 +1,12 @@
 'use client'
 import { communicationChannelsQuestions, conflictResolutionQuestions, decisionMakingQuestions, recognitionRewardsQuestions, teamDynamicsQuestions, workStylesQuestions } from "@/app/services/data";
+import { updateUserDetails } from "@/app/services/firestore";
 import { useState } from "react";
 import Select from "react-tailwindcss-select";
 import { ToastContainer, toast } from "react-toastify";
 
 
-const CultureForm = () => {
+const CultureForm = ({user,updateProgress}) => {
   const [formData, setFormData] = useState({
     decisionMaking: '',
     communicationChannels: '',
@@ -47,9 +48,10 @@ const CultureForm = () => {
     setConflictResolution(value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit =async (e) => {
+    e.preventDefault();
     // Perform any validation if needed
-    if (!leadershipImprovement || !teamImprovement || !employeeMotivationObstacles || !idealLeadership || !dreamTeamEnvironment || !aiImpact) {
+    if (!decisionMaking || !communicationChannels || !workStyle || !teamDynamics || !recognitionRewards || !conflictResolution) {
       toast.error(` 🦄 some fields are missing!`, {
         position: "top-right",
         autoClose: 3000,
@@ -62,12 +64,41 @@ const CultureForm = () => {
       })
       return;
     }
-    console.log('Leadership Improvement:', leadershipImprovement);
-    console.log('Team Improvement:', teamImprovement);
-    console.log('Employee Motivation Obstacles:', employeeMotivationObstacles);
-    console.log('Ideal Leadership:', idealLeadership);
-    console.log('Dream Team Environment:', dreamTeamEnvironment);
-    console.log('AI Impact:', aiImpact);
+    const payload = {
+      uid: user.id,
+      data: {
+        culture:[
+          decisionMaking,communicationChannels,workStyle,teamDynamics,recognitionRewards,conflictResolution
+        ],
+        profileUpdate:'75%'
+      }
+    }
+    try {
+      await updateUserDetails(payload);
+      toast.success(` 🦄 Details updated successfuly!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
+      updateProgress('Expected outcomes','75%')
+    } catch (error) {
+      console.log(error)
+      toast.error(` 🦄 something went wrong!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
+    }
   };
 
 
