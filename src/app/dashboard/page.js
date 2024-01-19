@@ -31,10 +31,10 @@ const Dashboard = () => {
               >
                 Complete Company Profile
               </Link>
-              <Link href="/dashboard/company/new"
+              <Link href="/dashboard/feedback"
                 class="block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 bg-transparent border border-[#01382E] rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple"
               >
-                View  Feedback
+                View Feedback
               </Link>
             </div>
           </div>
