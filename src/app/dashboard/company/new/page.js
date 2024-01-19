@@ -50,7 +50,7 @@ const NewCompanyProfile = () => {
         {percent ==='50%'&& (
           <CultureForm  user={user} updateProgress={handleProgressChange}/>
         )}
-         {percent ==='75%'||percent==='100%' && (
+         {percent ==='75%'&& (
           <ExpectedOutcomeForm  user={user} updateProgress={handleProgressChange}/>
         
         )}

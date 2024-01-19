@@ -13,7 +13,7 @@ const DashboardSurveys = () => {
 
         </div>
       </Drawer>
-      <div className=" shadow-lg rounded-lg h-fit w-full bg-white flex items-center p-3 gap-6">
+      <div className=" shadow-lg rounded-lg h-fit w-full bg-white flex items-center  justify-evenly p-3">
         <div>
           <h2 className=" text-gray-400 text-12">Tracker ID</h2>
           <p className="text-14 text-black font-semibold">A5067484</p>
@@ -57,7 +57,7 @@ const DashboardSurveys = () => {
 
 
       </div>
-      <div className=" shadow-lg rounded-lg h-fit w-full bg-white flex items-center p-3 gap-6">
+      <div className=" shadow-lg rounded-lg h-fit w-full bg-white flex items-center  justify-evenly p-3">
         <div>
           <h2 className=" text-gray-400 text-12">Tracker ID</h2>
           <p className="text-14 text-black font-semibold">A5067484</p>
@@ -101,7 +101,7 @@ const DashboardSurveys = () => {
 
 
       </div>
-      <div className=" shadow-lg rounded-lg h-fit w-full bg-white flex items-center p-3 gap-6">
+      <div className=" shadow-lg rounded-lg h-fit w-full bg-white flex items-center  justify-evenly p-3">
         <div>
           <h2 className=" text-gray-400 text-12">Tracker ID</h2>
           <p className="text-14 text-black font-semibold">A5067484</p>
@@ -145,6 +145,7 @@ const DashboardSurveys = () => {
 
 
       </div>
+
 
 
     </div>
