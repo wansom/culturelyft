@@ -5,11 +5,14 @@ import { useState } from "react";
 
 const DashboardFeedback = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [tab,setTab]=useState('All')
+
+
   return (
     <div className="m-3 bg-gray-200 rounded-lg shadow-sm  w-[96%] flex gap-3">
-      <div className="basis-1/5 h-screen  px-5 py-10 space-y-5">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center text-[#2D3B79] text-10 gap-4">
+      <div className="basis-1/5 h-screen ml-2 py-10 space-y-5" >
+        <div className={tab==='All'?'bg-white flex justify-between items-center rounded-lg p-2':'bg-transparent flex justify-between items-center rounded-lg p-2'} onClick={()=>{setTab('All')}}>
+          <div className={'flex items-center text-[#2D3B79] text-10 gap-4'}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -32,7 +35,7 @@ const DashboardFeedback = () => {
             3
           </div>
         </div>
-        <div className="flex justify-between items-center">
+        <div className={tab==='Unread'?'flex justify-between items-center bg-white rounded-lg p-2 ':'flex justify-between items-center rounded-lg p-2 bg-transparent'} onClick={()=>{setTab('Unread')}}>
           <div className="flex items-center text-gray-600 text-10 gap-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +59,7 @@ const DashboardFeedback = () => {
             3
           </div>
         </div>
-        <div className="flex justify-between items-center">
+        <div className={tab==='Replied'?'flex justify-between items-center bg-white rounded-lg p-2 ':'flex justify-between items-center rounded-lg p-2 bg-transparent'} onClick={()=>{setTab('Replied')}}>
           <div className="flex items-center text-[#118D57] text-10 gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +83,7 @@ const DashboardFeedback = () => {
             3
           </div>
         </div>
-        <div className="flex justify-between items-center">
+        <div className={tab==='Dismissed'?'flex justify-between items-center bg-white rounded-lg p-2 ':'flex justify-between items-center rounded-lg p-2 bg-transparent'} onClick={()=>{setTab('Dismissed')}}>
           <div className="flex items-center text-[#B71D18] text-10 gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
