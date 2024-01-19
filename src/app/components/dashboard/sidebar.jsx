@@ -72,6 +72,38 @@ const DashboardSidebar = () => {
                     </div>
                 </Link>
             </div>
+            <div class="link">
+                <Link href="/dashboard/feedback"  class={` ${pathname === '/dashboard/feedback' ? 'active' : ''}`}>
+                    <div class="link-icon">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.4203 16.8753H5.58125C3.03611 16.8753 1 14.8392 1 12.2941V5.77851C1 3.23338 3.03611 1.19727 5.58125 1.19727H13.4203C15.9654 1.19727 18.0015 3.23338 18.0015 5.77851V12.2941C18.0015 14.8392 15.9654 16.8753 13.4203 16.8753Z"
+                                stroke="#ADC9CD" stroke-miterlimit="10" />
+                            <path d="M4.15576 5.98242L9.55145 10.9709L14.9471 5.98242" stroke="#ADC9CD"
+                                stroke-miterlimit="10" />
+                        </svg>
+                    </div>
+                    <div class="link-text">
+                      View Feedback
+                    </div>
+                </Link>
+            </div>
+            <div class="link">
+                <Link href="/dashboard/surveys"  class={`${pathname === '/dashboard/templates' ? 'active' : ''}`}>
+                    <div class="link-icon">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.29446 11.788H13.8655" stroke="#ADC9CD" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1 5.73393C1 3.55216 2.11684 1.67843 4.23615 1.24361C6.35457 0.807932 7.9646 0.958545 9.30213 1.68013C10.6406 2.40171 10.2573 3.46707 11.6323 4.24907C13.0082 5.03192 15.2214 3.85594 16.667 5.41569C18.1806 7.04861 18.1725 9.55544 18.1725 11.1535C18.1725 17.2257 14.7711 17.7073 9.58625 17.7073C4.40144 17.7073 1 17.2869 1 11.1535V5.73393Z"
+                                stroke="#ADC9CD" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="link-text">
+                    Surveys
+                    </div>
+                </Link>
+            </div>
             <div className='link'>
                 <Link href="/dashboard/programs"  class={` ${pathname === '/dashboard/programs' ? 'active' : ''}`}>
                     <div class="link-icon">
@@ -107,38 +139,8 @@ const DashboardSidebar = () => {
                     </div>
                 </Link>
             </div>
-            <div class="link">
-                <Link href="/dashboard/templates"  class={`${pathname === '/dashboard/templates' ? 'active' : ''}`}>
-                    <div class="link-icon">
-                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.29446 11.788H13.8655" stroke="#ADC9CD" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M1 5.73393C1 3.55216 2.11684 1.67843 4.23615 1.24361C6.35457 0.807932 7.9646 0.958545 9.30213 1.68013C10.6406 2.40171 10.2573 3.46707 11.6323 4.24907C13.0082 5.03192 15.2214 3.85594 16.667 5.41569C18.1806 7.04861 18.1725 9.55544 18.1725 11.1535C18.1725 17.2257 14.7711 17.7073 9.58625 17.7073C4.40144 17.7073 1 17.2869 1 11.1535V5.73393Z"
-                                stroke="#ADC9CD" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <div class="link-text">
-                    Templates
-                    </div>
-                </Link>
-            </div>
-            <div class="link">
-                <Link href="/dashboard/feedback"  class={` ${pathname === '/dashboard/feedback' ? 'active' : ''}`}>
-                    <div class="link-icon">
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.4203 16.8753H5.58125C3.03611 16.8753 1 14.8392 1 12.2941V5.77851C1 3.23338 3.03611 1.19727 5.58125 1.19727H13.4203C15.9654 1.19727 18.0015 3.23338 18.0015 5.77851V12.2941C18.0015 14.8392 15.9654 16.8753 13.4203 16.8753Z"
-                                stroke="#ADC9CD" stroke-miterlimit="10" />
-                            <path d="M4.15576 5.98242L9.55145 10.9709L14.9471 5.98242" stroke="#ADC9CD"
-                                stroke-miterlimit="10" />
-                        </svg>
-                    </div>
-                    <div class="link-text">
-                        Feedback Forms
-                    </div>
-                </Link>
-            </div>
+           
+            
             
             {/* <div class="link">
                 <a href="renewals.html">
