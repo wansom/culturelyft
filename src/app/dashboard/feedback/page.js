@@ -106,9 +106,28 @@ const DashboardFeedback = () => {
         </div>
       </div>
       <div className="basis-2/5  h-screen  px-5 py-10 space-y-3 bg-white rounded-lg my-5">
+      <div className="h-full w-full flex flex-col items-center justify-center">
+      <Image
+                src="/icons/ic_folder_empty.svg"
+                alt="logo"
+                width={150}
+                height={100}
+              />
+              <p className="text-gray-300 text-16 font-bold">This folder is empty</p>
 
       </div>
+      </div>
       <div className="basis-3/5  h-screen  px-5 py-10 space-y-3 bg-white rounded-lg my-5 mr-2">
+      <div className="h-full w-full flex flex-col items-center justify-center">
+      <Image
+                src="/icons/ic_email_disabled.svg"
+                alt="logo"
+                width={150}
+                height={100}
+              />
+              <p className="text-gray-300 text-16 font-bold">No messages yet</p>
+
+      </div>
 
 </div>
     </div>
