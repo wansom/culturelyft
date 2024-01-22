@@ -20,6 +20,7 @@ const Anonymous = () => {
     email: '',
     message: '',
     category: '',
+    date:new Date()
 
   });
   const [trackindId, setTrackingID] = useState(null)

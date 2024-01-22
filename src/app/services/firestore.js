@@ -166,3 +166,26 @@ export const createEmployeeProfile=async(payload)=> {
 	  throw error;
 	}
   };
+
+ export const fetchQuestionsByUser = async (userEmail) => {
+	const questionsCollection = collection(firestoreDb, QUESTIONS_PATH);
+  
+	// Create a query to get documents where the 'email' field is equal to the provided userEmail
+	const queryByEmail = query(questionsCollection, where('email', '==', userEmail));
+  
+	try {
+	  const querySnapshot = await getDocs(queryByEmail);
+  
+	  const questions = [];
+  
+	  querySnapshot.forEach((doc) => {
+		// For each document matching the query, add its data to the 'questions' array
+		questions.push({ id: doc.id, ...doc.data() });
+	  });
+  
+	  return questions;
+	} catch (error) {
+	  console.error('Error fetching questions:', error.message);
+	  throw error;
+	}
+  };
