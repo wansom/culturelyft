@@ -146,3 +146,23 @@ export const createEmployeeProfile=async(payload)=> {
 	}
 	
    }
+
+   export const fetchMessageResponse  = async (documentId) => {
+	try {
+	  const documentRef = doc(firestoreDb, QUESTIONS_PATH, documentId);
+	  const documentSnapshot = await getDoc(documentRef);
+	  
+	  if (documentSnapshot.exists()) {
+		// Document found, you can access its data using documentSnapshot.data()
+		const documentData = documentSnapshot.data();
+		console.log('Document data:', documentData);
+		return documentData;
+	  } else {
+		console.log('Document does not exist');
+		return null;
+	  }
+	} catch (error) {
+	  console.error('Error fetching document:', error.message);
+	  throw error;
+	}
+  };
