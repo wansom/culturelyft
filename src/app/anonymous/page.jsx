@@ -5,6 +5,8 @@ import { useState } from "react";
 import { newsurveyRoles } from "../services/data";
 import Drawer from "../components/drawer";
 import { sendAnonEmail } from "../services/firestore";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Anonymous = () => {
     const[surveyRole,setSurveyRole]=useState(null)
@@ -44,11 +46,25 @@ sendAnonEmail({
   subject:'Anonymous Employee Feedback from Culturelyft',
   email:formData.email,
   content:formData.message,
-  
+
+}).then((res)=>{
+  console.log(res);
+  setIsOpen(false)
+  toast.success(` 🦄 You feeback has been submitted successfully!`, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  })
 })
       }
     return ( <div>
         <Navbar/>
+        <ToastContainer/>
         <main className=" overflow-x-hidden">
         <section class="banner flex flex-col md:flex-row">
         <div class="banner-container basis-2/2 md:basis=1/3">
