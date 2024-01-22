@@ -23,6 +23,7 @@ import {
 } from 'firebase/firestore'
 
 const USERS_PATH = 'CultureLyftClients'
+const QUESTIONS_PATH='anonymousQuiz'
 
 export const firestoreListener = onSnapshot
 export const deleteDbField = deleteField()
@@ -126,7 +127,7 @@ export const createEmployeeProfile=async(payload)=> {
 		if (!response.ok) {
 		  throw new Error(`HTTP error! Status: ${response.status}`);
 		}
-  
+		
 		// Parse and return the response JSON
 		return response.json();
 	  })
@@ -134,3 +135,14 @@ export const createEmployeeProfile=async(payload)=> {
 		console.error('Error:', error);
 	  });
   }
+  export const sendMailToFirestore=async(payload)=>{
+		try {
+		const mainCollectionRef = collection(firestoreDb, QUESTIONS_PATH);
+		const addedDocRef = await addDoc(mainCollectionRef, payload);
+		return addedDocRef.id;
+	} catch (error) {
+	  console.error('Error adding document:', error.message);
+	  throw error;
+	}
+	
+   }
