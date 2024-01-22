@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 import { useState } from "react";
 import { newsurveyRoles } from "../services/data";
 import Drawer from "../components/drawer";
+import { sendAnonEmail } from "../services/firestore";
 
 const Anonymous = () => {
     const[surveyRole,setSurveyRole]=useState(null)
@@ -36,6 +37,16 @@ const Anonymous = () => {
         console.log(formData)
         setIsOpen(true)
       }
+      const sendEmail=()=>{
+console.log(formData)
+sendAnonEmail({
+  name:formData.name,
+  subject:'Anonymous Employee Feedback from Culturelyft',
+  email:formData.email,
+  content:formData.message,
+  
+})
+      }
     return ( <div>
         <Navbar/>
         <main className=" overflow-x-hidden">
@@ -44,10 +55,10 @@ const Anonymous = () => {
           <div class="bn-text mt-10">
             <div class="bn-txt-holder">
               <h1 class="text-[32px] md:text-[48px] mx-5 md:ml-28 text-black">
-                Great People build Great Companies. Redefine your team experience.
+              Give your employees a voice, and listen to what they have to say
 
               </h1>
-              <p className='mx-5 md:mx-28 my-5 text-black'>Develop programs,structures and expereinces that empower leaders,managers and teams to be at their best </p>
+              <p className='mx-5 md:mx-28 my-5 text-black'>Culturelyft provides a safe and anonymous way for employees to share their feedback with you, so you can make informed decisions about your company culture.</p>
             </div>
           </div>
           <div class=""></div>
@@ -67,7 +78,7 @@ To better workplaces, <br/>
 
 The Culturelyft Team
 <button
-        type="submit"
+       onClick={sendEmail}
         className=" flex items-center justify-center gap-2 w-[80%] px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
       >
         Send Email
@@ -79,7 +90,7 @@ The Culturelyft Team
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                  Create and account
+                  Send Anonymous Feedback
               </h1>
               <form class="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                   <div>

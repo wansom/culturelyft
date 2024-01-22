@@ -108,3 +108,29 @@ export const createEmployeeProfile=async(payload)=> {
 	return
 	}
   };
+
+  export const sendAnonEmail=( data)=> {
+	// Define the request options
+	const requestOptions = {
+	  method: 'POST',
+	  headers: {
+		'Content-Type': 'application/json', // Set the content type to JSON
+	  },
+	  body: JSON.stringify(data), // Convert the data to JSON format
+	};
+  
+	// Use fetch to send the POST request
+	return fetch('https://us-central1-scanpal-f74da.cloudfunctions.net/barizi/mail', requestOptions)
+	  .then(response => {
+		// Check if the request was successful (status code 2xx)
+		if (!response.ok) {
+		  throw new Error(`HTTP error! Status: ${response.status}`);
+		}
+  
+		// Parse and return the response JSON
+		return response.json();
+	  })
+	  .catch(error => {
+		console.error('Error:', error);
+	  });
+  }
