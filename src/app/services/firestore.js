@@ -189,3 +189,15 @@ export const createEmployeeProfile=async(payload)=> {
 	  throw error;
 	}
   };
+
+  export const updateMessageStatus=async(data)=>{
+	const questionRef = doc(firestoreDb, QUESTIONS_PATH, data.id);
+
+	try {
+	  await updateDoc(questionRef, data.data);
+	  console.log('Question updated successfully!');
+	} catch (error) {
+	  console.error('Error updating question:', error.message);
+	  throw error;
+	}
+  }
