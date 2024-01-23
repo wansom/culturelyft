@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/navbar';
 import BlogCategories from './components/blog-categories';
 import './blog.css'
+import Link from 'next/link';
 
 export default function Home() {
   const [isOpen, setOpen] = useState(false);
@@ -87,11 +88,22 @@ export default function Home() {
 
               </h1>
               <p className='mx-5 md:mx-28 my-5 text-black'>Develop programs,structures and expereinces that empower leaders,managers and teams to be at their best </p>
-              <a href="/login"
-                class="md:ml-28 block w-[150px] px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple ml-10"
+              <div className='flex flex-col md:flex-row items-center gap-5 md:ml-28 mb-4'>
+              <Link href="/login"
+                class=" block  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
               >
-               Get Started
-              </a>
+               MY HR ACCOUNT
+              </Link>
+              <Link href="/anonymous"
+                class=" flex imtes-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 border-[#01382E]  border-solid border-2 rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple"
+              >
+               ANONYMOUS FEEDBACK<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+</svg>
+
+              </Link>
+              </div>
+           
             </div>
           </div>
           <div class=""></div>
