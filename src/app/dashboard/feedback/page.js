@@ -20,10 +20,6 @@ const DashboardFeedback = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [tab, setTab] = useState("All");
   const [allfeedback, setAllfeedback] = useState([
-    {
-      title: "ekiooo",
-      message: "cdmnkdkkfkk kfkkkfkf",
-    },
   ]);
   const [unreadfeedback, setUnreadfeedback] = useState([]);
   const [dismissedfeedback, setDismissedfeedback] = useState([]);
