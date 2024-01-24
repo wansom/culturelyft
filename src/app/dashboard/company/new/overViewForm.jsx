@@ -14,6 +14,8 @@ const OverviewForm = ({user,updateProgress}) => {
         departments: [],
         organizationType: '',
         city: '',
+        profileUpdate:'50%',
+        profileStage:'Company Culture'
       });
       const [animal, setAnimal] = useState(null);
       const [organizationType, setOrganizationType] = useState(null)
@@ -52,9 +54,8 @@ const OverviewForm = ({user,updateProgress}) => {
         const payload = {
           uid: user.id,
           data: formData,
-          profileUpdate:'50%'
+
         }
-        console.log(payload);
     
         try {
           await updateUserDetails(payload);
@@ -105,7 +106,7 @@ const OverviewForm = ({user,updateProgress}) => {
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="email"
               name="companyEmail"
-              value={formData.companyEmail}
+              value={user.companyEmail}
               onChange={handleChange}
               placeholder="hr@culturelyft.com"
             />

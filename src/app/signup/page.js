@@ -16,6 +16,8 @@ const Signup = () => {
     company: '',
     email: '',
     password: '',
+    profileUpdate:'0%',
+    profileStage:'overview'
   });
   const [loading,setLoading] =useState(false)
 

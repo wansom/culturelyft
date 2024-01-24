@@ -71,7 +71,8 @@ const CultureForm = ({user,updateProgress}) => {
         culture:[
           decisionMaking,communicationChannels,workStyle,teamDynamics,recognitionRewards,conflictResolution
         ],
-        profileUpdate:'75%'
+        profileUpdate:'75%',
+        profileStage:'Expected outcomes'
       }
     }
     try {

@@ -37,20 +37,20 @@ const NewCompanyProfile = () => {
 
       </div> */}
       
-      <div className="  rounded-[16px] bg-white w-full px-10 mx-10 my-4">
+      <div className="rounded-[16px] bg-white w-full px-10 mx-10 my-4">
         <div className="flex gap-1 flex-wrap my-4">
-        <ProgressBar stage={stage} percent={percent}/>
+        <ProgressBar stage={user.profileStage} percent={user.profileUpdate}/>
    
           
 
         </div>
-        {percent==='0%'&& (
+        {user.profileUpdate==='0%'&& (
          <OverviewForm user={user} updateProgress={handleProgressChange}/>
         )}
-        {percent ==='50%'&& (
+        {user.profileUpdate ==='50%'&& (
           <CultureForm  user={user} updateProgress={handleProgressChange}/>
         )}
-         {percent ==='75%'&& (
+         {user.profileUpdate ==='75%'|| user.profileUpdate ==='100%'&& (
           <ExpectedOutcomeForm  user={user} updateProgress={handleProgressChange}/>
         
         )}

@@ -62,7 +62,8 @@ const ExpectedOutcomeForm = ({user,updateProgress}) => {
             expectedOutcomes:[
              leadershipImprovement,teamImprovement,employeeMotivationObstacles,idealLeadership,dreamTeamEnvironment,aiImpact
             ],
-            profileUpdate:'100%'
+            profileUpdate:'100%',
+            profileStage:"Expected outcomes"
           }
         }
         try {
