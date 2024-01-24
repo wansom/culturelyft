@@ -9,7 +9,7 @@ const TeamMembers = () => {
   const { user, loading, error,employees } = useContext(UserContext);
     
   if (loading) return <MainLoader/>;
-  if (error) return <div>Error fetching user data: {error.message}</div>;
+  if (error) return <div>Error fetching  data: {error.message}</div>;
   return (
     <div>
 
