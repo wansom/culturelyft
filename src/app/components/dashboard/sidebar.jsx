@@ -34,7 +34,7 @@ const DashboardSidebar = () => {
         </div>
         <div class="dash-links -mt-14">
             <div className='link'>
-                <Link href="/dashboard" class={` ${pathname === '/' ? 'active' : ''}`}>
+                <Link href="/dashboard" class={` ${pathname === '/dashboard' ? 'active' : ''}`}>
                     <div class="link-icon">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path

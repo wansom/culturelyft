@@ -6,13 +6,14 @@ import { UserContext } from "@/app/services/DataContext";
 import { useContext } from "react";
 
 const TeamMembers = () => {
-  const { user, loading, error } = useContext(UserContext);
+  const { user, loading, error,employees } = useContext(UserContext);
     
   if (loading) return <MainLoader/>;
   if (error) return <div>Error fetching user data: {error.message}</div>;
   return (
     <div>
-    <UsersTable user={user}/>
+
+    <UsersTable user={user} employees={employees}/>
     </div>
   );
 };

@@ -90,7 +90,7 @@ export const createEmployeeProfile=async(payload)=> {
 
  export const fetchEmployeesData  = async (documentId) => {
 	try {
-	  const documentRef = doc(firestoreDb, USERS_PATH, documentId);
+	  const documentRef = doc(firestoreDb, 'CultureLyftClients', documentId);
 
 	  // Get a reference to the subcollection
 	  const subcollectionRef = collection(documentRef, 'employees');

@@ -12,15 +12,17 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [messages,setMessages] =useState(null)
+  const [employees, setEmployees]=useState([])
 
   useEffect(() => {
     const unsubscribeAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
-        const userDocRef = doc(collection(firestoreDb, 'CultureLyftClients'), userAuth.uid);
+        const documentRef = doc(firestoreDb, 'CultureLyftClients', userAuth.uid);
         const messagesRef = collection(firestoreDb, 'anonymousQuiz');
+        const employeesRef = collection(documentRef, 'employees');
   
         // Listen for real-time updates on the user document
-        const unsubscribeUser = onSnapshot(userDocRef, (doc) => {
+        const unsubscribeUser = onSnapshot(documentRef, (doc) => {
           if (doc.exists()) {
             const userData = doc.data();
             const userId = doc.id;
@@ -60,10 +62,27 @@ export const UserProvider = ({ children }) => {
           setLoading(false);
         });
   
+        // Listen for real-time updates on employees in the subcollection
+        const unsubscribeEmployees = onSnapshot(employeesRef, (querySnapshot) => {
+          const employees = [];
+  
+          querySnapshot.forEach((doc) => {
+            // For each document in the subcollection, add its data to the 'employees' array
+            employees.push({ id: doc.id, ...doc.data() });
+          });
+  
+          setEmployees(employees);
+          setLoading(false);
+        }, (error) => {
+          setError(error);
+          setLoading(false);
+        });
+  
         return () => {
-          // Unsubscribe from both listeners when the component is unmounted or no longer needs updates
+          // Unsubscribe from all listeners when the component is unmounted or no longer needs updates
           unsubscribeUser();
           unsubscribeMessages();
+          unsubscribeEmployees();
         };
       } else {
         setUser(null);
@@ -75,10 +94,11 @@ export const UserProvider = ({ children }) => {
     return unsubscribeAuth;
   }, []);
   
+  
 
 
   return (
-    <UserContext.Provider value={{ user, loading, error,messages }}>
+    <UserContext.Provider value={{ user, loading, error,messages,employees }}>
       {children}
     </UserContext.Provider>
   );
