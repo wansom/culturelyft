@@ -14,7 +14,7 @@ const DashboardSidebar = () => {
     }
     return ( 
         <nav class="dash-nav">
-        <div class="ins-lg -mt-10">
+        <div class="ins-lg -mt-6">
             <div class="dash-lg ">
             <Link href="/" class="nav-logo">
               <Image
@@ -58,6 +58,22 @@ const DashboardSidebar = () => {
                 </Link>
             </div>
             <div class="link">
+                <Link href="/dashboard/feedback"  class={` ${pathname === '/dashboard/feedback' ? 'active' : ''}`}>
+                    <div class="link-icon">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.4203 16.8753H5.58125C3.03611 16.8753 1 14.8392 1 12.2941V5.77851C1 3.23338 3.03611 1.19727 5.58125 1.19727H13.4203C15.9654 1.19727 18.0015 3.23338 18.0015 5.77851V12.2941C18.0015 14.8392 15.9654 16.8753 13.4203 16.8753Z"
+                                stroke="#ADC9CD" stroke-miterlimit="10" />
+                            <path d="M4.15576 5.98242L9.55145 10.9709L14.9471 5.98242" stroke="#ADC9CD"
+                                stroke-miterlimit="10" />
+                        </svg>
+                    </div>
+                    <div class="link-text">
+                      View Feedback
+                    </div>
+                </Link>
+            </div>
+            <div class="link">
                 <Link href="/dashboard/company/new"  class={` ${pathname === '/dashboard/company/new' ? 'active' : ''}`}>
                     <div class="link-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -83,22 +99,7 @@ const DashboardSidebar = () => {
                     </div>
                 </Link>
             </div>
-            <div class="link">
-                <Link href="/dashboard/feedback"  class={` ${pathname === '/dashboard/feedback' ? 'active' : ''}`}>
-                    <div class="link-icon">
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.4203 16.8753H5.58125C3.03611 16.8753 1 14.8392 1 12.2941V5.77851C1 3.23338 3.03611 1.19727 5.58125 1.19727H13.4203C15.9654 1.19727 18.0015 3.23338 18.0015 5.77851V12.2941C18.0015 14.8392 15.9654 16.8753 13.4203 16.8753Z"
-                                stroke="#ADC9CD" stroke-miterlimit="10" />
-                            <path d="M4.15576 5.98242L9.55145 10.9709L14.9471 5.98242" stroke="#ADC9CD"
-                                stroke-miterlimit="10" />
-                        </svg>
-                    </div>
-                    <div class="link-text">
-                      View Feedback
-                    </div>
-                </Link>
-            </div>
+
             <div class="link">
                 <Link href="/dashboard/surveys"  class={`${pathname === '/dashboard/surveys' ? 'active' : ''}`}>
                     <div class="link-icon">
@@ -212,8 +213,8 @@ const DashboardSidebar = () => {
                     <span class="name-initials">a</span>
                 </div>
                 <div class="pr-text">
-                    <h4>Amelia Kendi</h4>
-                    <p>ameliakendi@gm..</p>
+                    <h4>Need Help?</h4>
+                    <p>info@culturelyft.com</p>
                 </div>
                 <div class="pr-drpdwn">
                     <button class="pr-drpdwn-btn" onClick={userLogout}>

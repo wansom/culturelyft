@@ -25,7 +25,7 @@ const DashboardHeader = () => {
               />
             </svg>
           </div>
-          <div class="notify-num">8</div>
+          <div class="notify-num">0</div>
         </div>
       </div>
      );
