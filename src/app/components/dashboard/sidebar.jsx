@@ -32,11 +32,11 @@ const DashboardSidebar = () => {
 </Link>
             </div>
         </div>
-        <div class="dash-links -mt-14">
-            <div className='link'>
-                <Link href="/dashboard" class={` ${pathname === '/dashboard' ? 'active' : ''}`}>
+        <div class="dash-links -mt-8">
+            <div class="link">
+                <Link href="/dashboard"  class={` ${pathname === '/dashboard' ? 'active' : ''}`}>
                     <div class="link-icon">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M5.29388 7.54045H1.8325C0.814444 7.54045 0 6.72601 0 5.70795V2.24656C0 1.22851 0.814444 0.414062 1.8325 0.414062H5.29388C6.31194 0.414062 7.12638 1.22851 7.12638 2.24656V5.70795C7.22819 6.72601 6.31194 7.54045 5.29388 7.54045Z"
                                 fill="#1787E0" />
@@ -50,12 +50,23 @@ const DashboardSidebar = () => {
                                 d="M15.4741 17.2123H12.0127C10.9946 17.2123 10.1802 16.3979 10.1802 15.3798V11.9184C10.1802 10.9004 10.9946 10.0859 12.0127 10.0859H15.4741C16.4921 10.0859 17.3066 10.9004 17.3066 11.9184V15.3798C17.3066 16.2961 16.4921 17.2123 15.4741 17.2123Z"
                                 fill="#1787E0" />
                         </svg>
+
                     </div>
                     <div class="link-text">
                         Dashboard
                     </div>
-                    <div  class={`link ${pathname === '/dashboard' ? 'red-status' : ''}`}>
+                </Link>
+            </div>
+            <div class="link">
+                <Link href="/dashboard/company/new"  class={` ${pathname === '/dashboard/company/new' ? 'active' : ''}`}>
+                    <div class="link-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402M6.75 21A3.75 3.75 0 0 1 3 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 0 0 3.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008Z" />
+</svg>
 
+                    </div>
+                    <div class="link-text">
+                        Company Profile
                     </div>
                 </Link>
             </div>
@@ -89,7 +100,7 @@ const DashboardSidebar = () => {
                 </Link>
             </div>
             <div class="link">
-                <Link href="/dashboard/surveys"  class={`${pathname === '/dashboard/templates' ? 'active' : ''}`}>
+                <Link href="/dashboard/surveys"  class={`${pathname === '/dashboard/surveys' ? 'active' : ''}`}>
                     <div class="link-icon">
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.29446 11.788H13.8655" stroke="#ADC9CD" stroke-linecap="round"
@@ -163,21 +174,9 @@ const DashboardSidebar = () => {
                 </a>
             </div> */}
             
-            <div class="link">
-                <Link href="/dashboard/settings"  class={` ${pathname === '/dashboard/settings' ? 'active' : ''}`}>
-                    <div class="link-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402M6.75 21A3.75 3.75 0 0 1 3 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 0 0 3.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008Z" />
-</svg>
 
-                    </div>
-                    <div class="link-text">
-                        Account Settings
-                    </div>
-                </Link>
-            </div>
            
-            
+{/*             
             <div class="link">
                 <a href="/dashboard/chat"  class={` ${pathname === '/dashboard/chat' ? 'active' : ''}`}>
                     <div class="link-icon">
@@ -203,7 +202,7 @@ const DashboardSidebar = () => {
                         12
                     </div>
                 </a>
-            </div>
+            </div> */}
         </div>
         <div class="nav-profile">
           

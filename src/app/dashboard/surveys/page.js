@@ -6,8 +6,14 @@ import { useState } from "react";
 const DashboardSurveys = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="my-2 w-full px-10 space-y-2">
-      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+    <div className=" w-[60%] pl-10 space-y-2 h-fit  my-4 rounded-lg mx-auto flex items-center justify-between bg-white" >
+       <div className="space-y-2">
+       <h1 className="text-2xl font-bold">Feature Coming Soon</h1>
+       <p>Send targeted surveys and analyze real-time employee sentiment.Gain valuable insights into company culture, career development, and more.</p>
+       </div>
+      <img src="/icons/we_building.png" className="object contain h-[406px]"/>
+     
+      {/* <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="px-4 border-gray-100 border-2 border-solid my-8 mx-10 w-[75%] h-fit text-14 text-black rounded-lg">
           Occaecati est et illo quibusdam accusamus qui. Incidunt aut et molestiae ut facere aut. Est quidem iusto praesentium excepturi harum nihil tenetur facilis. Ut omnis voluptates nihil accusantium doloribus eaque debitis.
 
@@ -98,7 +104,7 @@ const DashboardSurveys = () => {
         </button>
 
 
-      </div>
+      </div> */}
 
 
 
