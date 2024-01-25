@@ -112,7 +112,7 @@ const DashboardSidebar = () => {
                         </svg>
                     </div>
                     <div class="link-text">
-                    Surveys
+                   Employee Surveys
                     </div>
                 </Link>
             </div>
