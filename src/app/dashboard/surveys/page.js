@@ -6,13 +6,18 @@ import { useState } from "react";
 const DashboardSurveys = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className=" w-[95%] px-10 space-y-2 h-fit  my-4 rounded-lg mx-auto flex items-center justify-between bg-white gap-10" >
+    <div className=" w-[95%] px-10 py-10 h-fit  my-4 rounded-lg mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between bg-white md:gap-10" >
        <div className="space-y-2">
-       <h1 className="text-2xl font-bold">Feature Coming Soon</h1>
+       <h1 className="text-2xl font-bold">Employee Surveys</h1>
        <p>Send targeted surveys and analyze real-time employee sentiment.Gain valuable insights into company culture, career development, and more.</p>
+       <button
+           
+            class=" uppercase block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple w-full"
+          >
+            Request feature
+          </button>
        </div>
-      {/* <img src="/icons/we_building.png" className="object contain h-[406px]"/> */}
-      <svg width="680" height="595" viewBox="0 0 680 595" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="680" height="595" viewBox="0 0 680 595" fill="none" xmlns="http://www.w3.org/2000/svg"  className="-mt-28 md:mt-0">
 <circle opacity="0.1" cx="340" cy="373.534" r="340" fill="#F1592A"/>
 <circle opacity="0.3" cx="340" cy="373.534" r="257.361" fill="#F1592A"/>
 <circle opacity="0.9" cx="340" cy="373.534" r="193.926" fill="white"/>

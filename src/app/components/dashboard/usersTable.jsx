@@ -22,290 +22,136 @@ const UsersTable = ({ user, employees }) => {
             {openModal === 2 && <StartSurvey user={user} />}
           </div>
         </Drawer>
-
-        <div class="claims-top">
-          <form action="" class="form">
-            <div class="fm-ctrl">
-              <label for="claim-id">Name </label> <br />
-              <div class="input-hold">
-                <input type="search" />
-                <div class="search-icon">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M6.16438 0.894531C9.18026 0.894531 11.6256 3.33931 11.6256 6.35579C11.6256 9.37227 9.18026 11.8171 6.16438 11.8171C3.1479 11.8171 0.703125 9.37227 0.703125 6.35579C0.703125 3.33931 3.1479 0.894531 6.16438 0.894531Z"
-                      stroke="#B5B5B5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M11.6658 10.9568C12.1628 10.9568 12.5656 11.3602 12.5656 11.8566C12.5656 12.3541 12.1628 12.757 11.6658 12.757C11.1688 12.757 10.7654 12.3541 10.7654 11.8566C10.7654 11.3602 11.1688 10.9568 11.6658 10.9568Z"
-                      stroke="#B5B5B5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+        <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                <div class="w-full md:w-1/2">
+                    <form class="flex items-center">
+                        <label for="simple-search" class="sr-only">Search</label>
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Search" required=""/>
+                        </div>
+                    </form>
                 </div>
-              </div>
-            </div>
-            <div class="fm-ctrl">
-              <label for="claim-id">Department</label> <br />
-              <select name="" id="">
-                <option value="">All</option>
-                {user?.departments.map((i) => (
-                  <option value="">{i}</option>
-                ))}
-              </select>
-            </div>
-            <div class="fm-ctrl">
-              <label for="">Filter</label>
-              <div class="filters">
-                <svg
-                  width="13"
-                  height="14"
-                  viewBox="0 0 13 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.77768 10.8398H1.39062"
-                    stroke="#130F26"
-                    stroke-width="0.95689"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8.52991 10.8405C8.52991 12.3873 8.99142 12.9024 10.3747 12.9024C11.758 12.9024 12.2195 12.3873 12.2195 10.8405C12.2195 9.29381 11.758 8.77869 10.3747 8.77869C8.99142 8.77869 8.52991 9.29381 8.52991 10.8405Z"
-                    stroke="#130F26"
-                    stroke-width="0.95689"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M7.83469 2.89407H12.2211"
-                    stroke="#130F26"
-                    stroke-width="0.95689"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M5.08087 2.89291C5.08087 1.34686 4.61936 0.831055 3.23605 0.831055C1.85213 0.831055 1.39062 1.34686 1.39062 2.89291C1.39062 4.43965 1.85213 4.95477 3.23605 4.95477C4.61936 4.95477 5.08087 4.43965 5.08087 2.89291Z"
-                    stroke="#130F26"
-                    stroke-width="0.95689"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-            </div>
-          </form>
-          {/* <div class="record-file-view px-4">
-            <button class="file-claim-btn" onClick={() => handleModalOpen(1)}>
-              Create New Employee Profile
-            </button>
-            <button class="file-claim-btn" onClick={() => handleModalOpen(2)}>
-              Start New Survey
-            </button>
-          </div> */}
-        </div>
-        <div class="record-table">
-          <table>
-            <thead>
-              <tr>
-                <th class="tbl-form">
-                  <div class="keep-me">
-                    <label class="ctn-check">
-                      <input type="checkbox" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Date Joined</th>
-                <th>Department</th>
-                <th>Status</th>
-                <th>View Full Profile</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-              {employees.length<0&&(
-                <tbody>
-                 {employees.map((member) => (
-                <tr>
-                  <td class="tbl-form">
-                    <div class="keep-me">
-                      <label class="ctn-check">
-                        <input type="checkbox" />
-                        <span class="checkmark"></span>
-                      </label>
-                    </div>
-                  </td>
-                  <td>{member.name}</td>
-                  <td>{member.email}</td>
-                  <td>{member.role}</td>
-                  <td>{member.date}</td>
-                  <td>{member.department}</td>
-                  <td class="green">Active</td>
-                  <td>
-                    <button class="view">View</button>
-                  </td>
-                  <td>
-                    <button>
-                      <svg
-                        width="15"
-                        height="4"
-                        viewBox="0 0 15 4"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.5794 2.15813H13.5966"
-                          stroke="#797979"
-                          stroke-width="2.74627"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M7.83805 2.15813H7.85527"
-                          stroke="#797979"
-                          stroke-width="2.74627"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M2.09672 2.15813H2.11394"
-                          stroke="#797979"
-                          stroke-width="2.74627"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
+                <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                    <button type="button" class="flex items-center justify-center text-white bg-[#01382E] hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                        <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                        </svg>
+                        Add Member
                     </button>
-                  </td>
-                </tr>
-              ))}
-                </tbody>
-              )}
+                    <div class="flex items-center space-x-3 w-full md:w-auto">
+                        <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
+                            <svg class="-ml-1 mr-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                            </svg>
+                            Actions
+                        </button>
+                        <div id="actionsDropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="actionsDropdownButton">
+                                <li>
+                                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mass Edit</a>
+                                </li>
+                            </ul>
+                            <div class="py-1">
+                                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete all</a>
+                            </div>
+                        </div>
+                        <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                            </svg>
+                            Filter
+                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                            </svg>
+                        </button>
+                        <div id="filterDropdown" class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
+                            <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose brand</h6>
+                            <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
 
-
-          </table>
-        </div>
-      </div>
-      {employees.length>0&&(
-                <div className="flex flex-col items-center justify-center w-full py-12">
-                    <img src="/icons/ic_folder_empty.svg"/>
-                    <p className="uppercase text-2xl font-semibold">No emploees added</p>
+                                <li class="flex items-center">
+                                    <input id="benq" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+                                    <label for="benq" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">BenQ (74)</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-               )
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-4 py-3">Full Name</th>
+                            <th scope="col" class="px-4 py-3">Email</th>
+                            <th scope="col" class="px-4 py-3">Role</th>
+                            <th scope="col" class="px-4 py-3">Date Joined</th>
+                            <th scope="col" class="px-4 py-3">Department</th>
+                            <th scope="col" class="px-4 py-3">
+                                <span class="sr-only">Actions</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
 
-}
-      <div class="record-pagination">
-        <div class="rec-pg-contain">
-          <div class="record-num">Records: 1-7 of 7</div>
-          <div class="record-pg">
-            <div class="rec-pg-select">
-              <button>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4.68488 1.44873L0.835938 5.29767L4.68488 9.14662"
-                    stroke="#8F8F8F"
-                    stroke-width="0.962236"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M9.49738 1.44873L5.64844 5.29767L9.49738 9.14662"
-                    stroke="#8F8F8F"
-                    stroke-width="0.962236"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-              <button>
-                <svg
-                  width="6"
-                  height="10"
-                  viewBox="0 0 6 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.17707 1.44873L1.32812 5.29767L5.17707 9.14662"
-                    stroke="#8F8F8F"
-                    stroke-width="0.962236"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
+                    </tbody>
+                </table>
             </div>
-            <div class="rec-pg-num">
-              <span>Page</span>
-              <input type="text" value="1" />
-              <span>of 1</span>
-            </div>
-            <div class="rec-pg-select">
-              <button>
-                <svg
-                  width="6"
-                  height="10"
-                  viewBox="0 0 6 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.72137 9.10889L4.57031 5.25994L0.721371 1.411"
-                    stroke="#8F8F8F"
-                    stroke-width="0.962236"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-              <button>
-                <svg
-                  width="11"
-                  height="10"
-                  viewBox="0 0 11 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.20574 9.10889L10.0547 5.25994L6.20575 1.411"
-                    stroke="#8F8F8F"
-                    stroke-width="0.962236"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.40106 9.10889L5.25 5.25994L1.40106 1.411"
-                    stroke="#8F8F8F"
-                    stroke-width="0.962236"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
+            <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+                <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+                    Showing
+                    <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
+                    of
+                    <span class="font-semibold text-gray-900 dark:text-white">1000</span>
+                </span>
+                <ul class="inline-flex items-stretch -space-x-px">
+                    <li>
+                        <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <span class="sr-only">Previous</span>
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-current="page" class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <span class="sr-only">Next</span>
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </div>
+    </section>
       </div>
+
+
     </>
   );
 };
