@@ -209,7 +209,7 @@ const DashboardSidebar = ({toggleIsOpen}) => {
           
             <div class="profile">
                 <div class="pr-img">
-                    <img src="/profile.png" alt="Insurance profile image"/>
+                    <img src="/Profile.png" alt="Insurance profile image"/>
                     <span class="name-initials">a</span>
                 </div>
                 <div class="pr-text">
