@@ -1,7 +1,25 @@
+'use client'
+import { useState } from "react";
+import Drawer from "../drawer";
+import DashboardSidebar from "./sidebar";
+
 const DashboardHeader = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+  
     return ( 
         <div class="tp-dash-vw w-full">
-        <span></span>
+    <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+      <DashboardSidebar toggleIsOpen={toggleIsOpen}/>
+    </Drawer>
+
+        <span className="block lg:hidden" onClick={()=>{setIsOpen(true)}}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+        </span>
         <div class="dash-notifications">
           <div class="bell">
             <svg

@@ -1,8 +1,10 @@
+
 import { Inter } from 'next/font/google'
 import '../dashboard.css'
 import DashboardSidebar from '../components/dashboard/sidebar'
 import DashboardHeader from '../components/dashboard/header'
 import { DataContextProvider, UserProvider } from '../services/DataContext'
+import Drawer from '../components/drawer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,7 +20,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main class="dash-view claims-views clients-view flex">
           <UserProvider>
-          <DashboardSidebar/>
+         <div className='hidden lg:block'>
+         <DashboardSidebar/>
+         </div>
           <div className='w-full'>
             <DashboardHeader/>
           {children}
