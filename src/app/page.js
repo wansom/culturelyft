@@ -87,7 +87,7 @@ export default function Home() {
                 Great People build Great Companies. Redefine your team experience.
 
               </h1>
-              <p className='mx-5 md:mx-28 my-5 text-black'>Develop programs,structures and expereinces that empower leaders,managers and teams to be at their best </p>
+              <p className='mx-5 md:mx-28 my-5 text-black'>A platform to help develop programs,structures and experiences that empower leaders,people managers and teams to be at their best </p>
               <div className='flex flex-col md:flex-row items-center gap-5 md:ml-28 mb-4'>
               <Link href="/login"
                 class=" block  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
@@ -128,8 +128,8 @@ export default function Home() {
           <div class="md:basis-1/2">
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Understand your employees</h1>
-              <p className='z-10 mb-2'>Listen to your employees so you can make better decisions and drive meaningful change in your organization.</p>
-              <a href='#contact' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <p className='z-10 mb-2'>Create digital profiles of your employees that go beyond skills so you can make better decisions and drive meaningful change in your organization.</p>
+              <a href='login' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg>
               </a>
@@ -137,8 +137,8 @@ export default function Home() {
             </div>
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Build high-performing teams</h1>
-              <p className='z-10 mb-2'>Build high-performing teams by enabling ongoing conversations with anytime feedback, goal tracking, development-focused reviews, and better 1‑on‑1s.</p>
-              <a href='#contact' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <p className='z-10 mb-2'>Empower employees to voice their opinions and contribute to a positive work environment through anonymous and identified feedback knowing that their feedback</p>
+              <a href='login' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></a>
               <hr className='h-[1px] bg-black w-full my-2' />
@@ -146,7 +146,7 @@ export default function Home() {
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Develop your people</h1>
               <p className='z-10 mb-2'>Grow and retain your people with personalized, continuous development that's easy to measure and scale.</p>
-              <a href='#contact' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <a href='login' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></a>
               <hr className='h-[1px] bg-black w-full my-2' />
