@@ -37,7 +37,7 @@ const NewCompanyProfile = () => {
 
       </div> */}
       
-      <div className="rounded-[16px] bg-white w-full px-10 mx-10 my-4">
+      <div className="rounded-[16px] bg-white w-full md:px-10 px-2 mx-2 md:mx-10 my-4">
         <div className="flex gap-1 flex-wrap my-4">
         <ProgressBar stage={user.profileStage} percent={user.profileUpdate}/>
    

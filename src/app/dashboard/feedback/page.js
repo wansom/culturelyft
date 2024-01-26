@@ -119,9 +119,9 @@ const DashboardFeedback = () => {
   if (loading) return <MainLoader />;
   if (error) return <div>Error fetching user data: {error.message}</div>;
   return (
-    <div className="m-3 bg-gray-200 rounded-lg shadow-sm  w-[96%] flex gap-3">
+    <div className="m-3 bg-gray-200 rounded-lg shadow-sm  w-[96%] flex flex-col md:flex-row gap-3">
       <ToastContainer />
-      <div className="basis-1/5 h-screen ml-2 py-10 space-y-5">
+      <div className="basis-1/5 h-screen ml-2 py-2 md:py-10 md:space-y-5">
         <div
           className={
             tab === "All"
