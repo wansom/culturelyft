@@ -17,7 +17,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribeAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
-        const documentRef = doc(firestoreDb, 'CultureLyftClients', userAuth.uid);
+        const documentRef = doc(firestoreDb, 'users', userAuth.uid);
         const messagesRef = collection(firestoreDb, 'anonymousQuiz');
         const employeesRef = collection(documentRef, 'employees');
   

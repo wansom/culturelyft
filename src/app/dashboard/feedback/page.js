@@ -152,7 +152,7 @@ const DashboardFeedback = () => {
           </div>
 
           <div className="rounded-full bg-[#2D3B79] h-10 w-10 text-8 flex items-center justify-center text-[#45B9FB]">
-            {messages.length}
+            {messages?.length}
           </div>
         </div>
         {/* <div className={tab==='Unread'?'flex justify-between items-center bg-white rounded-lg p-2 ':'flex justify-between items-center rounded-lg p-2 bg-transparent'} onClick={()=>{setTab('Unread')}}>
@@ -252,7 +252,7 @@ const DashboardFeedback = () => {
             {messages.length == 0 && (
               <EmptyState message={"This folder is empty"} />
             )}
-            {messages.length > 0 && (
+            {messages?.length > 0 && (
               <div className="h-full w-full">
                 {messages.map((message, index) => (
                   <div
@@ -389,10 +389,10 @@ const DashboardFeedback = () => {
       {tab === "Replied" && (
                <>
                <div className="basis-2/5  h-screen  px-5 py-10 space-y-3 bg-white rounded-lg my-5">
-                 {repliedMessages.length == 0 && (
+                 {repliedMessages?.length == 0 && (
                    <EmptyState message={"This folder is empty"} />
                  )}
-                 {repliedMessages.length > 0 && (
+                 {repliedMessages?.length > 0 && (
                    <div className="h-full w-full">
                      {repliedMessages.map((message, index) => (
                        <div

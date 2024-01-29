@@ -17,7 +17,8 @@ const Signup = () => {
     email: '',
     password: '',
     profileUpdate:'0%',
-    profileStage:'overview'
+    profileStage:'overview',
+    messages:[]
   });
   const [loading,setLoading] =useState(false)
 
@@ -59,14 +60,15 @@ setLoading(true)
       setLoading(false)
       return;
     }
-     await createUser(formData).then((user)=>{
-      console.log(user.user.uid)
+     await createUser(formData).then(async(user)=>{
       const payload ={
         uid: user.user.uid,
         data:formData,
         profileUpdate:'0%'
       }
-      createNewUser(payload)
+      await createNewUser(payload,() => {
+       router.push('/dashboard', { scroll: false })
+      })
       setLoading(false)
       toast.success('🦄 Account Created Successfully!', {
         position: "top-right",
@@ -78,7 +80,7 @@ setLoading(true)
         progress: undefined,
         theme: "light",
         })
-        router.push('/dashboard', { scroll: false })
+        
      }).catch((err)=>{
       setLoading(false)
       toast.error(` 🦄 ${err.message} !`, {

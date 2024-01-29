@@ -22,7 +22,7 @@ import {
 	where
 } from 'firebase/firestore'
 
-const USERS_PATH = 'CultureLyftClients'
+const USERS_PATH = 'users'
 const QUESTIONS_PATH='anonymousQuiz'
 
 export const firestoreListener = onSnapshot
@@ -63,8 +63,16 @@ const userRef = userId => {
 export const getAllUsers = () => {
 	return getDocuments(query(usersRef))
 }
-export const createNewUser=(payload)=>{
-return setDoc(userRef(payload.uid),payload.data)
+export const createNewUser=(payload,navigateCallback)=>{
+return setDoc(userRef(payload.uid),payload.data) .then(() => {
+	// Document set successfully
+	console.log('Document set successfully');
+	navigateCallback();
+  })
+  .catch((error) => {
+	// Handle errors if the document set fails
+	console.error('Error setting document:', error);
+  });
 }
 // Update user details function
 export const updateUserDetails = async (payload) => {
@@ -90,7 +98,7 @@ export const createEmployeeProfile=async(payload)=> {
 
  export const fetchEmployeesData  = async (documentId) => {
 	try {
-	  const documentRef = doc(firestoreDb, 'CultureLyftClients', documentId);
+	  const documentRef = doc(firestoreDb, 'users', documentId);
 
 	  // Get a reference to the subcollection
 	  const subcollectionRef = collection(documentRef, 'employees');
