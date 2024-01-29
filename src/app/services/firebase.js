@@ -5,15 +5,14 @@ import { getStorage } from 'firebase/storage'
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDMsPInM58uPksNu3E9iQ5EhnWBz67CPeQ",
-    authDomain: "scanpal-f74da.firebaseapp.com",
-    databaseURL: "https://scanpal-f74da.firebaseio.com",
-    projectId: "scanpal-f74da",
-    storageBucket: "scanpal-f74da.appspot.com",
-    messagingSenderId: "702443834173",
-    appId: "1:702443834173:web:eea09b202c6abcb5da1354",
-    measurementId: "G-9MVD7S5CEC"
-  };
+  apiKey: "AIzaSyCrQudI-0Iu6d8DDPj6q2ft_C4hb7TKmbY",
+  authDomain: "culturelyft-81292.firebaseapp.com",
+  projectId: "culturelyft-81292",
+  storageBucket: "culturelyft-81292.appspot.com",
+  messagingSenderId: "394178844455",
+  appId: "1:394178844455:web:f9dc674db3696aa8897b02",
+  measurementId: "G-F222Z01N2Z"
+};
 
 const app=initializeApp(firebaseConfig)
 

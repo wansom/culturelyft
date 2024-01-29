@@ -121,7 +121,7 @@ export const createEmployeeProfile=async(payload)=> {
 	};
   
 	// Use fetch to send the POST request
-	return fetch('https://us-central1-scanpal-f74da.cloudfunctions.net/barizi/mail', requestOptions)
+	return fetch('https://us-central1-culturelyft-81292.cloudfunctions.net/culturelyft/mail', requestOptions)
 	  .then(response => {
 		// Check if the request was successful (status code 2xx)
 		if (!response.ok) {
