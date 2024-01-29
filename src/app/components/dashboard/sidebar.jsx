@@ -69,7 +69,7 @@ const DashboardSidebar = ({toggleIsOpen}) => {
                         </svg>
                     </div>
                     <div class="link-text">
-                      View Feedback
+                      Anonymous Feedback
                     </div>
                 </Link>
             </div>
@@ -112,7 +112,7 @@ const DashboardSidebar = ({toggleIsOpen}) => {
                         </svg>
                     </div>
                     <div class="link-text">
-                   Employee Surveys
+                   Employee Engagement
                     </div>
                 </Link>
             </div>

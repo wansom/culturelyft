@@ -5,6 +5,7 @@ import { useState } from "react";
 import Select from "react-tailwindcss-select";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import ButtonLoader from "../button-loader";
 
 const EmployeeOnboarding = ({user}) => {
     const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ const EmployeeOnboarding = ({user}) => {
       });
       const [animal, setAnimal] = useState(null);
       const [profileType, setprofileType] = useState(null)
+      const [loading,setLoading] =useState(false)
 
       const handleDepartmentChange = (value) => {
         setAnimal(value)
@@ -52,18 +54,34 @@ const EmployeeOnboarding = ({user}) => {
       };
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true)
         try {
-          await createEmployeeProfile(formData);
-          toast.success(` 🦄 Details updated successfuly!`, {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
+          await createEmployeeProfile(formData).then((res)=>{
+            setLoading(false)
+            toast.success(` 🦄 Details updated successfuly!`, {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            })
+          }).catch(()=>{
+            setLoading(false)
+            toast.error(` 🦄 something went wrong!`, {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            })
           })
+
         } catch (error) {
           toast.error(` 🦄 something went wrong!`, {
             position: "top-right",
@@ -136,7 +154,7 @@ const EmployeeOnboarding = ({user}) => {
               options={departments}
             />
           </label>
-          <label className="block text-sm w-full">
+          {/* <label className="block text-sm w-full">
             <span className="text-gray-700 dark:text-gray-400">Which Profile Areas do you want to create</span>
             <Select className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               
@@ -145,14 +163,14 @@ const EmployeeOnboarding = ({user}) => {
               options={profileTypes}
               isMultiple
             />
-          </label>
+          </label> */}
         </div>
 
         <button
           type="submit"
-          className="block w-[200px] px-4 py-2 mt-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+          className="flex items-center justify-center gap-2 w-[200px] px-4 py-2 mt-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
         >
-          Save And Continue
+          Save And Continue  {loading&&(<ButtonLoader/>)}
         </button>
       </form>
     </>);
