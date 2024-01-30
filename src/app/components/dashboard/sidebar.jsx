@@ -8,7 +8,6 @@ const DashboardSidebar = ({toggleIsOpen}) => {
     const pathname = usePathname()
     const userLogout=()=>{
         logout().then(()=>{
-            console.log('user logged out')
             router.push('/login')
         })
     }
