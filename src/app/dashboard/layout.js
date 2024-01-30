@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
          <div className='hidden lg:block lg:basis-1/4 bg-[#01382E]'>
          <DashboardSidebar/>
          </div>
-          <div className='lg:basis-3/4 bg-gray-100'>
+          <div className=' w-full basis-4/4 lg:basis-3/4 bg-gray-100'>
             <DashboardHeader/>
           {children}
 
