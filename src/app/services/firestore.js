@@ -129,7 +129,7 @@ export const createEmployeeProfile=async(payload)=> {
 	};
   
 	// Use fetch to send the POST request
-	return fetch('https://us-central1-culturelyft-81292.cloudfunctions.net/culturelyft/mail', requestOptions)
+	return fetch('http://127.0.0.1:5001/culturelyft-81292/us-central1/culturelyft/mail', requestOptions)
 	  .then(response => {
 		// Check if the request was successful (status code 2xx)
 		if (!response.ok) {
