@@ -2,8 +2,11 @@
 'use client'
 import { useState } from 'react';
 import Image from 'next/image'
+import clsx from 'clsx';
+import Link from 'next/link';
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
+    const [openDropDown,setOpenDropDown]=useState(false)
     return ( 
         <nav class="nav ">
         <div class="nav-container container mx-auto px-5 lg:px-28 border-b-[1px] border-solid border-black">
@@ -25,9 +28,28 @@ const Navbar = () => {
                 </svg>
               </span>
             </div>
-            <a href="/anonymous" class="active">Anonymous Reporting</a>
-            <a href="/myissue">Track My Case</a>
-            <a href="/#culture">Pulse Suveys</a>
+            <div class="relative inline-block text-left">
+  <div  onClick={()=>{setOpenDropDown(!openDropDown)}} onMouseEnter={()=>{setOpenDropDown(!openDropDown)}}>
+    <a className='active'>
+  Anonymous Reporting
+    </a>
+  </div>
+
+  <div class={clsx('absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',{
+    'hidden':!openDropDown,
+    'block':openDropDown
+  })} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="py-1" role="none">
+      <Link href="/anonymous" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Report Issue</Link>
+      <Link href='/myissue' class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Track Issue</Link>
+     
+
+    </div>
+  </div>
+</div>
+            <a href="/about-id" >Employee Engagement</a>
+            <a href="/#about-id">Rewards & Appreciation</a>
+            <a href="/#culture">Experiences</a>
             <a href="/blog">Resources</a>
             <button href="/login"
                 class=" block w-[200px] px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple ml-10"
