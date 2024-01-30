@@ -1,7 +1,7 @@
 import Link from "next/link";
 const ProfileCard = ({ user, title }) => {
   return (
-    <div className="welcome-card h-fit  md:h-[300px] rounded-[16px] bg-[#D7F5E8] md:basis-2/3 w-full p-5 md:p-10 flex">
+    <div className="welcome-card h-fit rounded-[16px] bg-[#D7F5E8] md:basis-2/3 w-full p-5 md:p-10 flex">
       <div>
         <h2 className="text-[32px] font-bold">
           Welcome back 👋 <br />
@@ -11,13 +11,13 @@ const ProfileCard = ({ user, title }) => {
         <div className="flex flex-col md:flex-row gap-2">
           <Link
             href="/dashboard/company/new"
-            class="block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+            class=" px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple whitespace-nowrap flex items-center"
           >
             Complete Company Profile
           </Link>
           <Link
             href="/dashboard/feedback"
-            class="block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 bg-transparent border border-[#01382E] rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple"
+            class="flex items-center whitespace-nowrap px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 bg-transparent border border-[#01382E] rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple"
           >
             View Feedback
           </Link>

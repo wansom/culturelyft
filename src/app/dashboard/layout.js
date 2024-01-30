@@ -18,12 +18,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main class="dash-view claims-views clients-view flex">
+        <main class="flex overflow-x-hidden">
           <UserProvider>
-         <div className='hidden lg:block'>
+         <div className='hidden lg:block lg:basis-1/4 bg-[#01382E]'>
          <DashboardSidebar/>
          </div>
-          <div className='w-full'>
+          <div className='lg:basis-3/4 bg-gray-100'>
             <DashboardHeader/>
           {children}
 
