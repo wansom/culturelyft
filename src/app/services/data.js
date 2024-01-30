@@ -268,3 +268,18 @@ export const leadershipImprovementQuestions = [
     {value:'Diversity and Inclusion',label:'Diversity and Inclusion'},
     {value:'Employee Wellness',label:'Employee Wellness'},
   ]
+  export const teamExperiences=[
+    "Learning",
+   " Entertainment",
+    "Family-Friendly",
+   " Food & Drink",
+    "Sports",
+    "Get Outside",
+    "Wellness",
+    "In-Home",
+   " Travel",
+   " Camping",
+   "Book Club",
+   "Volunteer Challenges"
+
+  ]
