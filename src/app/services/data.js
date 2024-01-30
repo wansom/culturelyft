@@ -283,3 +283,15 @@ export const leadershipImprovementQuestions = [
    "Volunteer Challenges"
 
   ]
+  export const rewards=[
+    "Peer-to-peer recognition",
+    "Managerial recognition",
+    "Milestone Rewards",
+    "Anniversary celebrations",
+    "Birthday celebrations",
+    "Sales Incentives",
+    "Referral Incentives",
+    "Wellbeing Gifts",
+    "Onboarding Gifts",
+    "Marriage & Wedding Celebrations"
+  ]
