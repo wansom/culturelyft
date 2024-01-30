@@ -301,38 +301,8 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
           </Link>
         </div>
 
-        <div class="link">
-          <a href="renewals.html">
-            <div class="link-icon">
-              <svg
-                width="18"
-                height="19"
-                viewBox="0 0 18 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.6605 4.67282C16.6725 4.67282 17.493 3.85239 17.493 2.84033C17.493 1.82827 16.6725 1.00781 15.6605 1.00781C14.6484 1.00781 13.828 1.82827 13.828 2.84033C13.828 3.85239 14.6484 4.67282 15.6605 4.67282Z"
-                  stroke="#ADC9CD"
-                  stroke-miterlimit="10"
-                />
-                <path
-                  d="M3.84863 12.2057C5.0703 10.8823 6.39377 9.66061 7.61544 8.33714C8.22627 9.25339 8.93891 10.0678 9.54974 10.9841C10.7714 9.3552 11.8913 7.82811 13.1129 6.19922"
-                  stroke="#ADC9CD"
-                  stroke-miterlimit="10"
-                />
-                <path
-                  d="M12.1986 1.61914H4.86861C2.73069 1.61914 1 3.34982 1 5.48774V13.734C1 15.8719 2.73069 17.6026 4.86861 17.6026H13.1149C15.2528 17.6026 16.9835 15.8719 16.9835 13.734V6.40401"
-                  stroke="#ADC9CD"
-                  stroke-miterlimit="10"
-                />
-              </svg>
-            </div>
-            <div class="link-text">Aprreciation & Rewards</div>
-          </a>
-        </div>
 
-        <div class="link">
+        {/* <div class="link">
           <a
             href="/dashboard/chat"
             class={` ${pathname === "/dashboard/chat" ? "active" : ""}`}
@@ -370,7 +340,7 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
             <div class="link-text">Inbox</div>
             <div class="inbox-msgs">12</div>
           </a>
-        </div>
+        </div> */}
       </div>
       <div class="nav-profile">
         <div class="profile">

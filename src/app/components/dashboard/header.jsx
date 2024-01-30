@@ -4,9 +4,12 @@ import Drawer from "../drawer";
 import DashboardSidebar from "./sidebar";
 import { useRouter } from "next/navigation";
 import { logout } from "@/app/services/auth";
+import clsx from "clsx";
+import Link from "next/link";
 
 const DashboardHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropDown,setOpenDropDown]=useState(false)
   const toggleIsOpen = () => {
     setIsOpen(!isOpen);
   };
@@ -29,13 +32,28 @@ const DashboardHeader = () => {
 </svg>
         </span>
         <div class="dash-notifications flex items-center gap-2">
-          <div className="bg-gray-800 h-10 w-10 rounded-full text-white flex items-center justify-center" onClick={userLogout}>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+ 
+          <div class="relative inline-block text-left">
+  <div  onClick={()=>{setOpenDropDown(!openDropDown)}} onMouseEnter={()=>{setOpenDropDown(!openDropDown)}}>
+    <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-full bg-gray-800 text-white p-2 text-sm font-semibold  shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:text-black" id="menu-button" aria-expanded="true" aria-haspopup="true">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
 </svg>
+    </button>
+  </div>
 
+  <div class={clsx('absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',{
+    'hidden':!openDropDown,
+    'block':openDropDown
+  })} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="py-1" role="none">
+      <Link href="/dashboard/company/new" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Company Profile</Link>
+      <button onClick={userLogout} class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Sign Out</button>
+     
 
-          </div>
+    </div>
+  </div>
+</div>
           <div class="bell">
             <svg
               width="34"
