@@ -1,13 +1,103 @@
 "use client";
 import Drawer from "@/app/components/drawer";
+import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
 
 const DashboardSurveys = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropDown,setOpenDropDown]=useState(false)
   return (
-    <div className=" w-[95%] px-10 py-10 h-fit  my-4 rounded-lg mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between bg-white md:gap-10">
-      <div className="space-y-2 md:basis-1/2">
+
+  <div className=" w-[95%] px-10 py-10 h-fit  my-4 rounded-lg mx-auto bg-white">
+      <div className=" flex flex-wrap items-center justify-start  md:gap-8">
+      {/* <div class="relative inline-block text-left">
+  <div  onClick={()=>{setOpenDropDown(!openDropDown)}}>
+    <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+    Recognition and Appreciation
+      <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <div class={clsx('absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',{
+    'hidden':!openDropDown,
+    'block':openDropDown
+  })} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="py-1" role="none">
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Peer-to-peer recognition</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Managerial recognition</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Anniversary celebrations</a>
+      <form method="POST" action="#" role="none" onSubmit={(e)=>e.preventDefault()}>
+        <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Milestone Rewards</button>
+      </form>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Birthday celebrations</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Sales Incentives</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Referral Incentives</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Wellbeing Gifts</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Onboarding Gifts</a>
+    </div>
+  </div>
+</div> */}
+<div class="relative inline-block text-left">
+    <button type="button" class=" whitespace-nowrap inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+    360-degree feedback
+    <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+</div>
+<div class="relative inline-block text-left">
+    <button type="button" class=" whitespace-nowrap inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+    Peer-to-peer feedback
+    <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+</div>
+<div class="relative inline-block text-left">
+    <button type="button" class=" whitespace-nowrap inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+    Managerial feedback
+    <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+</div>
+<div class="relative inline-block text-left">
+    <button type="button" class=" whitespace-nowrap inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+    Pulse surveys
+    <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+</div>
+<div class="relative inline-block text-left">
+    <button type="button" class=" whitespace-nowrap inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+    Onboarding surveys
+    <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+</div>
+<div class="relative inline-block text-left">
+    <button type="button" class=" whitespace-nowrap inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+    Exit interviews
+    <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+</div>
+<button type="button" class="flex items-center justify-center text-white bg-[#01382E] hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" onClick={()=>{setIsOpen(true)}}>
+                        <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                        </svg>
+                        Create New
+                    </button>
+
+
+
+      {/* <div className="space-y-2 md:basis-1/2">
         <h1 className="text-2xl font-bold">Employee Engagement Center</h1>
         <p>
           Encourage open communication and feedback with both anonymous and
@@ -1099,9 +1189,12 @@ const DashboardSurveys = () => {
           d="M632.935 587.479C632.935 587.657 501.67 587.809 339.768 587.809C177.866 587.809 46.5753 587.657 46.5753 587.479C46.5753 587.301 177.815 587.148 339.768 587.148C501.721 587.148 632.935 587.288 632.935 587.479Z"
           fill="#263238"
         />
-      </svg>
+      </svg> */}
 
-      {/* <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+     
+    </div>
+    {/* <div>
+       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="px-4 border-gray-100 border-2 border-solid my-8 mx-10 w-[75%] h-fit text-14 text-black rounded-lg">
           Occaecati est et illo quibusdam accusamus qui. Incidunt aut et molestiae ut facere aut. Est quidem iusto praesentium excepturi harum nihil tenetur facilis. Ut omnis voluptates nihil accusantium doloribus eaque debitis.
 
@@ -1192,8 +1285,9 @@ const DashboardSurveys = () => {
         </button>
 
 
-      </div> */}
-    </div>
+      </div>
+    </div> */}
+  </div>
   );
 };
 
