@@ -56,7 +56,7 @@ const NewCompanyProfile = () => {
         
         )}
          {user.profileUpdate ==='100%'&& (
-        <div className="h-full w-full flex flex-col items-center justify-center py-20">
+        <div className=" flex flex-col items-center justify-center py-20">
           <img src="/success.png"/>
           <Link
             href="/dashboard"

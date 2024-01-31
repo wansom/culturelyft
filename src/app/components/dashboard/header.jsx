@@ -21,7 +21,7 @@ const DashboardHeader = () => {
   }
   
     return ( 
-        <div class="tp-dash-vw w-full">
+        <div class="tp-dash-vw border-b-solid border-b-[2px] border-b-gray-300">
     <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
       <DashboardSidebar toggleIsOpen={toggleIsOpen}/>
     </Drawer>

@@ -12,9 +12,9 @@ const Dashboard = () => {
   if (error) return <div>Error fetching user data: {error.message}</div>;
   return (
     <div className="px-5 pt-5">
-      <div className="flex flex-col md:flex-row gap-10">
+      <div className="flex flex-col md:flex-row gap-6">
         <ProfileCard user={user} title={'Engagement, performance & development platform you need to build an employee experience people love.'}/>
-        <div className="clients-top-card h-[300px] rounded-[16px] bg-white  md:basis-1/3 w-full">
+        <div className="clients-top-card h-fit rounded-[16px] bg-white  md:basis-1/3 w-full">
           <div>
             <h2 className="text-2xl font-bold ">{employees.length}</h2>
             <div className="flex items-center gap-2">

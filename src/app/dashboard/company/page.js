@@ -1,5 +1,5 @@
 const CompanyProfile = () => {
-    return ( <div>
+    return ( <div className="w-full">
         <h1>Company Profile</h1>
     </div> );
 }
