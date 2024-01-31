@@ -55,7 +55,7 @@ const Navbar = () => {
             <a href="/#culture">Experiences</a>
             <a href="/blog">Resources</a>
             <button onClick={()=>{router.push('https://calendly.com/culturelyft/30min')}}
-                class=" block w-[200px] px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+                class=" block w-[200px] px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple lg:ml-10"
               >
                Speak To Our Team
               </button>
