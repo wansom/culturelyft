@@ -80,10 +80,10 @@ const Anonymous = () => {
     });
   };
   return (
-    <main className="container mx-auto overflow-x-hidden">
+    <main className=" overflow-x-hidden">
       <Navbar />
       <ToastContainer />
-      <section class="banner flex flex-col md:flex-row">
+      <section class="container mx-auto banner flex flex-col md:flex-row">
         <div class="banner-container basis-2/2 md:basis=1/3">
           <div class="bn-text mt-10">
             <div class="bn-txt-holder">

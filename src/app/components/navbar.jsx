@@ -50,7 +50,7 @@ const Navbar = () => {
     </div>
   </div>
 </div>
-            <a href="/about-id" >Employee Engagement</a>
+            <a href="/#about-id" >Employee Engagement</a>
             <a href="/#about-id">Rewards & Appreciation</a>
             <a href="/#culture">Experiences</a>
             <a href="/blog">Resources</a>
