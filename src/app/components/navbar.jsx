@@ -4,18 +4,21 @@ import { useState } from 'react';
 import Image from 'next/image'
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from "next/navigation";
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
     const [openDropDown,setOpenDropDown]=useState(false)
+    const router =useRouter()
+  
     return ( 
         <nav class="nav ">
-        <div class="nav-container container mx-auto px-5 lg:px-28 border-b-[1px] border-solid border-black">
+        <div class="flex  items-center justify-center container-fluid mx-auto px-5 border-b-[1px] border-solid border-black">
           <div class="nav logo">
             <a href="/" class="nav-logo">
               <Image
                 src="/logo.png"
                 alt="logo"
-                width={150}
+                width={120}
                 height={100}
               />
             </a>
@@ -51,8 +54,8 @@ const Navbar = () => {
             <a href="/#about-id">Rewards & Appreciation</a>
             <a href="/#culture">Experiences</a>
             <a href="/blog">Resources</a>
-            <button href="/login"
-                class=" block w-[200px] px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple ml-10"
+            <button onClick={()=>{router.push('https://calendly.com/culturelyft/30min')}}
+                class=" block w-[200px] px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
               >
                Speak To Our Team
               </button>
