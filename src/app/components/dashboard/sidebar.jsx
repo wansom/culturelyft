@@ -280,7 +280,7 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
 
 
         <div class="link">
-          <a
+          <Link
             href="/dashboard/chat"
             class={` ${pathname === "/dashboard/chat" ? "active" : ""}`}
           >
@@ -316,7 +316,7 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
             </div>
             <div class="link-text">Inbox</div>
             <div class="inbox-msgs">1</div>
-          </a>
+          </Link>
         </div>
       </div>
       <div class="nav-profile">
