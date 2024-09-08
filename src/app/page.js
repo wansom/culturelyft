@@ -187,10 +187,11 @@ export default function Home() {
         </div>
 
       </section> */}
-      <section  class="about  py-6 my-10" id="about-id">
-      <div class="about-cards container mx-auto px-5 lg:px-20 flex items-center md:items-start flex-col md:flex-row justify-between gap-10">
-          <div class="ellipse"></div>
-          <div class="about-card w-80 md:w-[260px]">
+      <section  class="about py-6" id="about-id">
+    
+        <h1 className='text-center font-bold text-4xl max-w-[50%] mx-auto'>Join A Global Team of Elite Sales Assistants Driving Business Growth</h1>
+      <div class="about-cards  mx-auto px-5 lg:px-10 flex items-center md:items-start flex-col md:flex-row justify-between gap-10">
+          <div class="about-card w-80 md:w-[300px]">
             <svg id="ellipse" xmlns="http://www.w3.org/2000/svg" width="131" height="93" viewBox="0 0 131 93" fill="none">
               <g opacity="0.15">
                 <circle cx="98.9996" cy="-6.00002" r="19.4" stroke="#F9FCFC" stroke-width="2.56954" />
@@ -208,11 +209,11 @@ export default function Home() {
               </svg>
             </span>
             <div class="card-text">
-              <h2>22%</h2>
-              <p>reduction in <br /> turnover</p>
+              <h2>Training Bootcamp</h2>
+              <p>Every assisstant must attend and pass our 3 week bootcamp before they are eligible to work on client projects</p>
             </div>
           </div>
-          <div class="about-card w-80 md:w-[260px]">
+          <div class="about-card w-80 md:w-[300px]">
             <svg id="ellipse" xmlns="http://www.w3.org/2000/svg" width="131" height="93" viewBox="0 0 131 93" fill="none">
               <g opacity="0.15">
                 <circle cx="98.9996" cy="-6.00002" r="19.4" stroke="#F9FCFC" stroke-width="2.56954" />
@@ -232,11 +233,11 @@ export default function Home() {
               </svg>
             </span>
             <div class="card-text">
-              <h2>12%</h2>
-              <p>improvement in productivity</p>
+              <h2>Work Assessments</h2>
+              <p>Get to work on a real-business project and achieve set goals to better equip you as as sales assisstant</p>
             </div>
           </div>
-          <div class="about-card w-80 md:w-[260px]">
+          <div class="about-card w-80 md:w-[300px]">
             <svg id="ellipse" xmlns="http://www.w3.org/2000/svg" width="131" height="93" viewBox="0 0 131 93" fill="none">
               <g opacity="0.15">
                 <circle cx="98.9996" cy="-6.00002" r="19.4" stroke="#F9FCFC" stroke-width="2.56954" />
@@ -263,11 +264,11 @@ export default function Home() {
               </svg>
             </span>
             <div class="card-text">
-              <h2>8+</h2>
-              <p>weeks faster <br /> recovery time</p>
+              <h2>Get Paid</h2>
+              <p>Get paid competitive salaries working as a sales assisstant for different businesses within our partner network </p>
             </div>
           </div>
-          <div class="about-card w-80 md:w-[260px]">
+          <div class="about-card w-80 md:w-[300px]">
             <svg id="ellipse" xmlns="http://www.w3.org/2000/svg" width="131" height="93" viewBox="0 0 131 93" fill="none">
               <g opacity="0.15">
                 <circle cx="98.9996" cy="-6.00002" r="19.4" stroke="#F9FCFC" stroke-width="2.56954" />
@@ -285,8 +286,8 @@ export default function Home() {
               </svg>
             </span>
             <div class="card-text">
-              <h2>2.2*</h2>
-              <p>New talent  <br />Attraction rate</p>
+              <h2>Continuous mentorship</h2>
+              <p>We offer continuous training for our assisstants at no extra cost to help improve performance</p>
 
             </div>
           </div>
