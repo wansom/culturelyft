@@ -6,7 +6,6 @@ const ProfileCard = ({ user, title }) => {
         <h2 className="text-[32px] font-bold text-white">
           Welcome back 👋 <br />
         </h2>
-        {user && <h2 className="text-[32px] font-bold">{user?.company}</h2>}
         <p className="text-white">{title}</p>
         <div className="flex flex-col md:flex-row gap-2">
           <Link

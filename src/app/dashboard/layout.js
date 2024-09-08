@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <main class="flex overflow-x-hidden">
           <UserProvider>
          <DashboardSidebar/>
-          <div className=' bg-gray-100 dashboard-main'>
+          <div className=' bg-gray-100 dashboard-main min-h-screen'>
             <DashboardHeader/>
           {children}
 
