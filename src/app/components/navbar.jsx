@@ -11,15 +11,15 @@ const Navbar = () => {
     const router =useRouter()
   
     return ( 
-        <nav class="nav ">
-        <div class="flex  items-center justify-center container-fluid mx-auto px-5 border-b-[1px] border-solid border-black">
+        <nav class="nav">
+        <div class="flex  items-center justify-between mx-auto px-5">
           <div class="nav logo">
             <a href="/" class="nav-logo">
               <Image
-                src="/logo.png"
+                src="/culturelyft.png"
                 alt="logo"
-                width={120}
-                height={100}
+                width={170}
+                height={120}
               />
             </a>
           </div>
@@ -31,34 +31,12 @@ const Navbar = () => {
                 </svg>
               </span>
             </div>
-            <div class="relative inline-block text-left">
-  <div  onClick={()=>{setOpenDropDown(!openDropDown)}} onMouseEnter={()=>{setOpenDropDown(!openDropDown)}}>
-    <a className='active'>
-  Anonymous Reporting
-    </a>
-  </div>
-
-  <div class={clsx('absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',{
-    'hidden':!openDropDown,
-    'block':openDropDown
-  })} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-    <div class="py-1" role="none">
-      <Link href="/anonymous" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Report Issue</Link>
-      <Link href='/myissue' class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Track Issue</Link>
-     
-
-    </div>
-  </div>
-</div>
-            <a href="/#about-id" >Employee Engagement</a>
-            <a href="/#about-id">Rewards & Appreciation</a>
-            <a href="/#culture">Experiences</a>
-            <a href="/blog">Resources</a>
-            <button onClick={()=>{router.push('https://calendly.com/culturelyft/30min')}}
-                class=" block w-[200px] px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple lg:ml-10"
-              >
-               Speak To Our Team
-              </button>
+            <Link href="/#assitants" >Sales Assistants</Link>
+            <Link href="/#businesses">For Businesses</Link>
+            <Link href="/#assitants">Our Training</Link>
+            <Link href="/register">Become an Assistant</Link>
+            <Link href="/#resources">Resources</Link>
+           
           </div>
           <div class="menu-bar">
             <span className={isOpen ? "hide text-white" : " active"}

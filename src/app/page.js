@@ -114,15 +114,15 @@ export default function Home() {
         </div>
 
       </section>
-      <section class="about " id="about-id">
+      <section class="about " id="businesses">
         <div class="about-container  mx-auto px-5 py-10  flex flex-col-reverse md:flex-row  items-start justify-between gap-20">
           <div class="flex flex-row items-center justify-between md:basis-1/2 ">
             <div class="">
-              <img src="/about-1.jpg" alt="Adanian" className='rounded-lg my-2' />
-              <img class="left-img" src="/about-3.jpg" alt="Adanian" className='rounded-lg' style={{ borderRadius: '10px' }} />
+              <img src="/about-1.jpg" alt="culturelyft" className='rounded-lg my-2' />
+              <img class="left-img" src="/sales.png" alt="Adanian" className='rounded-lg' style={{ borderRadius: '10px' }} />
             </div>
             <div class="r-images m-2">
-              <img src="/about-2.jpg" alt="Adanian" className='rounded-lg' style={{ borderRadius: '10px' }} />
+              <img src="/about-2.jpg" alt="culturelyft" className='rounded-lg' style={{ borderRadius: '10px' }} />
             </div>
           </div>
           <div class="md:basis-1/2">
@@ -187,9 +187,9 @@ export default function Home() {
         </div>
 
       </section> */}
-      <section  class="about py-6" id="about-id">
+      <section  class="about py-6" id="assitants">
     
-        <h1 className='text-center font-bold text-4xl max-w-[50%] mx-auto'>Join A Global Team of Elite Sales Assistants Driving Business Growth</h1>
+        <h1 className='text-center font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto'>Join A Global Team of Elite Sales Assistants Driving Business Growth</h1>
       <div class="about-cards  mx-auto px-5 lg:px-10 flex items-center md:items-start flex-col md:flex-row justify-between gap-10">
           <div class="about-card w-80 md:w-[300px]">
             <svg id="ellipse" xmlns="http://www.w3.org/2000/svg" width="131" height="93" viewBox="0 0 131 93" fill="none">

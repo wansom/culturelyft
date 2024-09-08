@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const BlogCategories = () => {
     return ( 
-        <section class="topics mt-2" id="topics" aria-labelledby="topic-label">
+        <section class="topics mt-2" id="resources" aria-labelledby="topic-label">
         <div class="mx-auto px-5">
 
           <div class="card topic-card">
@@ -13,7 +13,7 @@ const BlogCategories = () => {
                 Resources
               </h2>
 
-              <p class="card-text">
+              <p class="text-md text-white mb-3">
                 Don't miss out on the latest Expert insights on performance management, increasing sales revenue and customer engagement for yor business success.
               </p>
 
