@@ -229,7 +229,7 @@
   .w-100 { width: 100%; }
   
   .card {
-    background-color: var(--primary);
+    background-color: #081a43;
     border: 1px solid var(--border-prussian-blue);
   }
   

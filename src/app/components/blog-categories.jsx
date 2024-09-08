@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 const BlogCategories = () => {
     return ( 
         <section class="topics mt-2" id="topics" aria-labelledby="topic-label">
-        <div class="container mx-auto">
+        <div class="mx-auto px-5">
 
           <div class="card topic-card">
 
@@ -12,7 +14,7 @@ const BlogCategories = () => {
               </h2>
 
               <p class="card-text">
-                Don't miss out on the latest Expert insights on performance management, employee development and employee engagement for HR professionals and people leaders.
+                Don't miss out on the latest Expert insights on performance management, increasing sales revenue and customer engagement for yor business success.
               </p>
 
               <div class="btn-group">
@@ -37,7 +39,7 @@ const BlogCategories = () => {
               <ul class="slider-list" data-slider-container>
 
                 <li class="slider-item">
-                  <a href="/blog" class="slider-card">
+                  <Link href="/login" class="slider-card">
 
                     <figure class="slider-banner img-holder h-[318px]">
                       <img src="/banner.jpg" width="507" height="618" loading="lazy" alt="Sport"
@@ -45,16 +47,16 @@ const BlogCategories = () => {
                     </figure>
 
                     <div class="slider-content">
-                      <span class="slider-title">Employee Engagement</span>
+                      <span class="slider-title">Business Sales Teams</span>
 
-                      <p class="slider-subtitle">38 Articles</p>
+                      <p class="text-sm font-light text-[#e58e04]">38 Articles</p>
                     </div>
 
-                  </a>
+                  </Link>
                 </li>
 
                 <li class="slider-item">
-                  <a href="blog" class="slider-card">
+                  <Link href="/login" class="slider-card">
 
                     <figure class="slider-banner img-holder h-[318px]" >
                       <img src="/about-2.jpg" width="507" height="618" loading="lazy" alt="Travel"
@@ -62,16 +64,16 @@ const BlogCategories = () => {
                     </figure>
 
                     <div class="slider-content">
-                      <span class="slider-title">Employee Experience</span>
+                      <span class="slider-title">Performance Improvement</span>
 
-                      <p class="slider-subtitle">63 Articles</p>
+                      <p class="text-sm font-light text-[#e58e04]">63 Articles</p>
                     </div>
 
-                  </a>
+                  </Link>
                 </li>
 
                 <li class="slider-item">
-                  <a href="/blog" class="slider-card">
+                  <Link href="/login" class="slider-card">
 
                     <figure class="slider-banner img-holder h-[318px] " >
                       <img src="/blog-1.jpg" width="507" height="618" loading="lazy" alt="Design"
@@ -79,12 +81,12 @@ const BlogCategories = () => {
                     </figure>
 
                     <div class="slider-content">
-                      <span class="slider-title">Company Culture</span>
+                      <span class="slider-title">Customer Engagement</span>
 
-                      <p class="slider-subtitle">78 Articles</p>
+                      <p class="text-sm font-light text-[#e58e04]">17 Articles</p>
                     </div>
 
-                  </a>
+                  </Link>
                 </li>
 
               </ul>

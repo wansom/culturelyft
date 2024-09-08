@@ -114,8 +114,8 @@ export default function Home() {
         </div>
 
       </section>
-      <section class="about" id="about-id">
-        <div class="about-container ac container  mx-auto px-5 lg:px-10 flex flex-col-reverse md:flex-row  items-start justify-between gap-20">
+      <section class="about " id="about-id">
+        <div class="about-container  mx-auto px-5 py-10  flex flex-col-reverse md:flex-row  items-start justify-between gap-20">
           <div class="flex flex-row items-center justify-between md:basis-1/2 ">
             <div class="">
               <img src="/about-1.jpg" alt="Adanian" className='rounded-lg my-2' />
@@ -127,35 +127,35 @@ export default function Home() {
           </div>
           <div class="md:basis-1/2">
             <div>
-              <h1 className='text-[32px] font-semibold text-black'>Understand your employees</h1>
-              <p className='z-10 mb-2'>Create digital profiles of your employees that go beyond skills so you can make better decisions and drive meaningful change in your organization.</p>
-              <a href='login' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <h1 className='text-[32px] font-semibold text-black'>Define Business Goals</h1>
+              <p className='z-10 mb-2'>Tell us more about your business,your target customers demographics, countries where you operate and your sales goals. This helps us to personalize the training and selection of your sales assisstants.</p>
+              <Link href='/login' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg>
-              </a>
+              </Link>
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
             <div>
-              <h1 className='text-[32px] font-semibold text-black'>Build high-performing teams</h1>
-              <p className='z-10 mb-2'>Empower employees to voice their opinions and contribute to a positive work environment through anonymous and identified feedback knowing that their feedback</p>
-              <a href='login' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <h1 className='text-[32px] font-semibold text-black'>Train and Hire Assistants</h1>
+              <p className='z-10 mb-2'>We interview and train sales assisstants who meet your business requirements. These can be a few individuals or an entire department based on your preference </p>
+              <a href='login' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></a>
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
             <div>
-              <h1 className='text-[32px] font-semibold text-black'>Develop your people</h1>
-              <p className='z-10 mb-2'>Grow and retain your people with personalized, continuous development that's easy to measure and scale.</p>
-              <a href='login' className='flex items-center'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <h1 className='text-[32px] font-semibold text-black'>Evaluate and Monitor</h1>
+              <p className='z-10 mb-2 '>All our assistants undergo at least 3 weeks sales bootcamps where we equip them with the best skills and tools. Once we have assisstants on your project, you can monitor and suggest areas of improvement to accelerate business goals</p>
+              <Link href='/login' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Hire Sales Assistants <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg></a>
+              </svg></Link>
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
           </div>
         </div>
         
       </section>
-      <section class="speakers  py-6 my-10" id="speakers-id">
+      {/* <section class="speakers  py-6 my-10" id="speakers-id">
         <div className='container mx-auto px-5 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-5  '>
           <div className='rounded-[16px] p-10 space-y-4 bg-[#01382E]' id='insights'>
             <h1 className='text-[32px] font-semibold text-white'>Get more insights from Research</h1>
@@ -186,7 +186,7 @@ export default function Home() {
           </div>
         </div>
 
-      </section>
+      </section> */}
       <section  class="about  py-6 my-10" id="about-id">
       <div class="about-cards container mx-auto px-5 lg:px-20 flex items-center md:items-start flex-col md:flex-row justify-between gap-10">
           <div class="ellipse"></div>
