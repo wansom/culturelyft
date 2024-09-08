@@ -79,25 +79,25 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden">
     <Navbar/>
-      <section class="banner flex flex-col md:flex-row">
-        <div class="banner-container basis-2/2 md:basis=1/3">
+      <section class="banner flex flex-col md:flex-row bg-[#081a43]">
+        <div class="banner-container basis-2/2 md:basis=1/2">
           <div class="bn-text mt-10">
             <div class="bn-txt-holder">
-              <h1 class="text-[32px] md:text-[48px] mx-5 md:ml-28 text-black">
-                Great People build Great Companies. Redefine your team experience.
+              <h1 class="text-[32px] md:text-[48px] mx-5  text-white">
+                We handle the sales so you can focus on building things your customers love
 
               </h1>
-              <p className='mx-5 md:mx-28 my-5 text-black'>A platform to help develop programs,structures and experiences that empower leaders,people managers and teams to be at their best </p>
-              <div className='flex flex-col md:flex-row items-center gap-5 md:ml-28 mb-4'>
+              <p className='mx-5 my-5 text-white text-md'>We have trained,interviewed and equipped over 10,000 sales assisstants to handle every step of your customer acqusition journey  </p>
+              <div className='flex flex-col md:flex-row items-center gap-5 ml-5 mb-4'>
               <Link href="/login"
-                class=" block  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+                class=" block  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
               >
-               MY HR ACCOUNT
+               Book A Demo
               </Link>
               <Link href="/anonymous"
-                class=" flex imtes-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 border-[#01382E]  border-solid border-2 rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple"
+                class=" flex imtes-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border-[#e58e04]  border-solid border-2 rounded-lg active:bg-[#e58e04] hover:bg-[#e58e04] hover:text-white focus:outline-none focus:shadow-outline-purple"
               >
-               ANONYMOUS FEEDBACK<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+               BECOME A SALES ASSISSTANT<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
 </svg>
 
@@ -108,8 +108,8 @@ export default function Home() {
           </div>
           <div class=""></div>
         </div>
-        <div className='basis-1/3 md:basis-2/3'>
-          <img src='/banner.jpg' >
+        <div className='md:basis-1/2'>
+          <img src='/banner.png' className='h-full w-full object-cover' >
           </img>
         </div>
 

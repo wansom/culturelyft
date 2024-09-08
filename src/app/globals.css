@@ -251,8 +251,8 @@ nav {
 /* == || Header == */
 /* == Banner == */
 section.banner{
-  min-height: 576px;
   width: 100%;
+ height: calc(100vh - 100px);;
  
 }
 .banner-container{

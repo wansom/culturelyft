@@ -1738,20 +1738,9 @@ table.fold-table>tbody>tr td.table-dt-status svg {
 
 
 /* == INBOX == */
-.inbox-content {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
 
-.inbox-messages {
-    width: 100%;
-    max-width: 260px;
-    background-color: #00000000;
-    flex-shrink: 0;
-}
+
+
 
 .msg-search {
     position: relative;

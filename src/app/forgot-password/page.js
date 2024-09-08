@@ -53,7 +53,8 @@ await passwordReset(email).then(()=>{
 })
     
   };
-    return (  <main>
+    return (  
+    <main>
       <Navbar/>
       <ToastContainer />
          <div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
