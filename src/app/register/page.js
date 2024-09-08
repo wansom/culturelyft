@@ -13,7 +13,7 @@ import ButtonLoader from "../components/button-loader";
 const Signup = () => {
   const router = useRouter()
   const [formData, setFormData] = useState({
-    company: '',
+    fullname: '',
     email: '',
     password: '',
     profileUpdate:'0%',
@@ -23,7 +23,7 @@ const Signup = () => {
   const [loading,setLoading] =useState(false)
 
   const [errors, setErrors] = useState({
-    company: '',
+    fullname: '',
     email: '',
     password: '',
   });
@@ -41,8 +41,8 @@ const Signup = () => {
 setLoading(true)
     // Validate form fields
     const newErrors = {};
-    if (formData.company.trim() === '') {
-      newErrors.company = 'Company name is required';
+    if (formData.fullname.trim() === '') {
+      newErrors.fullname = 'Full name is required';
     }
 
     if (formData.email.trim() === '') {
@@ -115,7 +115,7 @@ setLoading(true)
             <img
               aria-hidden="true"
               class="object-cover w-full h-full dark:hidden"
-              src="/login.jpg"
+              src="/auth.png"
               alt="Office"
             />
             <img
@@ -134,15 +134,16 @@ setLoading(true)
               </h1>
             
               <form onSubmit={handleSubmit}>
-      <label className="block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">Company Name</span>
+      <label className="block text-sm" htmlFor="fullname">
+        <span className="text-gray-700 dark:text-gray-400">Full Name</span>
         <input
           className={`block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input ${
-            errors.company && 'border-red-500'
+            errors.fullname && 'border-red-500'
           }`}
-          placeholder="Culture Lyft"
-          name="company"
-          value={formData.company}
+          placeholder="Walter White"
+          name="fullname"
+          id="fullname"
+          value={formData.fullname}
           onChange={handleChange}
         />
         {errors.company && (
@@ -197,7 +198,7 @@ setLoading(true)
       </div>
       <button
         type="submit"
-        className=" flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+        className=" flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#e58e04] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
       >
         Create account
        {loading&&(<ButtonLoader/>)}

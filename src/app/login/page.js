@@ -95,13 +95,13 @@ setLoading(true)
               <img
                 aria-hidden="true"
                 class="object-cover w-full h-full dark:hidden"
-                src="/login.jpg"
+                src="/auth.png"
                 alt="Office"
               />
               <img
                 aria-hidden="true"
                 class="hidden object-cover w-full h-full dark:block"
-                src="/login-.jpg"
+                src="/auth.png"
                 alt="Office"
               />
             </div>
@@ -148,7 +148,7 @@ setLoading(true)
 
       <button
         type="submit"
-        className=" flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+        className=" flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#e58e04] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
       >
         Log In
        {loading&&(<ButtonLoader/>)}
@@ -169,9 +169,9 @@ setLoading(true)
                 <p class="mt-1">
                   <a
                     class="text-sm font-medium text-[#13A8BD] dark:text-[#13A8BD] hover:underline"
-                    href="/signup"
+                    href="/register"
                   >
-                    Create account
+                    Don't have an account? Create 
                   </a>
                 </p>
               </div>

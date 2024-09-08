@@ -97,7 +97,7 @@ await passwordReset(email).then(()=>{
 
       <button
         type="submit"
-        className="flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+        className="flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#e58e04] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
         disabled={loading}
       >
         {loading && (
