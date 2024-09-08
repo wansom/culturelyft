@@ -6,7 +6,10 @@
     position: sticky;
     top: 0;
 }
-
+.dashboard-main{
+    width: calc(100% - 280px);
+    margin-left: auto;
+}
 .ins-lg {
     display: flex;
     align-items: center;

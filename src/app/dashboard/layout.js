@@ -4,7 +4,6 @@ import '../dashboard.css'
 import DashboardSidebar from '../components/dashboard/sidebar'
 import DashboardHeader from '../components/dashboard/header'
 import { DataContextProvider, UserProvider } from '../services/DataContext'
-import Drawer from '../components/drawer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,10 +19,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main class="flex overflow-x-hidden">
           <UserProvider>
-         <div className='hidden lg:block lg:basis-1/4 bg-[#01382E]'>
          <DashboardSidebar/>
-         </div>
-          <div className=' w-full basis-4/4 lg:basis-3/4 bg-gray-100'>
+          <div className=' bg-gray-100 dashboard-main'>
             <DashboardHeader/>
           {children}
 

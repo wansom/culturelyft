@@ -12,7 +12,7 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
     });
   };
   return (
-    <nav class="w-full p-4 bg-[#01382E] sticky top-0 h-full">
+    <nav class="w-[280px] p-4 bg-[#01382E] fixed top-0 h-screen ">
       <div class="ins-lg -mt-6">
         <div class="dash-lg ">
           <Link href="/" class="nav-logo">
