@@ -3,14 +3,15 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Select from 'react-tailwindcss-select';
 import 'react-toastify/dist/ReactToastify.css';
-import { departments, organizationTypes } from "@/app/services/data";
+import { workingHours, languages} from "@/app/services/data";
 import { updateUserDetails } from "@/app/services/firestore";
 
 const OverviewForm = ({user,updateProgress}) => {
     const [formData, setFormData] = useState({
-        company: '',
-        companyEmail: '',
+        fullname: '',
+        email: '',
         phoneNumber: '',
+        national_id:'',
         departments: [],
         organizationType: '',
         city: '',
@@ -88,27 +89,31 @@ const OverviewForm = ({user,updateProgress}) => {
             <ToastContainer/>
         <div className=" space-y-5 mb-10">
 
-          <label className="block text-sm w-full">
-            <span className="text-gray-700 dark:text-gray-400">Company Name</span>
+          <label className="block text-sm w-full" htmlFor="fullname">
+            <span className="text-gray-700 dark:text-gray-400">Fullname Name</span>
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="text"
-              name="company"
-              value={formData.company}
+              name="fullanme"
+              value={formData.fullname}
               onChange={handleChange}
-              placeholder="Culture Lyft"
+              placeholder={user.fullname}
+              id="fullname"
+              disabled
             />
           </label>
 
-          <label className="block text-sm w-full">
-            <span className="text-gray-700 dark:text-gray-400">Company Email</span>
+          <label className="block text-sm w-full" htmlFor="email">
+            <span className="text-gray-700 dark:text-gray-400">Your Email</span>
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="email"
-              name="companyEmail"
-              value={user.companyEmail}
+              name="email"
+              value={user.email}
               onChange={handleChange}
-              placeholder="hr@culturelyft.com"
+              placeholder={user.email}
+              id="email"
+              disabled
             />
           </label>
           <label className="block text-sm w-full">
@@ -122,6 +127,17 @@ const OverviewForm = ({user,updateProgress}) => {
               placeholder="+1-212-456-7890"
             />
           </label>
+          <label className="block text-sm w-full">
+            <span className="text-gray-700 dark:text-gray-400">National ID</span>
+            <input
+              className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+              type="text"
+              name="national_id"
+              value={formData.national_id}
+              onChange={handleChange}
+              placeholder="37638924"
+            />
+          </label>
           <label className=" w-full block text-sm">
             <span className="text-gray-700 dark:text-gray-400">City</span>
             <input
@@ -130,24 +146,24 @@ const OverviewForm = ({user,updateProgress}) => {
               name="city"
               value={formData.city}
               onChange={handleChange}
-              placeholder="San Francisco"
+              placeholder="Nairobi"
             />
           </label>
           <label className=" w-full block text-sm">
-            <span className="text-gray-700 dark:text-gray-400">Departments</span>
+            <span className="text-gray-700 dark:text-gray-400">Select your languages</span>
             <Select className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               value={animal}
               onChange={handleDepartmentChange}
-              options={departments}
+              options={languages}
               isMultiple
             />
           </label>
           <label className="block text-sm w-full">
-            <span className="text-gray-700 dark:text-gray-400">Type of Organization</span>
+            <span className="text-gray-700 dark:text-gray-400">How many hours are you available per week</span>
             <Select className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               value={organizationType}
               onChange={handleOrganizationChange}
-              options={organizationTypes}
+              options={workingHours}
 
             />
           </label>

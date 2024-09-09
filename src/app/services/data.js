@@ -148,11 +148,11 @@ export const departments = [
     // Add more departments as needed
 ];
 
-export const organizationTypes = [
-    { value: 'Non-profit', label: 'Non-profit' },
-    { value: 'Government', label: 'Government' },
-    { value: 'Private', label: 'Private' },
-    { value: 'Public', label: 'Public' },
+export const workingHours = [
+    { value: '0-5', label: '0-5' },
+    { value: '5-10', label: '5-10' },
+    { value: '10-20', label: '10-20' },
+    { value: '20-40', label: '20-40' },
 ];
 
 export const leadershipImprovementQuestions = [
@@ -295,3 +295,72 @@ export const leadershipImprovementQuestions = [
     "Onboarding Gifts",
     "Marriage & Wedding Celebrations"
   ]
+  export const languages = [
+    { value: 'English', label: 'English' },
+    { value: 'Kiswahili', label: 'Kiswahili' },
+    { value: 'French', label: 'French' },
+    { value: 'Arabic', label: 'Arabic' },
+    { value: 'Mandarin', label: 'Mandarin' },
+    { value: 'German', label: 'German' },
+    { value: 'Spanish', label: 'Spanish' }
+  ];
+  
+  export const questions = [
+    { 
+      question: 'How comfortable are you talking to new people, either in person or over the phone?', 
+      options: [
+        { value: 'Very comfortable', label: 'Very comfortable' },
+        { value: 'Somewhat comfortable', label: 'Somewhat comfortable' },
+        { value: 'Not comfortable', label: 'Not comfortable' }
+      ]
+    },
+    { 
+      question: 'How quickly do you adapt to learning new things or picking up new skills?', 
+      options: [
+        { value: 'Very quickly', label: 'Very quickly' },
+        { value: 'Moderately quickly', label: 'Moderately quickly' },
+        { value: 'Slowly', label: 'Slowly' }
+      ]
+    },
+    { 
+      question: 'How would you handle a situation where a customer is unhappy but you’re unsure how to help?', 
+      options: [
+        { value: 'Seek guidance from a supervisor', label: 'Seek guidance from a supervisor' },
+        { value: 'Try to solve the issue independently', label: 'Try to solve the issue independently' },
+        { value: 'Apologize and suggest a later resolution', label: 'Apologize and suggest a later resolution' }
+      ]
+    },
+    { 
+      question: 'What motivates you to work hard and push through challenges?', 
+      options: [
+        { value: 'Personal growth', label: 'Personal growth' },
+        { value: 'Recognition or rewards', label: 'Recognition or rewards' },
+        { value: 'Achieving team goals', label: 'Achieving team goals' }
+      ]
+    },
+    { 
+      question: 'How do you feel about working as part of a team?', 
+      options: [
+        { value: 'I enjoy collaborating', label: 'I enjoy collaborating' },
+        { value: 'I prefer working alone', label: 'I prefer working alone' },
+        { value: 'I’m neutral about it', label: 'I’m neutral about it' }
+      ]
+    },
+    { 
+      question: 'What interests you about a sales assistant role?', 
+      options: [
+        { value: 'Learning new skills', label: 'Learning new skills' },
+        { value: 'Earning a steady income', label: 'Earning a steady income' },
+        { value: 'Helping customers', label: 'Helping customers' }
+      ]
+    },
+    { 
+      question: 'How would you describe your attitude towards helping others?', 
+      options: [
+        { value: 'I always go out of my way to help', label: 'I always go out of my way to help' },
+        { value: 'I help when asked', label: 'I help when asked' },
+        { value: 'I prefer focusing on my own tasks', label: 'I prefer focusing on my own tasks' }
+      ]
+    }
+  ];
+  

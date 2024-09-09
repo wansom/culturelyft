@@ -1,5 +1,5 @@
 'use client'
-import { communicationChannelsQuestions, conflictResolutionQuestions, decisionMakingQuestions, recognitionRewardsQuestions, teamDynamicsQuestions, workStylesQuestions } from "@/app/services/data";
+import { questions, conflictResolutionQuestions, decisionMakingQuestions, recognitionRewardsQuestions, teamDynamicsQuestions, workStylesQuestions } from "@/app/services/data";
 import { updateUserDetails } from "@/app/services/firestore";
 import { useState } from "react";
 import Select from "react-tailwindcss-select";
@@ -108,67 +108,67 @@ const CultureForm = ({user,updateProgress}) => {
     <form className="space-y-4" onSubmit={handleSubmit}>
       <ToastContainer/>
       <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">How are major decisions typically made in your company?</span>
+        <span className="text-gray-700 dark:text-gray-400">{questions[0].question}</span>
         <Select
           className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
           value={decisionMaking}
           onChange={handleDecisionMakingChange}
-          options={decisionMakingQuestions}
+          options={questions[0].options}
           
         />
       </label>
 
       <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">What are the dominant communication channels within your company?</span>
+        <span className="text-gray-700 dark:text-gray-400">{questions[1].question}</span>
         <Select
           className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
           value={communicationChannels}
           onChange={handleCommunicationChannelsChange}
-          options={communicationChannelsQuestions}
+          options={questions[1].options}
           
         />
       </label>
 
       <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">How would you describe the pace and expectations of work in your company?</span>
+        <span className="text-gray-700 dark:text-gray-400">{questions[2].question}</span>
         <Select
           className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
           value={workStyle}
           onChange={handleWorkStyleChange}
-          options={workStylesQuestions}
+          options={questions[2].options}
           
         />
       </label>
 
       <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">How would you characterize the way teams operate and collaborate in your company?</span>
+        <span className="text-gray-700 dark:text-gray-400">{questions[3].question}</span>
         <Select
           className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
           value={teamDynamics}
           onChange={handleTeamDynamicsChange}
-          options={teamDynamicsQuestions}
+          options={questions[3].options}
           
         />
       </label>
 
       <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">How do your company and teams acknowledge and reward individual and team achievements?</span>
+        <span className="text-gray-700 dark:text-gray-400">{questions[4].question}</span>
         <Select
           className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
           value={recognitionRewards}
           onChange={handleRecognitionRewardsChange}
-          options={recognitionRewardsQuestions}
+          options={questions[4].options}
           
         />
       </label>
 
       <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">How are disagreements and conflicts typically addressed within your company and teams?</span>
+        <span className="text-gray-700 dark:text-gray-400">{questions[5].question}</span>
         <Select
           className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
           value={conflictResolution}
           onChange={handleConflictResolutionChange}
-          options={conflictResolutionQuestions}
+          options={questions[5].options}
           
         />
       </label>

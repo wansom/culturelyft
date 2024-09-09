@@ -1,178 +1,145 @@
 'use client'
-import { aiImpactQuestions, dreamTeamEnvironmentQuestions, employeeMotivationObstaclesQuestions, idealLeadershipQuestions, leadershipImprovementQuestions, teamDynamicsQuestions } from "@/app/services/data";
 import { updateUserDetails } from "@/app/services/firestore";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import Select from "react-tailwindcss-select";
+
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { PaystackButton } from 'react-paystack';
+import { useState } from "react";
 
 const ExpectedOutcomeForm = ({user,updateProgress}) => {
-    const [leadershipImprovement, setLeadershipImprovement] = useState('');
-    const [teamImprovement, setTeamImprovement] = useState('');
-    const [employeeMotivationObstacles, setEmployeeMotivationObstacles] = useState('');
-    const [idealLeadership, setIdealLeadership] = useState('');
-    const [dreamTeamEnvironment, setDreamTeamEnvironment] = useState('');
-    const [aiImpact, setAIImpact] = useState('');
      const router =useRouter()
+     const [amount, setAmount] = useState(150000);
+     const [accountType,setAccountType]=useState('')
 
-    const handleLeadershipImprovementChange = (value) => {
-        setLeadershipImprovement(value);
-      };
-    
-      const handleTeamImprovementChange = (value) => {
-        setTeamImprovement(value);
-      };
-    
-      const handleEmployeeMotivationObstaclesChange = (value) => {
-        setEmployeeMotivationObstacles(value);
-      };
-    
-      const handleIdealLeadershipChange = (value) => {
-        setIdealLeadership(value);
-      };
-    
-      const handleDreamTeamEnvironmentChange = (value) => {
-        setDreamTeamEnvironment(value);
-      };
-    
-      const handleAIImpactChange = (value) => {
-        setAIImpact(value);
-      };
-
-      const handleSubmit =async (e) => {
-        e.preventDefault()
-        // Perform any validation if needed
-        if (!leadershipImprovement || !teamImprovement || !employeeMotivationObstacles || !idealLeadership || !dreamTeamEnvironment || !aiImpact) {
-            toast.error(` 🦄 some fields are missing!`, {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-              })
-          return;
-        }     
-        const payload = {
-          uid: user.id,
-          data: {
-            expectedOutcomes:[
-             leadershipImprovement,teamImprovement,employeeMotivationObstacles,idealLeadership,dreamTeamEnvironment,aiImpact
-            ],
-            profileUpdate:'100%',
-            profileStage:"Profile Complete"
-          }
+     const handleRadioChange = (event) => {
+      setAccountType(event.target.value);
+    };
+    const config = {
+      reference: (new Date()).getTime().toString(),
+      email: user?.email,
+      amount: amount,
+      publicKey: 'pk_live_5f0995267a23b9b1d692ffccb39ffe681ee493dd',
+      currency:'KES'
+  };
+    const handlePaystackSuccessAction = async () => {
+      const payload = {
+        uid: user.id,
+        data: {
+          amount:amount,
+          accountType:accountType,
+          profileUpdate:'100%',
+          profileStage:"Profile Complete"
         }
-        try {
-          await updateUserDetails(payload);
-          toast.success(` 🦄 Details updated successfuly!`, {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          })
-          updateProgress('Expected outcomes','100%')
+      }
+      try {
+        await updateUserDetails(payload);
+        toast.success(` 🦄 Details updated successfuly!`, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+        updateProgress('Expected outcomes','100%')
 
-        } catch (error) {
-          console.log(error)
-          toast.error(` 🦄 something went wrong!`, {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          })
-        }
-      };
-      
+      } catch (error) {
+        console.log(error)
+        toast.error(` 🦄 something went wrong!`, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      }
+    };
+  
+    // you can call this function anything
+    const handlePaystackCloseAction = () => {
+      console.log('closed')
+      toast.error('You cancelled the transaction')
+    }
+
+    
+  const componentProps = {
+    ...config,
+    text: 'Submit for verification',
+    onSuccess: (reference) => handlePaystackSuccessAction(reference),
+    onClose: handlePaystackCloseAction,
+};
+
     
     return ( 
-      <form onSubmit={handleSubmit}>
+      <div>
         <ToastContainer/>
-    <div className="space-y-4">
-      <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">Where do you see the biggest need for improvement in your leadership team?</span>
-        <Select
-          className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-          value={leadershipImprovement}
-          onChange={handleLeadershipImprovementChange}
-          options={leadershipImprovementQuestions}
+        <div className='flex flex-col items-start justify-center'>
           
-        />
-      </label>
-
-      <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">What's one thing you'd change about how your teams work together?</span>
-        <Select
-          className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-          value={teamImprovement}
-          onChange={handleTeamImprovementChange}
-          options={teamDynamicsQuestions}
-          
-        />
-      </label>
-
-      <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">What gets in the way of your employees feeling motivated?</span>
-        <Select
-          className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-          value={employeeMotivationObstacles}
-          onChange={handleEmployeeMotivationObstaclesChange}
-          options={employeeMotivationObstaclesQuestions}
-          
-        />
-      </label>
-
-      <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">What would rockstar leadership look like in your company?</span>
-        <Select
-          className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-          value={idealLeadership}
-          onChange={handleIdealLeadershipChange}
-          options={idealLeadershipQuestions}
-          
-        />
-      </label>
-
-      <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">Imagine your dream team environment. What's it like?</span>
-        <Select
-          className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-          value={dreamTeamEnvironment}
-          onChange={handleDreamTeamEnvironmentChange}
-          options={dreamTeamEnvironmentQuestions}
-          
-        />
-      </label>
-
-      <label className="w-full block text-sm">
-        <span className="text-gray-700 dark:text-gray-400">How do you envision our AI helping you achieve these goals?</span>
-        <Select
-          className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-          value={aiImpact}
-          onChange={handleAIImpactChange}
-          options={aiImpactQuestions}
-          
-        />
-      </label>
-    </div>
-    <button
-              type="submit"
-              className="block w-[200px] px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
-            >
-              Complete Profile
-            </button>
-      </form>  
+          <h3 className="mb-5 text-lg font-medium text-gray-900 dark:text-white">Every New Assistant is expected to undergo training before starting to work. You will be charged KES. 2500 for document verification</h3>
+          <ul className="grid w-full gap-6 md:grid-cols-2">
+                  <li>
+                    <input 
+                      type="radio" 
+                      id="hosting-small" 
+                      name="hosting" 
+                      value="novice" 
+                      className="hidden peer" 
+                      onChange={handleRadioChange} 
+                      required 
+                    />
+                    <label 
+                      htmlFor="hosting-small" 
+                      className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#e58e04] peer-checked:border-[#e58e04] peer-checked:text-[#e58e04] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                    >
+                      <div className="block">
+                        <div className="w-full text-lg font-semibold">Novice</div>
+                        <div className="w-full"><ul className="text-md font-light list-disc list-inside">
+                          <li>3 weeks training bootcamp</li>
+                          <li>No Prior sales experience</li>
+                          <li>Can only work for a single company at a time</li>
+                          <li>Low level sales tasks</li>
+                          <li>25% platform commission on payments</li>
+                          </ul></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <input 
+                      type="radio" 
+                      id="hosting-big" 
+                      name="hosting" 
+                      value="Intermediate" 
+                      className="hidden peer" 
+                      onChange={handleRadioChange} 
+                      defaultChecked 
+                    />
+                    <label 
+                      htmlFor="hosting-big" 
+                      className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#e58e04] peer-checked:border-[#e58e04] peer-checked:text-[#e58e04] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                    >
+                      <div className="block">
+                      <div className="w-full text-lg font-semibold">Intermediate</div>
+                        <div className="w-full"><ul className="text-md font-light list-disc list-inside">
+                          <li>3 weeks training bootcamp</li>
+                          <li>At least 2years sales experience</li>
+                          <li>Can work with multiple organizations at a time</li>
+                          <li>High level sales tasks</li>
+                          <li>15% platform commission on payments</li>
+                          </ul></div>
+                         
+                      </div>
+                    </label>
+                  </li>
+                </ul>            
+                  <PaystackButton {...componentProps}  className=" flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#e58e04] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"/>
+                </div>
+      </div>  
      );
 }
  
