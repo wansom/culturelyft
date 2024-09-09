@@ -1,4 +1,4 @@
-import { storage } from "@/database";
+import { storage } from "./firebase";
 
 import {
   deleteObject,
@@ -147,5 +147,3 @@ export const uploadFileAndGetDownloadURL=async (userId,file)=> {
   const downloadURL = await getDownloadURL(storageRef);
   return downloadURL;
 }
-
-
