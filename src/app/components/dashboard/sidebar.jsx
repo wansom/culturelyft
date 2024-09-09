@@ -284,6 +284,7 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
           <Link
             href="/dashboard/chat"
             class={` ${pathname === "/dashboard/chat" ? "active" : ""}`}
+            onClick={toggleIsOpen}
           >
             <div class="link-icon">
               <svg

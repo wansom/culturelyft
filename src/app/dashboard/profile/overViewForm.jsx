@@ -55,7 +55,6 @@ const OverviewForm = ({user,updateProgress}) => {
         const payload = {
           uid: user.id,
           data: formData,
-
         }
     
         try {

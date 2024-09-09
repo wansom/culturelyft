@@ -77,7 +77,7 @@ const NewCompanyProfile = () => {
   if (error) return <div>Error fetching user data: {error.message}</div>;
   return (
 
-    <div className="flex gap-3 mx-2">
+    <div className="flex flex-col md:flex-row gap-3 mx-2">
       <div className="clients-top-card  rounded-[16px] bg-white md:basis-1/3 w-full flex flex-col items-center  justify-center gap-4 max-h-[400px]">
       {user.photo&&(
   <img src={user.photo} className="rounded-full h-40 w-40"/>

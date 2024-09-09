@@ -2329,3 +2329,10 @@ table.fold-table>tbody>tr td.table-dt-status svg {
 
 
 }
+
+@media screen and (max-width: 640px) {
+    .dashboard-main{
+        width: calc(100%);
+        margin-left: auto;
+    }
+}

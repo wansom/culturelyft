@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main class="flex overflow-x-hidden">
           <UserProvider>
-         <DashboardSidebar/>
+            <div className=' hidden lg:block'>
+            <DashboardSidebar/>
+            </div>
           <div className=' bg-gray-100 dashboard-main min-h-screen'>
             <DashboardHeader/>
           {children}
