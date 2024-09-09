@@ -121,7 +121,7 @@ setLoading(true)
             <img
               aria-hidden="true"
               class="hidden object-cover w-full h-full dark:block"
-              src="/login.jpg"
+              src="/auth.png"
               alt="Office"
             />
           </div>
