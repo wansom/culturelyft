@@ -81,7 +81,7 @@ const ExpectedOutcomeForm = ({user,updateProgress}) => {
         <ToastContainer/>
         <div className='flex flex-col items-start justify-center'>
           
-          <h3 className="mb-5 text-lg font-medium text-gray-900 dark:text-white">We use third party applications to verify all application documents. This costs  KES. 2500</h3>
+          <h3 className="mb-5 text-lg font-medium text-gray-900">We use third party applications to verify all application documents. This costs  KES. 2500</h3>
           <ul className="grid w-full gap-6 md:grid-cols-2">
                   <li>
                     <input 

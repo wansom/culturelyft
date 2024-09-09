@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <div className="px-5 pt-5">
       <div className="flex flex-col md:flex-row gap-6">
-        <ProfileCard user={user} title={'Engagement, performance & development platform you need to build an employee experience people love.'}/>
+        <ProfileCard user={user} title={'We have trained,interviewed and equipped over 10,000 sales assistants accelerating business growth globally'}/>
         <div className="clients-top-card h-fit rounded-[16px] bg-white  md:basis-1/3 w-full">
           <div>
             <h2 className="text-2xl font-bold ">{employees.length}</h2>

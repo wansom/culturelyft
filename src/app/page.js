@@ -87,17 +87,17 @@ export default function Home() {
                 We handle the sales so you can focus on building things your customers love
 
               </h1>
-              <p className='mx-5 my-5 text-white text-md'>We have trained,interviewed and equipped over 10,000 sales assisstants to handle every step of your customer acqusition journey  </p>
+              <p className='mx-5 my-5 text-white text-md'>We have trained,interviewed and equipped over 10,000 sales assistant to handle every step of your customer acqusition journey  </p>
               <div className='flex flex-col md:flex-row items-center gap-5 ml-5 mb-4'>
               <Link href="https://calendly.com/culturelyft-info/30min"
                 class=" block  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
               >
-               HIRE ASSISSTANTS
+               HIRE ASSISTANTS
               </Link>
               <Link href="/register"
                 class=" flex imtes-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border-[#e58e04]  border-solid border-2 rounded-lg active:bg-[#e58e04] hover:bg-[#e58e04] hover:text-white focus:outline-none focus:shadow-outline-purple"
               >
-               BECOME A SALES ASSISSTANT<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+               BECOME A SALES ASSISTANT<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
 </svg>
 
@@ -128,7 +128,7 @@ export default function Home() {
           <div class="md:basis-1/2">
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Define Business Goals</h1>
-              <p className='z-10 mb-2'>Tell us more about your business,your target customers demographics, countries where you operate and your sales goals. This helps us to personalize the training and selection of your sales assisstants.</p>
+              <p className='z-10 mb-2'>Tell us more about your business,your target customers demographics, countries where you operate and your sales goals. This helps us to personalize the training and selection of your sales assistants.</p>
               <Link href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg>
@@ -137,7 +137,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Train and Hire Assistants</h1>
-              <p className='z-10 mb-2'>We interview and train sales assisstants who meet your business requirements. These can be a few individuals or an entire department based on your preference </p>
+              <p className='z-10 mb-2'>We interview and train sales assistants who meet your business requirements. These can be a few individuals or an entire department based on your preference </p>
               <a href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></a>
@@ -145,7 +145,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Evaluate and Monitor</h1>
-              <p className='z-10 mb-2 '>All our assistants undergo at least 3 weeks sales bootcamps where we equip them with the best skills and tools. Once we have assisstants on your project, you can monitor and suggest areas of improvement to accelerate business goals</p>
+              <p className='z-10 mb-2 '>All our assistants undergo at least 3 weeks sales bootcamps where we equip them with the best skills and tools. Once we have assistant on your project, you can monitor and suggest areas of improvement to accelerate business goals</p>
               <Link href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Hire Sales Assistants <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></Link>
@@ -210,7 +210,7 @@ export default function Home() {
             </span>
             <div class="card-text">
               <h2>Training Bootcamp</h2>
-              <p>Every assisstant must attend and pass our 3 week bootcamp before they are eligible to work on client projects</p>
+              <p>Every assistant must attend and pass our 3 week bootcamp before they are eligible to work on client projects</p>
             </div>
           </div>
           <div class="about-card w-80 md:w-[300px]">
@@ -234,7 +234,7 @@ export default function Home() {
             </span>
             <div class="card-text">
               <h2>Work Assessments</h2>
-              <p>Get to work on a real-business project and achieve set goals to better equip you as as sales assisstant</p>
+              <p>Get to work on a real-business project and achieve set goals to better equip you as as sales assistant</p>
             </div>
           </div>
           <div class="about-card w-80 md:w-[300px]">
@@ -265,7 +265,7 @@ export default function Home() {
             </span>
             <div class="card-text">
               <h2>Get Paid</h2>
-              <p>Get paid competitive salaries working as a sales assisstant for different businesses within our partner network </p>
+              <p>Get paid competitive salaries working as a sales assistant for different businesses within our partner network </p>
             </div>
           </div>
           <div class="about-card w-80 md:w-[300px]">
@@ -287,7 +287,7 @@ export default function Home() {
             </span>
             <div class="card-text">
               <h2>Continuous mentorship</h2>
-              <p>We offer continuous training for our assisstants at no extra cost to help improve performance</p>
+              <p>We offer continuous training for our assistant at no extra cost to help improve performance</p>
 
             </div>
           </div>

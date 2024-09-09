@@ -16,7 +16,7 @@ const ProfileCard = ({ user, title }) => {
            
           </Link>
           <Link
-            href="/dashboard/feedback"
+            href="/dashboard/training"
             class="flex items-center whitespace-nowrap px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-[#e58e04] transition-colors duration-150 bg-transparent border border-[#e58e04] rounded-lg active:bg-[#e58e04] hover:bg-[#e58e04] hover:text-white focus:outline-none focus:shadow-outline-purple"
           >
             Training Bootcamp
