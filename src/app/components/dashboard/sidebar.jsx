@@ -76,8 +76,8 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
         </div>
           <div className="link">
           <Link
-            href="/dashboard/team"
-            class={` ${pathname === "/dashboard/team" ? "active" : ""}`}
+            href="/dashboard/profile"
+            class={` ${pathname === "/dashboard/profile" ? "active" : ""}`}
             onClick={toggleIsOpen}
           >
             <div class="link-icon">

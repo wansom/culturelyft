@@ -94,7 +94,7 @@ export default function Home() {
               >
                Book A Demo
               </Link>
-              <Link href="/anonymous"
+              <Link href="/register"
                 class=" flex imtes-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border-[#e58e04]  border-solid border-2 rounded-lg active:bg-[#e58e04] hover:bg-[#e58e04] hover:text-white focus:outline-none focus:shadow-outline-purple"
               >
                BECOME A SALES ASSISSTANT<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
