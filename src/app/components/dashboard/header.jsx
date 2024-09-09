@@ -14,8 +14,8 @@ const DashboardHeader = () => {
     setIsOpen(!isOpen);
   };
   const router =useRouter()
-  const userLogout=()=>{
-      logout().then(()=>{
+  const userLogout=async()=>{
+     await logout().then(()=>{
           router.push('/login')
       })
   }

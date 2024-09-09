@@ -12,7 +12,7 @@ const ProfileCard = ({ user, title }) => {
             href="/dashboard/profile"
             class=" px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#e58e04] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple whitespace-nowrap flex items-center"
           >
-            {user.profileUpdate=='100%'?"Profile Awaiting Verification":' Complete Company Profile'}
+            {user?.profileUpdate=='100%'?"Profile Awaiting Verification":' Complete Company Profile'}
            
           </Link>
           <Link
