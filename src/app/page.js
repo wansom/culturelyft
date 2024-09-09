@@ -89,10 +89,10 @@ export default function Home() {
               </h1>
               <p className='mx-5 my-5 text-white text-md'>We have trained,interviewed and equipped over 10,000 sales assisstants to handle every step of your customer acqusition journey  </p>
               <div className='flex flex-col md:flex-row items-center gap-5 ml-5 mb-4'>
-              <Link href="/login"
+              <Link href="https://calendly.com/culturelyft-info/30min"
                 class=" block  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
               >
-               Book A Demo
+               HIRE ASSISSTANTS
               </Link>
               <Link href="/register"
                 class=" flex imtes-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border-[#e58e04]  border-solid border-2 rounded-lg active:bg-[#e58e04] hover:bg-[#e58e04] hover:text-white focus:outline-none focus:shadow-outline-purple"
