@@ -129,7 +129,7 @@ export default function Home() {
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Define Business Goals</h1>
               <p className='z-10 mb-2'>Tell us more about your business,your target customers demographics, countries where you operate and your sales goals. This helps us to personalize the training and selection of your sales assisstants.</p>
-              <Link href='/login' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <Link href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg>
               </Link>
@@ -138,7 +138,7 @@ export default function Home() {
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Train and Hire Assistants</h1>
               <p className='z-10 mb-2'>We interview and train sales assisstants who meet your business requirements. These can be a few individuals or an entire department based on your preference </p>
-              <a href='login' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <a href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></a>
               <hr className='h-[1px] bg-black w-full my-2' />
@@ -146,7 +146,7 @@ export default function Home() {
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Evaluate and Monitor</h1>
               <p className='z-10 mb-2 '>All our assistants undergo at least 3 weeks sales bootcamps where we equip them with the best skills and tools. Once we have assisstants on your project, you can monitor and suggest areas of improvement to accelerate business goals</p>
-              <Link href='/login' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Hire Sales Assistants <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <Link href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Hire Sales Assistants <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></Link>
               <hr className='h-[1px] bg-black w-full my-2' />
