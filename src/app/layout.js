@@ -5,7 +5,24 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Culture Lyft',
-  description: 'Employee engagement, performance & development platform you need to build an employee experience people love.',
+  description: 'We have trained,interviewed and equipped over 10,000 sales assisstants to handle every step of your customer acqusition journey',
+  keywords: ['remote jobs in Kenya'],
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+      'de-DE': '/de-DE',
+    },
+  },
+  openGraph: {
+    title: 'Evacare',
+    description: 'We have trained,interviewed and equipped over 10,000 sales assisstants to handle every step of your customer acqusition journey',
+    url: 'https://www.culturelyft.com',
+    siteName: 'Culture Lyft',
+    images: '/home.png',
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({ children }) {
