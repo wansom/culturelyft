@@ -96,7 +96,7 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
                 />
               </svg>
             </div>
-            <div class="link-text">Complete Profile</div>
+            <div class="link-text">Account Profile</div>
           </Link>
         </div>
        
