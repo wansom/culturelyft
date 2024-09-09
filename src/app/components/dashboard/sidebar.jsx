@@ -102,8 +102,8 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
        
         <div class="link">
           <Link
-            href="/dashboard/feedback"
-            class={` ${pathname === "/dashboard/feedback" ? "active" : ""}`}
+            href="/dashboard/training"
+            class={` ${pathname === "/dashboard/training" ? "active" : ""}`}
             onClick={toggleIsOpen}
           >
             <div class="link-icon">
@@ -246,7 +246,7 @@ const DashboardSidebar = ({ toggleIsOpen }) => {
        
         <div className="link">
           <Link
-            href="/dashboard/rewards"
+            href="/dashboard"
             class={` ${pathname === "/dashboard/rewards" ? "active" : ""}`}
             onClick={toggleIsOpen}
           >

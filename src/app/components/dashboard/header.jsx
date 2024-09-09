@@ -47,7 +47,7 @@ const DashboardHeader = () => {
     'block':openDropDown
   })} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
     <div class="py-1" role="none">
-      <Link href="/dashboard/company/new" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Company Profile</Link>
+      <Link href="/dashboard/profile" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account Profile</Link>
       <button onClick={userLogout} class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Sign Out</button>
      
 

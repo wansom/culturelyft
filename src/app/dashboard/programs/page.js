@@ -9,7 +9,7 @@ const Programs = () => {
   return (
 
   <div className=" w-[95%] px-10 py-10 h-fit  my-4 rounded-lg mx-auto bg-white">
-      <div className=" flex flex-wrap items-center justify-start gap-4">
+      {/* <div className=" flex flex-wrap items-center justify-start gap-4">
         {teamExperiences.map((e)=>(
           <div class="relative inline-block text-left">
     <button type="button" class=" whitespace-nowrap inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -33,16 +33,16 @@ const Programs = () => {
 
 
      
-    </div>
+    </div> */}
     <div className="flex flex-wrap lg:flex-nowrap items-center justify-evenly gap-10 my-4">
       <div className="space-y-2 md:basis-2/3">
-        <h1 className="text-2xl font-bold">Redefine Employee Expereince</h1>
+        <h1 className="text-2xl font-bold">Work with Global Brands</h1>
         <p>
-        For HR teams and organizational leaders, offering personalized, experiential rewards at scale can feel impossible. culturelyft makes it easy to recognize your people with a meaningful, personalized experience no matter where they're located
+       Our Goal is to train,interview, and manage the best sales Asssistants to work with global brands to accelerate business growth.Once you complete training you will be able to access  tasks here 
         </p>
-        <button class=" uppercase block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple w-full">
+        {/* <button class=" uppercase block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple w-full">
           Request feature
-        </button>
+        </button> */}
       </div>
       <Image
                   src="/rocket.png"
