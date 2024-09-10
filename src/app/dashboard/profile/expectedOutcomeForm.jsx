@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const ExpectedOutcomeForm = ({user,updateProgress}) => {
      const router =useRouter()
-     const [amount, setAmount] = useState(250000);
+     const [amount, setAmount] = useState(70000);
      const [accountType,setAccountType]=useState('')
 
      const handleRadioChange = (event) => {
@@ -81,7 +81,7 @@ const ExpectedOutcomeForm = ({user,updateProgress}) => {
         <ToastContainer/>
         <div className='flex flex-col items-start justify-center'>
           
-          <h3 className="mb-5 text-lg font-medium text-gray-900">We use third party applications to verify all application documents. This costs  KES. 2500</h3>
+          <h3 className="mb-5 text-lg font-medium text-gray-900">We use third party applications to verify all application documents.Make sure your account has at least Ksh 700 for this verification</h3>
           <ul className="grid w-full gap-6 md:grid-cols-2">
                   <li>
                     <input 
