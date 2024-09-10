@@ -8,7 +8,7 @@ import { updateUserDetails } from "@/app/services/firestore";
 
 const OverviewForm = ({user,updateProgress}) => {
     const [formData, setFormData] = useState({
-        fullname: user.fullname,
+      fullname: user.fullname,
         email: user.email,
         phoneNumber: '',
         national_id:'',
@@ -93,12 +93,12 @@ const OverviewForm = ({user,updateProgress}) => {
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="text"
-              name="fullanme"
+              name="fullname"
               value={formData.fullname}
               onChange={handleChange}
-              placeholder={user.fullname}
+              placeholder=''
               id="fullname"
-              disabled
+              
             />
           </label>
 
@@ -108,11 +108,11 @@ const OverviewForm = ({user,updateProgress}) => {
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="email"
               name="email"
-              value={user.email}
+              value={formData.email}
               onChange={handleChange}
               placeholder={user.email}
               id="email"
-              disabled
+              
             />
           </label>
           <label className="block text-sm w-full">
