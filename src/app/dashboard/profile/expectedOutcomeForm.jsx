@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const ExpectedOutcomeForm = ({user,updateProgress}) => {
      const router =useRouter()
-     const [amount, setAmount] = useState(1000);
+     const [amount, setAmount] = useState(250000);
      const [accountType,setAccountType]=useState('')
 
      const handleRadioChange = (event) => {

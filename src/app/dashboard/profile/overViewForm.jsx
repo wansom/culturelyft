@@ -8,8 +8,8 @@ import { updateUserDetails } from "@/app/services/firestore";
 
 const OverviewForm = ({user,updateProgress}) => {
     const [formData, setFormData] = useState({
-        fullname: '',
-        email: '',
+        fullname: user.fullname,
+        email: user.email,
         phoneNumber: '',
         national_id:'',
         departments: [],
