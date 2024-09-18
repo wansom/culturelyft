@@ -17,8 +17,8 @@ const Navbar = () => {
               <Image
                 src="/culturelyft.png"
                 alt="logo"
-                width={170}
-                height={120}
+                width={150}
+                height={100}
               />
             </a>
           </div>
