@@ -55,11 +55,11 @@ export default function Home() {
         <div class="banner-container basis-2/2 md:basis=1/2">
           <div class="bn-text mt-10">
             <div class="bn-txt-holder">
-              <h1 class="text-[32px] md:text-[48px] mx-5  text-white">
-                We handle the sales so you can focus on building things your customers love
+              <h1 class="text-[32px] md:text-[46px] mx-5  text-white">
+                We handle the customer success so you focus on building things your customers love
 
               </h1>
-              <p className='mx-5 my-5 text-white text-md'>We have trained,interviewed and equipped over 10,000 sales assistant to handle every step of your customer acqusition journey  </p>
+              <p className='mx-5 my-5 text-white text-md'>We have trained,interviewed and equipped over 10,000 agents to handle every step of your customer  journey  </p>
               <div className='flex flex-col md:flex-row items-center gap-5 ml-5 mb-4'>
               <Link href="https://calendly.com/culturelyft-info/30min"
                 class=" block  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
@@ -158,9 +158,9 @@ export default function Home() {
         
       </section>
     
-      <section  class="about py-6" id="assitants">
+      <section  class="about py-6 " id="assitants">
     
-        <h1 className='text-center font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto'>Join A Global Team of Elite Sales Agents Driving Business Growth</h1>
+        <h1 className='text-center font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto '>Join A Global Team of Elite Sales Agents Driving Business Growth</h1>
       <div class="about-cards  mx-auto px-5 lg:px-10 flex items-center md:items-start flex-col md:flex-row justify-between gap-10">
           <div class="about-card w-80 md:w-[300px]">
             <svg id="ellipse" xmlns="http://www.w3.org/2000/svg" width="131" height="93" viewBox="0 0 131 93" fill="none">
