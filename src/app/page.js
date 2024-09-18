@@ -6,54 +6,26 @@ import './blog.css'
 import Link from 'next/link';
 
 export default function Home() {
-  const [isOpen, setOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    phonenumber: "",
-    tickets: ""
-  });
-  const [posts, setPosts] = useState([]);
+  const [hoveredIndex, setHoveredIndex] = useState(0);
+  const[activeProduct,setActiveProduct]=useState(0)
+  const products=[
+    {
+      title:'Customer Support',
+      subtitle:'Full time agents, dedicated to your brand, delivering exceptional support 24/7/365.Start with 1 agent or a team of 30+. No Upfront fees required.',
+    },
+    {
+      title:'On Demand Sales Team ',
+      subtitle:'Generate more revenue with a complete inbound/outbound sales operation, available on demand.',
+   
+    },
+    {
+      title:'Enterprise Call Center ',
+      subtitle:"Our teams answer calls for you, call back customers and sell in real time. All in a simple month-to-month format, built to scale and go 24/7 from day 1.",
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+    },
+  ]
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('https://api.adanianlabs.io/api/v1/attendance', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
-      const data = await response.json();
 
-      if (data) {
-        swal({
-          title: "Thank You",
-          text: "Your reservation has been received ",
-          icon: "success",
-        }).then(() => {
-          location.reload()
-        })
-      }
-
-      // handle success or errors based on the response data
-    } catch (error) {
-      swal({
-
-        text: "Something went wrong making your reservation. please try again",
-        icon: "error",
-      })
-    }
-  };
   useEffect(() => {
     fetch("https://intelliverseai.com/wp/wp-json/wp/v2/posts")
       .then((response) => response.json())
@@ -114,6 +86,35 @@ export default function Home() {
         </div>
 
       </section>
+      <section className=" mx-auto px-5 py-12 bg-gray-global " id="products">
+    <h2 className="text-black text-2xl font-semibold text-center">
+        Our Services
+      </h2>
+      <div className="flex flex-col md:flex-row justify-center items-center gap-3 my-4">
+        {
+          products.map((i,index)=>(
+            <div key={index}>
+              <div className={`rounded-lg px-5 py-2 ${activeProduct!==index?'border-solid border-2 border-gray-200 bg-white text-secondary':'bg-black text-white'}`} onClick={()=>{setActiveProduct(index)}}>{i.title}</div>
+             
+             
+            </div>
+
+            
+          ))
+        }
+
+      </div>
+
+      <div>
+        <div className="w-full">
+          <p className="text-black text-center text-lg">{products[activeProduct]?.subtitle}</p>
+               
+        </div>
+  
+      </div>
+     
+
+    </section>
       <section class="about " id="businesses">
         <div class="about-container  mx-auto px-5 py-10  flex flex-col-reverse md:flex-row  items-start justify-between gap-20">
           <div class="flex flex-row items-center justify-between md:basis-1/2 ">
@@ -146,7 +147,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className='text-[32px] font-semibold text-black'>Evaluate and Monitor</h1>
-              <p className='z-10 mb-2 '>All our assistants undergo at least 3 weeks sales bootcamps where we equip them with the best skills and tools. Once we have assistant on your project, you can monitor and suggest areas of improvement to accelerate business goals</p>
+              <p className='z-10 mb-2 '>All our assistants undergo at least 3 weeks sales bootcamps where we equip them with the best skills and tools. Project onboarding is fast, We will have your team ready in a week.You can monitor and suggest areas of improvement to accelerate business goals</p>
               <Link href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Hire Sales Assistants <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></Link>
@@ -156,38 +157,7 @@ export default function Home() {
         </div>
         
       </section>
-      {/* <section class="speakers  py-6 my-10" id="speakers-id">
-        <div className='container mx-auto px-5 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-5  '>
-          <div className='rounded-[16px] p-10 space-y-4 bg-[#01382E]' id='insights'>
-            <h1 className='text-[32px] font-semibold text-white'>Get more insights from Research</h1>
-            <p>With  Employee Research you can read between the lines. Capture, consolidate and measure employee feedback that falls outside of your Engagement or Pulse programs.</p>
-            <ul className='list-disc list-inside'>
-              <li>Launch ad hoc feedback quickly with programs designed by experts, including assessments for CSR, ethics, DEI, well-being, safety, employee growth & development, and more
-                Reduce time to action with best-in-class I/O designed</li>
-              <li>Reduce time to action with best-in-class I/O designed programs that are lightweight yet incredibly comprehensive. No need to wait for other departments to guide strategy or decisions</li>
-              <li>Protect employee confidentiality and anonymity with built-in enterprise security that’s both scalable and reliable</li>
-            </ul>
-            <a href='https://calendly.com/culturelyft/30min' className='flex items-center justify-center gap-2 text-white border-white border-solid border-2 py-2 px-3 rounded-lg '>Speak to Our Team <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-              </a>
-          </div>
-          <div className='rounded-[16px] p-10 space-y-4 bg-[#01382E]' id='culture'>
-            <h1 className='text-[32px] font-semibold text-white'>Build The Best Company Culture</h1>
-            <p>Culture Lyft, quickly uncover and weigh what matters most to your employees, whether that’s more vacation days, better healthcare or work-life balance.</p>
-            <ul className='list-disc list-inside'>
-              <li>Leverage powerful analytical models and cost-benefit analysis tools to identify what your employees value and where to focus to deliver the most impact</li>
-              <li>Get insights on employee preferences faster with rigorous, pre-configured analyses for benefits, office design, employer value proposition and more</li>
-              <li>Enable leaders to run programs with ease and glean insights quickly thanks to guided setups, all without compromising on quality</li>
-            </ul>
-            <a href='https://calendly.com/culturelyft/30min' className='flex items-center justify-center gap-2 text-white border-white border-solid border-2 py-2 px-3 rounded-lg '>Speak to Our Team <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-              </a>
-          </div>
-        </div>
-
-      </section> */}
+    
       <section  class="about py-6" id="assitants">
     
         <h1 className='text-center font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto'>Join A Global Team of Elite Sales Agents Driving Business Growth</h1>

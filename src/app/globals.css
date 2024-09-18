@@ -423,6 +423,9 @@ input {
 	height: 100%;
 	outline: none;
 }
+.bg-gray-global{
+  background: rgba(0, 0, 0, 0.04);
+}
 
 
 /* == || Banner == */
