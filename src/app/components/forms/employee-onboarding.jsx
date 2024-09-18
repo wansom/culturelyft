@@ -110,7 +110,7 @@ const EmployeeOnboarding = ({user}) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Vincent Kompany"
-            />
+            /> 
           </label>
 
           <label className="block text-sm w-full">

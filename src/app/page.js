@@ -118,8 +118,9 @@ export default function Home() {
         <div class="about-container  mx-auto px-5 py-10  flex flex-col-reverse md:flex-row  items-start justify-between gap-20">
           <div class="flex flex-row items-center justify-between md:basis-1/2 ">
             <div class="">
+            <img class="left-img" src="/sales.png" alt="Adanian" className='rounded-lg' style={{ borderRadius: '10px' }} />
               <img src="/about-1.jpg" alt="culturelyft" className='rounded-lg my-2' />
-              <img class="left-img" src="/sales.png" alt="Adanian" className='rounded-lg' style={{ borderRadius: '10px' }} />
+             
             </div>
             <div class="r-images m-2">
               <img src="/about-2.jpg" alt="culturelyft" className='rounded-lg' style={{ borderRadius: '10px' }} />

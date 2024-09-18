@@ -214,6 +214,7 @@ nav {
 }
 
 
+
 .links a.active,
 .links a:hover {
   color: var(--blue);
@@ -410,7 +411,18 @@ section.banner{
   background-color: #90123F;
 }
 
+fieldset {
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
 
+input {
+	width: 100%;
+	border: none;
+	height: 100%;
+	outline: none;
+}
 
 
 /* == || Banner == */

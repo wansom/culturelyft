@@ -127,7 +127,7 @@ const OverviewForm = ({user,updateProgress}) => {
             />
           </label>
           <label className="block text-sm w-full">
-            <span className="text-gray-700 dark:text-gray-400">National ID</span>
+            <span className="text-gray-700 dark:text-gray-400">National ID/Passport</span>
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="text"
@@ -138,14 +138,14 @@ const OverviewForm = ({user,updateProgress}) => {
             />
           </label>
           <label className=" w-full block text-sm">
-            <span className="text-gray-700 dark:text-gray-400">City</span>
+            <span className="text-gray-700 dark:text-gray-400">Country/City</span>
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               type="text"
               name="city"
               value={formData.city}
               onChange={handleChange}
-              placeholder="Nairobi"
+              placeholder="London,UK"
             />
           </label>
           <label className=" w-full block text-sm">
