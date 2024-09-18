@@ -36,9 +36,9 @@ const Programs = () => {
     </div> */}
     <div className="flex flex-wrap lg:flex-nowrap items-center justify-evenly gap-10 my-4">
       <div className="space-y-2 md:basis-2/3">
-        <h1 className="text-2xl font-bold">Work with Global Brands</h1>
+        <h1 className="text-2xl font-bold">Contract Center</h1>
         <p>
-       Our Goal is to train,interview, and manage the best sales Asssistants to work with global brands to accelerate business growth.Once you complete training you will be able to access  tasks here 
+          You have no active contracts.Contracts are available after training
         </p>
         {/* <button class=" uppercase block max-w-1/2 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple w-full">
           Request feature
