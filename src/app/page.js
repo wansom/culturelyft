@@ -92,12 +92,12 @@ export default function Home() {
               <Link href="https://calendly.com/culturelyft-info/30min"
                 class=" block  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
               >
-               HIRE ASSISTANTS
+               HIRE AN AGENT
               </Link>
               <Link href="/register"
                 class=" flex imtes-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border-[#e58e04]  border-solid border-2 rounded-lg active:bg-[#e58e04] hover:bg-[#e58e04] hover:text-white focus:outline-none focus:shadow-outline-purple"
               >
-               BECOME A SALES ASSISTANT<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+               BECOME AN AGENT<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
 </svg>
 
@@ -137,8 +137,8 @@ export default function Home() {
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
             <div>
-              <h1 className='text-[32px] font-semibold text-black'>Train and Hire Assistants</h1>
-              <p className='z-10 mb-2'>We interview and train sales assistants who meet your business requirements. These can be a few individuals or an entire department based on your preference </p>
+              <h1 className='text-[32px] font-semibold text-black'>Train and Hire Agents</h1>
+              <p className='z-10 mb-2'>We interview and train sales agents who meet your business requirements. These can be a few individuals or an entire department based on your preference </p>
               <a href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></a>
@@ -190,7 +190,7 @@ export default function Home() {
       </section> */}
       <section  class="about py-6" id="assitants">
     
-        <h1 className='text-center font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto'>Join A Global Team of Elite Sales Assistants Driving Business Growth</h1>
+        <h1 className='text-center font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto'>Join A Global Team of Elite Sales Agents Driving Business Growth</h1>
       <div class="about-cards  mx-auto px-5 lg:px-10 flex items-center md:items-start flex-col md:flex-row justify-between gap-10">
           <div class="about-card w-80 md:w-[300px]">
             <svg id="ellipse" xmlns="http://www.w3.org/2000/svg" width="131" height="93" viewBox="0 0 131 93" fill="none">
