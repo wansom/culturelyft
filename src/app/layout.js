@@ -5,8 +5,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Culture Lyft',
-  description: 'We have trained,interviewed and equipped over 10,000 sales assistants for businesses',
-  keywords: ['remote jobs in Kenya'],
+  description: 'We provide customer support,sales assisstants and enterprise call centers  for businesses',
+  keywords: ['Customer support in Kenya','Call Center','Sales Assistant','remote jobs in Kenya'],
   alternates: {
     canonical: '/',
     languages: {
@@ -16,7 +16,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Culture Lyft',
-    description: 'We have trained,interviewed and equipped over 10,000 sales assistants for businesses',
+    description: 'We provide customer support,sales assisstants and enterprise call centers  for businesses',
     url: 'https://www.culturelyft.com',
     siteName: 'Culture Lyft',
     images: '/home.png',
