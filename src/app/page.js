@@ -87,13 +87,11 @@ export default function Home() {
         </div>
 
       </section>
-      </div>
-  
-      <section className=" mx-auto px-5 py-12 bg-gray-global " id="products">
-    <h2 className="text-black text-4xl font-semibold text-center">
+      <section className=" mx-auto px-5 lg:px-20 py-16 " id="products">
+    <h2 className="text-white mb-4 text-4xl font-semibold text-center">
         I want to Get A Solution
       </h2>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-3 my-4">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-3 my-6">
         {
           products.map((i,index)=>(
             <div key={index}>
@@ -110,7 +108,7 @@ export default function Home() {
 
       <div>
         <div className="w-full">
-          <p className="text-black text-center text-lg">{products[activeProduct]?.subtitle}</p>
+          <p className="text-gray-300 text-center text-lg">{products[activeProduct]?.subtitle}</p>
                
         </div>
   
@@ -118,8 +116,8 @@ export default function Home() {
      
 
     </section>
-      <section class="about " id="businesses">
-        <div class="about-container  mx-auto px-5 py-10  flex flex-col-reverse md:flex-row  items-start justify-between gap-20">
+    <section class="about finding-information-section-wrapper  px-5 lg:px-20 py-10  " id="businesses">
+        <div class="about-container  mx-auto flex flex-col-reverse md:flex-row  items-start justify-between gap-20">
           <div class="flex flex-row items-center justify-between md:basis-1/2 ">
             <div class="">
             <img class="left-img" src="/sales.png" alt="Adanian" className='rounded-lg' style={{ borderRadius: '10px' }} />
@@ -132,38 +130,32 @@ export default function Home() {
           </div>
           <div class="md:basis-1/2">
             <div>
-              <h1 className='text-[32px] font-semibold text-black'>Define Business Goals</h1>
-              <p className='z-10 mb-2'>Tell us more about your business,your target customers demographics, countries where you operate and your sales goals. This helps us to personalize the training and selection of your sales assistants.</p>
-              <Link href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-              </Link>
+              <h1 className='text-[32px] font-semibold text-white'>Define Business Goals</h1>
+              <p className='z-10 mb-2 text-gray-300'>Tell us about your business, target audience, locations, and sales goals so we can tailor the training and selection of your sales assistants</p>
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
             <div>
-              <h1 className='text-[32px] font-semibold text-black'>Train and Hire Agents</h1>
-              <p className='z-10 mb-2'>We interview and train sales agents who meet your business requirements. These can be a few individuals or an entire department based on your preference </p>
-              <a href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Learn More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg></a>
+              <h1 className='text-[32px] font-semibold text-white'>Train and Hire Agents</h1>
+              <p className='z-10 mb-2 text-gray-300'>We interview and train sales agents tailored to your business needs, whether you need a few individuals or a full department. </p>
+            
               <hr className='h-[1px] bg-black w-full my-2' />
             </div>
             <div>
-              <h1 className='text-[32px] font-semibold text-black'>Evaluate and Monitor</h1>
-              <p className='z-10 mb-2 '>All our assistants undergo at least 3 weeks sales bootcamps where we equip them with the best skills and tools. Project onboarding is fast, We will have your team ready in a week.You can monitor and suggest areas of improvement to accelerate business goals</p>
-              <Link href='https://calendly.com/culturelyft-info/30min' className='flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Hire Sales Assistants <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <h1 className='text-[32px] font-semibold text-white'>Evaluate and Monitor</h1>
+              <p className='z-10 mb-2 text-gray-300'>All our assistants complete a 3-week sales bootcamp, equipping them with top skills and tools. With fast onboarding, your team will be ready in a week. You can monitor progress and suggest improvements to accelerate business goals.</p>
+              <Link href='https://calendly.com/culturelyft-info/30min' className='mt-10 flex items-center text-[#e58e04] flex-nowrap hover:border-solid hover:border-2 hover:border-[#e58e04] w-fit px-4'>Hire Sales Assistants <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg></Link>
-              <hr className='h-[1px] bg-black w-full my-2' />
+            
             </div>
           </div>
         </div>
         
       </section>
+      </div>    
+      <section  class="about py-6 bg-gray-global " id="assitants">
     
-      <section  class="about py-6 " id="assitants">
-    
-        <h1 className='text-center font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto '>Join A Global Team of Elite Sales Agents Driving Business Growth</h1>
+        <h1 className='text-center font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto'>Join A Global Team of Elite Sales Agents Driving Business Growth</h1>
       <div class="about-cards  mx-auto px-5 lg:px-10 flex items-center md:items-start flex-col md:flex-row justify-between gap-10">
           <div class="about-card w-80 md:w-[300px]">
             <svg id="ellipse" xmlns="http://www.w3.org/2000/svg" width="131" height="93" viewBox="0 0 131 93" fill="none">

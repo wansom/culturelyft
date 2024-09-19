@@ -108,6 +108,20 @@ p{
 }
 
 button { cursor: pointer; }
+.text-rich-green{
+  color:#99efd0;
+}
+.text-rich-gray{
+  color: #8476aa;
+}
+
+.finding-information-section-wrapper {
+  width: 100%;
+  background-image: url(../../public/pattern-7.svg);
+  background-repeat: no-repeat;
+  background-position: 75vw 205px;
+  background-size: contain;
+}
 .form-input {
   -webkit-appearance: none;
   -moz-appearance: none;
