@@ -64,7 +64,7 @@ export default function Home() {
               <Link href="https://calendly.com/culturelyft-info/30min"
                 class=" block  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#e58e04] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
               >
-               HIRE AN AGENT
+               TALK TO OUR TEAM
               </Link>
               <Link href="/register"
                 class=" flex imtes-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border-[#e58e04]  border-solid border-2 rounded-lg active:bg-[#e58e04] hover:bg-[#e58e04] hover:text-white focus:outline-none focus:shadow-outline-purple"
