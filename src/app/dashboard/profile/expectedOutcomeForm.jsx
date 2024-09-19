@@ -173,12 +173,12 @@ const ExpectedOutcomeForm = ({user,updateProgress}) => {
 							</fieldset>
               <div class="flex items-center">
     <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-secondary bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 my-3"/>
-    <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">By checking this box, I agree to a $3.99 fee for document verification through a third-party service</label>
+    <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">By checking this box, I agree to a $3.99 fee for document verification through a third-party service *We don't verify profiles from UAE</label>
 </div>
           </form>
                     <div className="space-y-3 w-full">
                    
-                    <PayPalScriptProvider options={initialOptions}> 
+      <PayPalScriptProvider options={initialOptions}> 
       <PayPalButtons
         createSubscription={(data, actions) => {
             
