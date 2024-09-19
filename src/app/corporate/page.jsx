@@ -100,7 +100,7 @@ const Anonymous = () => {
           <div class="bn-text ">
             <div class="bn-txt-holder">
               <h1 class="text-[32px] md:text-[48px]  text-black">
-                Corporate Customer Success Training
+              Customer Success Training
               </h1>
               <p className=" my-5 text-black">
               CultureLyft offers best-in-class customer success training for teams to build stronger client relationships, increase customer retention, and drive long-term business growth. Our tailored programs empower teams to deliver exceptional service, handle challenging situations, and consistently exceed customer expectations
