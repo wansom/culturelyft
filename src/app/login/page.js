@@ -81,7 +81,7 @@ setLoading(true)
     return /\S+@\S+\.\S+/.test(email);
   };
     return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden main-wrapper">
             <Navbar/>
           <section className="mx-auto">
           <ToastContainer />

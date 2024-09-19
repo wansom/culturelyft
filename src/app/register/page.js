@@ -102,7 +102,7 @@ setLoading(true)
     return /\S+@\S+\.\S+/.test(email);
   };
     return (  
-        <main>
+        <main className="main-wrapper">
             <Navbar/>
             <section className="mx-auto">
             <ToastContainer />

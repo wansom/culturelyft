@@ -92,7 +92,7 @@ const Anonymous = () => {
     });
   };
   return (
-    <main className=" overflow-x-hidden ">
+    <main className=" overflow-x-hidden main-wrapper">
       <Navbar />
       <ToastContainer />
       <section class="container-fluid mx-auto flex flex-col md:flex-row  px-5 lg:px-0">
