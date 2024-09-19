@@ -50,8 +50,9 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden">
-    <Navbar/>
-      <section class="banner flex flex-col md:flex-row bg-[#081a43]">
+      <div className='main-wrapper'>
+      <Navbar/>
+      <section class="banner flex flex-col md:flex-row">
         <div class="banner-container basis-2/2 md:basis=1/2">
           <div class="bn-text mt-10">
             <div class="bn-txt-holder">
@@ -81,11 +82,13 @@ export default function Home() {
           <div class=""></div>
         </div>
         <div className='md:basis-1/2'>
-          <img src='/banner-1.png' className='h-full w-full object-cover' >
+          <img src='/banner-2.png' className='h-full w-full object-cover' >
           </img>
         </div>
 
       </section>
+      </div>
+  
       <section className=" mx-auto px-5 py-12 bg-gray-global " id="products">
     <h2 className="text-black text-4xl font-semibold text-center">
         I want to Get A Solution
