@@ -6,7 +6,6 @@ import './blog.css'
 import Link from 'next/link';
 
 export default function Home() {
-  const [hoveredIndex, setHoveredIndex] = useState(0);
   const[activeProduct,setActiveProduct]=useState(0)
   const products=[
     {
@@ -49,8 +48,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="overflow-x-hidden">
-      <div className='main-wrapper'>
+    <main className="overflow-x-hidden main-wrapper">
       <Navbar/>
       <section class="banner flex flex-col md:flex-row">
         <div class="banner-container basis-2/2 md:basis=1/2">
@@ -258,13 +256,31 @@ export default function Home() {
       </div>
     </div>
   </section>
-      </div>    
-     
-      <BlogCategories/>
- 
+  <section className='mx-auto px-5 md:px-20 py-12 invest-property-section-wrapper'>
+<div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+  <div className='space-y-4'>
+    <h2 className='font-semibold text-white text-4xl'>Serve your Customers in their own <span className='text-orange-500'>Native Languages</span></h2>
+    <p className='text-gray-300 text-md font-light'>We have Support Agents in over 30 countries speaking over 80 Languages ensuring you can personalize your customer support in native languages</p>
+    <Link href="https://calendly.com/culturelyft-info/30min"
+                class=" block w-fit  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+              >
+               TALK TO OUR TEAM
+              </Link>
+  </div>
+<div>
+<img
+            src="/invest-property-section-img.png"
+            alt=""
+            class="invest-property-section__img"
+          />
+</div>
+</div>
+  </section>     
+  <BlogCategories/>   
+
       <footer>
-        <div class="footer-container container">
-          <p className='text-center font-bold'>© {new Date().getFullYear()}All Rights Reserved.Culturelyft</p>
+        <div class="footer-container container my-5">
+          <p className='text-center font-light text-white'>© {new Date().getFullYear()} All Rights Reserved.Culturelyft</p>
         </div>
       </footer>
     </main>

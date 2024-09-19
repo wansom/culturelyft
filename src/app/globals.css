@@ -141,6 +141,30 @@ button { cursor: pointer; }
   background-position: 1vw -120px;
   background-size: contain;
 }
+
+.invest-property-section-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 50px auto;
+  background-image: url(../../public/Mask-Group.svg);
+  background-repeat: no-repeat;
+  background-position: 40vw center;
+  background-size: contain;
+}
+@media screen and (min-width: 768px) {
+  .invest-property-section-wrapper {
+    background-position: 50vw center;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .invest-property-section-wrapper {
+    background-position: right center;
+  }
+}
 .main-wrapper{
   background: linear-gradient(222deg, #3b1d60 1.22%, #040d3e 20%);
 }
