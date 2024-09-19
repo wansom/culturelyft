@@ -152,7 +152,7 @@ export default function Home() {
         </div>
         
       </section>
-      <section  class="about py-6 bg-gray-global " id="assitants">
+      <section  class="about py-6 increase-your-traffic-section-wrapper " id="assitants">
     
     <h1 className='text-center text-white font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto'>Join A Global Team of Elite <span className='text-orange-500'>Sales Agents</span> Driving Business Growth</h1>
   <div class="about-cards  mx-auto px-5 lg:px-20 flex items-center md:items-start flex-col md:flex-row justify-between gap-10">
