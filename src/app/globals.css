@@ -417,12 +417,12 @@ fieldset {
   width: 100%;
 }
 
-input {
+/* input {
 	width: 100%;
 	border: none;
 	height: 100%;
 	outline: none;
-}
+} */
 .bg-gray-global{
   background: rgba(0, 0, 0, 0.04);
 }
