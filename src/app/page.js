@@ -132,13 +132,13 @@ export default function Home() {
             <div>
               <h1 className='text-[32px] font-semibold text-white'>Define Business Goals</h1>
               <p className='z-10 mb-2 text-gray-300'>Tell us about your business, target audience, locations, and sales goals so we can tailor the training and selection of your sales assistants</p>
-              <hr className='h-[1px] bg-black w-full my-2' />
+              
             </div>
             <div>
               <h1 className='text-[32px] font-semibold text-white'>Train and Hire Agents</h1>
               <p className='z-10 mb-2 text-gray-300'>We interview and train sales agents tailored to your business needs, whether you need a few individuals or a full department. </p>
             
-              <hr className='h-[1px] bg-black w-full my-2' />
+              
             </div>
             <div>
               <h1 className='text-[32px] font-semibold text-white'>Evaluate and Monitor</h1>
