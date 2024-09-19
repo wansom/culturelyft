@@ -18,6 +18,7 @@ const Anonymous = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone:'',
     message: "",
     category: "",
     date: new Date(),
@@ -40,8 +41,19 @@ const Anonymous = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    setIsOpen(true);
+    sendMailToFirestore(formData).then((id) => {
+    
+      toast.success(` 🦄 You request has been submitted successfully!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    });
   };
   const handleCopy = () => {
     toast.success(` 🦄ID Copied to clipboard!`, {
@@ -80,46 +92,24 @@ const Anonymous = () => {
     });
   };
   return (
-    <main className=" overflow-x-hidden">
+    <main className=" overflow-x-hidden ">
       <Navbar />
       <ToastContainer />
-      <section class="container mx-auto banner flex flex-col md:flex-row">
-        <div class="banner-container basis-2/2 md:basis=1/3">
-          <div class="bn-text mt-10">
+      <section class="container-fluid mx-auto flex flex-col md:flex-row  px-5 lg:px-0">
+        <div class="basis-2/2 md:basis-2/3 corporate bg-cover bg-center flex items-center px-10">
+          <div class="bn-text ">
             <div class="bn-txt-holder">
-              <h1 class="text-[32px] md:text-[48px] mx-5 md:ml-28 text-black">
-                Give your employees a voice, and listen to what they have to say
+              <h1 class="text-[32px] md:text-[48px]  text-black">
+                Corporate Customer Success Training
               </h1>
-              <p className="mx-5 md:mx-28 my-5 text-black">
-                Culturelyft provides a safe and anonymous way for employees to
-                share their feedback with you, so you can make informed
-                decisions about your company culture.
+              <p className=" my-5 text-black">
+              CultureLyft offers best-in-class customer success training for teams to build stronger client relationships, increase customer retention, and drive long-term business growth. Our tailored programs empower teams to deliver exceptional service, handle challenging situations, and consistently exceed customer expectations
               </p>
-              <Link
-                href="/myissue"
-                class=" flex items-center justify-center w-[50%] md:ml-28 px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple ml-10"
-              >
-                Track Submitted Issue
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
-              </Link>
             </div>
           </div>
           <div class=""></div>
         </div>
-        <div className="basis-1/3 md:basis-2/3">
+        <div className="basis-2/3 md:basis-1/3">
           <section class="bg-gray-50 dark:bg-gray-900">
             <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
               {!trackindId && (
@@ -215,51 +205,15 @@ const Anonymous = () => {
               <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                   <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                    Send Anonymous Feedback
+                    I am Interested
                   </h1>
                   <form class="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-                    <div>
-                      <label
-                        htmlFor="message"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        what would you like to give feeback on?
-                      </label>
-                      <textarea
-                        value={formData.message}
-                        onChange={handleChange}
-                        type="text"
-                        name="message"
-                        id="message"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
-                        placeholder="provide honest feedback"
-                        required=""
-                      ></textarea>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Who should receive this feedback?(Email)
-                      </label>
-                      <input
-                        value={formData.email}
-                        onChange={handleChange}
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="hr@culturelyft.com"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        required=""
-                      />
-                    </div>
-                    <div>
+                  <div>
                       <label
                         htmlFor="name"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
-                        Who should receive this feedback?(Name)
+                       Your Name
                       </label>
                       <input
                         value={formData.name}
@@ -274,23 +228,65 @@ const Anonymous = () => {
                     </div>
                     <div>
                       <label
-                        htmlFor="category"
+                        htmlFor="email"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
-                        Which category does this fall?
+                       Your Email
                       </label>
-                      <Select
-                        className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700  focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                        value={surveyRole}
-                        onChange={handleRoleChange}
-                        options={newsurveyRoles}
+                      <input
+                        value={formData.email}
+                        onChange={handleChange}
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="hr@culturelyft.com"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required=""
                       />
+                    </div>
+                    
+                    <div>
+                      <label
+                        htmlFor="name"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                       Your Phone Number
+                      </label>
+                      <input
+                        value={formData.phone}
+                        onChange={handleChange}
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        placeholder="+44 (0)20 7718 0070"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required=""
+                      />
+                    </div>
+                
+                    <div>
+                      <label
+                        htmlFor="message"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Tell Us About your company
+                      </label>
+                      <textarea
+                        value={formData.message}
+                        onChange={handleChange}
+                        type="text"
+                        name="message"
+                        id="message"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
+                        placeholder="Help Us personalize your Training"
+                        required=""
+                      ></textarea>
                     </div>
                     <button
                       type="submit"
                       className=" flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
                     >
-                      Preview Message
+                      Submit Request
                     </button>
                   </form>
                 </div>

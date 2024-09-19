@@ -32,7 +32,7 @@ const Navbar = () => {
             </div>
             <Link href="/#assitants" >Customer Support</Link>
             <Link href="/#businesses">Sales Support</Link>
-            <Link href="/#assitants">Our Training</Link>
+            <Link href="/corporate">Corporate Training</Link>
             <Link href="/#resources">Resources</Link>
             <Link href="/register">Become an Assistant</Link>
             <button onClick={()=>{router.push('/login')}}

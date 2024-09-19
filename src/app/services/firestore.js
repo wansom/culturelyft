@@ -24,6 +24,7 @@ import {
 
 const USERS_PATH = 'users'
 const QUESTIONS_PATH='anonymousQuiz'
+const TRAINING_PATH='trainings'
 
 export const firestoreListener = onSnapshot
 export const deleteDbField = deleteField()
@@ -35,24 +36,7 @@ const getDocuments = query => {
 	})
 }
 
-const getDocument = ref => {
-	return getDoc(ref).then(doc => formatQueryDataObject(doc))
-}
-const addDocument = (ref, data) => {
-	return addDoc(ref, data)
-}
 
-const setDocument = (path, docId, data) => {
-	return setDoc(doc(firestoreDb, path, docId), data)
-}
-
-const updateDocument = (ref, data) => {
-	return updateDoc(ref, data)
-}
-
-const deleteDocument = (ref, docId) => {
-	return deleteDoc(doc(firestoreDb, ref, docId))
-}
 
 
 //database functions
@@ -86,6 +70,7 @@ export const updateUserDetails = async (payload) => {
 export const createEmployeeProfile=async(payload)=> {
 	try {
 		const mainCollectionRef = collection(firestoreDb, USERS_PATH);
+		const trainingCollectionRef=collection(firestoreDb,TRAINING_PATH)
 		const mainDocRef = doc(mainCollectionRef, payload.employer);
 		const subCollectionRef = collection(mainDocRef, 'employees');
 		const addedDocRef = await addDoc(subCollectionRef, payload);
@@ -145,8 +130,8 @@ export const createEmployeeProfile=async(payload)=> {
   }
   export const sendMailToFirestore=async(payload)=>{
 		try {
-		const mainCollectionRef = collection(firestoreDb, QUESTIONS_PATH);
-		const addedDocRef = await addDoc(mainCollectionRef, payload);
+		const corpCollectionRef = collection(firestoreDb, TRAINING_PATH);
+		const addedDocRef = await addDoc(corpCollectionRef, payload);
 		return addedDocRef.id;
 	} catch (error) {
 	  console.error('Error adding document:', error.message);

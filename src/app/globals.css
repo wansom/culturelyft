@@ -423,6 +423,9 @@ fieldset {
 	height: 100%;
 	outline: none;
 } */
+ .corporate{
+  background-image: url(../../public/corporate.jpg);
+ }
 .bg-gray-global{
   background: rgba(0, 0, 0, 0.04);
 }
