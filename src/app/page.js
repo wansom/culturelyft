@@ -87,8 +87,8 @@ export default function Home() {
 
       </section>
       <section className=" mx-auto px-5 py-12 bg-gray-global " id="products">
-    <h2 className="text-black text-2xl font-semibold text-center">
-        Our Services
+    <h2 className="text-black text-4xl font-semibold text-center">
+        I want to Get A Solution
       </h2>
       <div className="flex flex-col md:flex-row justify-center items-center gap-3 my-4">
         {
