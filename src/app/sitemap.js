@@ -67,12 +67,12 @@ export default async function sitemap() {
       },
     },
     {
-      url: `${baseUrl}/account`,
+      url: `${baseUrl}/business`,
       lastModified: new Date(),
       alternates: {
         languages: {
-          es: `${baseUrl}/account`,
-          de: `${baseUrl}/account`,
+          es: `${baseUrl}/business`,
+          de: `${baseUrl}/business`,
         },
       },
     },
