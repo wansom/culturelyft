@@ -150,6 +150,55 @@ export default function Home() {
         </div>
         
       </section>
+      <section className='mx-auto px-5 md:px-20 py-12 invest-property-section-wrapper'>
+<div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+  <div>
+  <div className='space-y-4'>
+    <h2 className='font-semibold text-white text-4xl'>Serve your Customers in their own <span className='text-orange-500'>Native Languages</span></h2>
+    <p className='text-gray-300 text-md font-light'>We have Support Agents in over 30 countries speaking over 80 Languages ensuring you can personalize your customer support in native languages</p>
+    <Link href="https://calendly.com/culturelyft-info/30min"
+                class=" block w-fit  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+              >
+               TALK TO OUR TEAM
+              </Link>
+  </div>
+  </div>
+
+  
+<div>
+<img
+            src="/invest-property-section-img.png"
+            alt=""
+            class="invest-property-section__img"
+          />
+</div>
+</div>
+  </section>  
+  <section className='mx-auto px-5 md:px-20 py-12 invest-property-section-wrapper' id='ai'>
+<div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+<div>
+<img
+            src="/traffic.png"
+            alt=""
+            class="invest-property-section__img"
+          />
+</div>
+  <div>
+  <div className='space-y-4'>
+    <h2 className='font-semibold text-white text-4xl'>Achieve more with <span className='text-orange-500'>AI</span></h2>
+    <p className='text-gray-300 text-md font-light'>Eliminate repetitive tasks and help your agents craft personalized experiences with AI-driven assistance.</p>
+    <Link href="https://calendly.com/culturelyft-info/30min"
+                class=" flex items-center gap-2 w-fit  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
+              >
+               BOOK A DEMO <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+</svg>
+
+              </Link>
+  </div>
+  </div>
+</div>
+  </section>  
       <section  class="about py-6 increase-your-traffic-section-wrapper " id="assitants">
     
     <h1 className='text-center text-white font-bold  text-2xl md:text-4xl md:max-w-[50%] mx-auto'>Join A Global Team of Elite <span className='text-orange-500'>Sales Agents</span> Driving Business Growth</h1>
@@ -256,26 +305,7 @@ export default function Home() {
       </div>
     </div>
   </section>
-  <section className='mx-auto px-5 md:px-20 py-12 invest-property-section-wrapper'>
-<div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-  <div className='space-y-4'>
-    <h2 className='font-semibold text-white text-4xl'>Serve your Customers in their own <span className='text-orange-500'>Native Languages</span></h2>
-    <p className='text-gray-300 text-md font-light'>We have Support Agents in over 30 countries speaking over 80 Languages ensuring you can personalize your customer support in native languages</p>
-    <Link href="https://calendly.com/culturelyft-info/30min"
-                class=" block w-fit  px-4 py-2 text-md uppercase font-medium leading-5 text-center text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
-              >
-               TALK TO OUR TEAM
-              </Link>
-  </div>
-<div>
-<img
-            src="/invest-property-section-img.png"
-            alt=""
-            class="invest-property-section__img"
-          />
-</div>
-</div>
-  </section>     
+   
   <BlogCategories/>   
 
       <footer>

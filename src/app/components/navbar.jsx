@@ -30,7 +30,9 @@ const Navbar = () => {
                 </svg>
               </span>
             </div>
+            <Link href="/#ai">AI</Link>
             <Link href="/#assitants" >Customer Support</Link>
+            
             <Link href="/#businesses">Sales Support</Link>
             <Link href="/corporate">Corporate Training</Link>
             <Link href="/#resources">Resources</Link>
