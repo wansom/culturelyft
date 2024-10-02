@@ -80,7 +80,7 @@ export default function Home() {
           <div class=""></div>
         </div>
         <div className='md:basis-1/2'>
-          <img src='/banner-2.png' className='h-full w-full object-cover' >
+          <img src='/banner.png' className='h-full w-full object-cover' >
           </img>
         </div>
 
